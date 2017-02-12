@@ -1,10 +1,15 @@
+import  os
+folder = os.path.realpath('.')
+from lab import *
 ##Fit lineare di calibrazione(x inverso di lunghezza d'onda; y angoli)
 import numpy
 import math
 import pylab
 import scipy
 import scipy.special
-x,dx,y,dy=pylab.loadtxt('C:/Users\Luca\Documents\Laboratorio3\Ottica1\calibrazione.txt', unpack=True)
+
+datafile = 'dati_1.txt'
+x,dx,y,dy=pylab.loadtxt(os.path.join(folder, 'Dati', datafile)).T
 pylab.figure(1)
 pylab.xlabel(' x')
 pylab.ylabel('y')

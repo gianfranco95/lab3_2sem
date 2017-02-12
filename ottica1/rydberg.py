@@ -1,3 +1,6 @@
+import  os
+folder = os.path.realpath('.')
+from lab import *
 import numpy
 import math
 import pylab
@@ -26,7 +29,8 @@ dd=pylab.sqrt( ((d/l)*dl)**2 + (d*d*pylab.cos(ti)*dti/l)**2 + (d*d*pylab.cos(td)
 print('Passo reticolare d=%f+-%f'%(d,dd))
 
 ##Costante di Rydberg (-1 sta per infinito)
-alfa,dalfa,n1,n2,ordine=pylab.loadtxt('C:/Users\Luca\Documents\Laboratorio3\Ottica1\ydberg.txt', unpack=True)
+datafile = 'dati_1.txt'
+alfa,dalfa,n1,n2,ordine=pylabloadtxt(os.path.join(folder, 'Dati', datafile)).T
 p=pylab.zeros(len(ordine))
 for i in range(0,len(ordine)):
     if(n2[i]==-1): p[i]=1

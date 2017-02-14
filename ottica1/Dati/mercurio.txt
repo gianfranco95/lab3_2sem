@@ -1,0 +1,7 @@
+#angolo	#primi
+229	25	#riflessione
+229	26
+229     28
+277     0.5	#rifrazione
+277	0.0
+276	59.5	

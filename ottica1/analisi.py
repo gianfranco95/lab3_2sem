@@ -6,16 +6,22 @@ from lab import *
 
 #### Parte 1
 
-datafile = 'dati_1.txt'
+datafile = 'mercurio.txt'
 rawdata = np.loadtxt(os.path.join(folder, 'Dati', datafile)).T
+theta=rawdata[0]+(rawdata[1]/60)
 
-media=np.empty(len(rawdata)/3)
-disp=np.empty(len(rawdata)/3)
+theta0=168.71944444
+dtheta0=0.03333333
+media=np.empty(len(theta)/3)
+disp=np.empty(len(theta)/3)
 
 i=0
-while i <len(rawdata):
-    a=(rawdata[i]+rawdata[i+1]+rawdata[i+2])/3
+while i <len(theta):
+    a=(theta[i]+theta[i+1]+theta[i+2])/3
     media[(1/3)*i]=a
-    rawdata[i:i+3].sort() 
-    disp[(1/3)*i]=rawdata[i+2]-rawdata[i]
+    theta[i:i+3].sort() 
+    disp[(1/3)*i]=theta[i+2]-theta[i]
     i=i+3
+
+theta=media-(theta0*numpy.ones(2))
+dtheta=disp +(dtheta0*numpy.ones(2))

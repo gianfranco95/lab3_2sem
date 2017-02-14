@@ -1,0 +1,24 @@
+#angolo	#primi
+
+269	3	#prima viola
+269	4
+269	5
+269	17	#seconda viola
+269	17
+269	17.5
+272	53.5	#azzurro
+272	54
+272	51
+276	11	#primo verde
+276	12
+276	11.5	
+284	48 	#rosso
+284	46.5	
+284	49
+299	24	#viola secondo ordine
+299	27
+299     26.5
+306	48	#azzurro secondo ordine
+306     47
+306	48.5
+

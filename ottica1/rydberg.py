@@ -7,12 +7,31 @@ import pylab
 import scipy
 import scipy.special
 
+datafile = 'mercurio.txt'
+rawdata = np.loadtxt(os.path.join(folder, 'Dati', datafile)).T
+theta=rawdata[0]+(rawdata[1]/60)
+
+theta0=168.71944444
+dtheta0=0.03333333
+media=np.empty(len(theta)/3)
+disp=np.empty(len(theta)/3)
+
+i=0
+while i <len(theta):
+    a=(theta[i]+theta[i+1]+theta[i+2])/3
+    media[(1/3)*i]=a
+    theta[i:i+3].sort() 
+    disp[(1/3)*i]=theta[i+2]-theta[i]
+    i=i+3
+
+theta=media-(theta0*numpy.ones(2))
+dtheta=disp +(dtheta0*numpy.ones(2))
 #Determinazione del passo reticolare
 #misure
-a0=
-da0=
-a1=
-da1=
+a0=theta[0]
+da0=dtheta[0]
+a1=theta[1]
+da1=dtheta[1]
 l=546.074 #nm
 dl=0.001 #nm
 a0=a0*math.pi/180

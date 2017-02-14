@@ -1,0 +1,7 @@
+#angolo	#primi
+280	00	#primo giallo
+280     00
+279     58.5
+280	5      #secondo giallo
+280	3
+280	3

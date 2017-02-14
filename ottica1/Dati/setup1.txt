@@ -1,0 +1,3 @@
+#centro #primi_c	#destro	#primi_d	#sinistro	#primi_s
+203 	42		203	44		203		40
+   

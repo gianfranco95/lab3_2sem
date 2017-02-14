@@ -1,0 +1,4 @@
+#angolo	#primi
+168	44	#angolo zero
+168	43.5
+168	42

@@ -1,14 +1,33 @@
-\begin{section}*{Misura della costante di Rydberg}
+\section{Misura della costante di Rydberg}
 
-\begin{subsection}*{Misura del passo reticolare}
+\subsection{Misura del passo reticolare}
+Si è utilizzato lo strumento nella configurazione in \fig{spettroscopio_reticolo}, con la lampada al mercurio in ingresso. E' stato possibile calcolare il passo reticolare dell'elemento diffrattore grazie alla relazione:
+\begin{equation}
+d = \frac{m\lambda}{sen\theta_{i} - sen\theta_{d}}
+\label{legge_diffrazione}
+\end{equation} dove $m$ è l'ordine di diffrazione, $\theta_{i}$ l'angolo di incidenza e $\theta_{d}$ l'angolo di diffrazione (tutti rispetto alla normale del reticolo). Nella misura è stata utilizzata la lunghezza d'onda nominale di ?? corrispondente al colore verde. E' stato scelto un angolo di incidenza ampio in modo tale da ridurre l'incertezza sui seni in ??formula 1 ??\newline
+Dapprima è stato misurato l'angolo di riferimento corrispondente ai due telescopi allineati sull'asse ottico. In seguito sono stati calcolati gli angoli $\alpha_{0}$ e $\alpha_{d}$ di deflessione rispetto all'asse rispettivamente del fascio riflesso e il fascio relativo al primo ordine di diffrazione. Sono stati dunque ricavati i due angoli in ???relazione 1??, tramite le relazioni:
+\begin{equation}
+\theta_{i}=\frac{\pi-\alpha_{0}}{2}
+\end{equation}
+\begin{equation}
+ \theta_{d}=\pi-\theta_{i}-\alpha{d}
+\end{equation}
+I valori ottenuti per gli angoli sono riportati in \tab{passo_reticolare}.
+???tabella
+Come nelle sezioni precedenti è stato determinato l'errore effettuando separatamente più misure di ciascun angolo e determinandone media e dispersione.
+\newline
+Dalla ??cito la 1?? si ottiene il valore  d=??. L'errore sul passo reticolare discende da quello sugli angoli trascurando invece quello sul'ultima cifra della lunghezza d'onda che risulta trascurabile.
 
-Prima di misurare la costante di Rydberg, abbiamo misurato il passo reticolare $d$ per lo spettroscopio a reticolo di diffrazione utilizzando la lampada a mercurio, noto $$d = \frac{m\lambda}{sen\theta_{i} - sen\theta_{d}}$$ dove $m$ è l'ordine di diffrazione, $\theta_{i}$ l'angolo di incidenza e $\theta_{d}$ l'angolo di diffrazione. Le relazioni tra questi angoli e la differenza tra gli angoli concretamente misurati e il rideterminato $\theta_{0} = 44 \pm 9$ (stavolta la risoluzione del goniometro è di mezzo primo) $\alpha_{0}$ e $\alpha_{1}$ sono $\theta_{i} = \frac{1}{2} (\pi - \alpha_{0})$ e $\theta_{d} = \pi - \theta_{i} - \alpha_{i}$.\\  Gli angoli misurati sono quelli corrispondenti alla riflessione ($\alpha_{0}$) e al primo ordine di rifrazione per la riga verde ($\alpha_{i}$) per i colori. Noti gli angoli e la lunghezza d'onda, abbiamo così determinato $d = 3$.
+\subsection{Righe spettrali dell'idrogeno}
 
-\end{subsection}
+Sostituendo alla lampada a mercurio la lampada a idrogeno, abbiamo misurato l'angolo di rifllessione e gli angoli di rifrazione per le bande viola e azzurra (primi due ordini) e per le bande verde e rossa (solo primo ordine). Qualora vi fosse più di una banda dello stesso colore, abbiamo misurato l'angolo per la più evidente. Noto $d$ e misurati gli angoli, abbiamo quindi calcolato $\lambda$ invertendo la ??formula 1. I risultati sono riportati in cito tabella 2???.\\
 
-\begin{subsection}*{Righe spettrali dell'idrogeno}
-
-Sostituendo alla lampada a mercurio la lampada a idrogeno, abbiamo misurato l'angolo di rifllessione e gli angoli di rifrazione per le bande viola e azzurra (primi due ordini) e per le bande verde e rossa (solo primo ordine). Qualora vi fosse più di una banda dello stesso colore, abbiamo misurato l'angolo per la più evidente. Noto $d$, abbiamo quindi calcolato $\lambda$. I risultati sono riportati in \emph{Tabella 2}.\\
+E' nota l'equazione di Rydberg:
+\begin{equation}
+\frac{1}{\lambda} = R (\frac{1}{n_{1}^2} - \frac{1}{n_{2}^2})
+\end{equation} dove $n_1$ e $n_2$  sono due numeri quantici associati all'idrogeno ed R è la costante di Rydberg. Conoscendo preliminarmente l'ordine di grandezza della costante R si sono stimati i valori dei due numeri quantici per ciascuna lunghezza d'onda. E' stato eseguito un fit lineare numerico a due parametri y=mx+q, ottenendo: m=??, q=??; figura???.
+L'intercetta risulta compatibile con il valore nullo e fornisce il valore m per la costante di Rydberg
 
 \begin{table}[h]
 \begin{center}
@@ -19,16 +38,8 @@ Sostituendo alla lampada a mercurio la lampada a idrogeno, abbiamo misurato l'an
 \hline
 
 \hline
-
 \end{tabular}
 \caption{spettro lampada a idrogeno.}
 \end{center}
 \end{table}
-
-Nota l'equazione di Rydberg $$ \frac{1}{\lambda} = R (\frac{1}{n_{1}^2} - \frac{1}{n_{2}^2}) $$ dove $n_1$ e $n_2$ sono stati stimati a partire da $\lambda$ misurata e dal valore noto di R, abbiamo svolto un fit ottenendo ...\\
-
-\end{subsection}
-
 % sodio
-
-\end{section}

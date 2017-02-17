@@ -37,14 +37,14 @@ dl=0.001 #nm
 a0=a0*math.pi/180
 da0=da0*math.pi/180
 a1=a1*math.pi/180
-da1=a1*math.pi/180
+da1=da1*math.pi/180
 ti=(math.pi-a0)/2
 dti=da0/2
 td=math.pi-ti-a1
 dtd=pylab.sqrt(dti**2 + da1**2)
 
 d=l/(pylab.sin(ti)-pylab.sin(td))
-dd=pylab.sqrt( ((d/l)*dl)**2 + (d*d*pylab.cos(ti)*dti/l)**2 + (d*d*pylab.cos(td)*dtd/l)**2 )
+dd=pylab.sqrt( (d*d*pylab.cos(ti)*dti/l)**2 + (d*d*pylab.cos(td)*dtd/l)**2 )
 print('Passo reticolare d=%f+-%f'%(d,dd))
 
 #Costante di Rydberg (-1 sta per infinito)
@@ -114,7 +114,7 @@ print('Chi quadro/ndof = %f/%f\nprobabilità associata = %f'%(chisquare,dof,pchi
 pylab.figure(2)
 pylab.subplot(211)
 pylab.xlim(0.87,0.97)
-pylab.ylabel('1/$\lambda$ $[nm^{-1}]$')
+pylab.ylabel('1/$\lambda$ $[nm^{-1}]$', size = 15)
 pylab.title('misura costante di Rydberg')
 pylab.grid(color='gray')
 pylab.plot(x,y, 'o')
@@ -122,7 +122,31 @@ pylab.errorbar(x,y,yerr=dy,linestyle='')
 pylab.plot(x,f(x,m_fit,q_fit), color='black',label = "retta di fit")
 pylab.subplot(212)
 pylab.title('Residui')
-pylab.xlabel('$\frac{1}{n1^2}-\frac{1}{n2^2}$')
+pylab.xlabel('$1/n_1^{2}-1/n_2^{2}$', size = 15)
 pylab.plot(x,(y-f(x,m_fit,q_fit))/dy,'o',linestyle='',markersize = 5)
+pylab.xlim(0.87,0.97)
 pylab.legend(loc = 4)
 pylab.show()
+
+## distanza tra doppietto giallo del sodio
+datafile = 'doppietto_sodio.txt'
+rawdataa = numpy.loadtxt(os.path.join(folder, 'Dati', datafile)).T
+theta1=rawdataa[0]+(rawdataa[1]/60)
+theta0=168.71944444
+dtheta0=0.03333333
+media=numpy.empty(len(theta1)/3)
+disp=numpy.empty(len(theta1)/3)
+
+i=0
+while i <len(theta1):
+    a=(theta1[i]+theta1[i+1]+theta1[i+2])/3
+    media[(1/3)*i]=a
+    theta1[i:i+3].sort() 
+    disp[(1/3)*i]=theta1[i+2]-theta1[i]
+    i=i+3
+
+theta1=(media-(theta0*numpy.ones(2)))*math.pi/180
+theta1=(pylab.pi-ti)*pylab.ones(2)-theta1
+dtheta1=numpy.sqrt(disp**2 +((dtheta0-(dti*180/math.pi))*numpy.ones(2))**2)*math.pi/180
+lambda_sodio=(d*(pylab.sin(ti)-pylab.sin(theta1)))/1
+dlambda_sodio=pylab.sqrt( (dd*lambda_sodio/d)**2 + (d*pylab.cos(ti)*dti)**2 + (d*pylab.cos(theta1)*dtheta1)**2 )/1

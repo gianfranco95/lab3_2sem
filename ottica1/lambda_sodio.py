@@ -80,6 +80,6 @@ angolo[0:len(angolo)].sort()
 dtheta=(angolo[len(angolo)-1]-angolo[0])/2
 
 L=m_fit/(theta-q_fit)
-dL=math.sqrt( (dm_fit/(theta-q_fit))**2 + ((m_fit/((theta-q_fit)**2))**2 )*(dq_fit**2+dtheta**2)+ 2*mq_cov/((theta-q_fit)**2))
+dL=math.sqrt( (dm_fit/(theta-q_fit))**2 + ((m_fit/((theta-q_fit)**2))**2 )*(dq_fit**2+dtheta**2)+ 2*mq_cov*(m_fit/(theta-q_fit)**3))
 
-print('Lunghezza d onda=%f+-%f'%(L,dL))
+print('Lunghezza d'onda=%f+-%f'%(L,dL))

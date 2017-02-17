@@ -27,7 +27,7 @@ while i <len(theta):
     
 y=media
 dy=disp
-lungh_onda=numpy.array([508.6,643.8,467.8,480.0])
+lungh_onda=numpy.array([508.6,643.8,467.8,480.0])       #nanometri
 x=1/(lungh_onda)
 dlungh=numpy.ones(len(x))*0.1
 dx=dlungh/(lungh_onda**2)
@@ -58,8 +58,7 @@ print('Chi quadro/ndof = %f/%f\nprobabilità associata = %f'%(chisquare,dof,pchi
 #Grafico
 pylab.figure(2)
 pylab.subplot(211)
-pylab.xlabel(' x')
-pylab.ylabel('y')
+pylab.ylabel('$theta$ [rad]')
 pylab.title('Data')
 pylab.grid(color='gray')
 pylab.plot(x,y, 'o')
@@ -67,7 +66,7 @@ pylab.errorbar(x,y,yerr=dy,xerr=dx,linestyle='')
 pylab.plot(x,f(x,m_fit,q_fit), color='black',label = "retta di fit")
 pylab.subplot(212)
 pylab.title('Residui')
-pylab.xlabel(' x')
+pylab.xlabel(' 1/$\lambda$ $[nm^{-1}]$')
 pylab.plot(x,(y-f(x,m_fit,q_fit))/dy,'o',linestyle='',markersize = 5)
 pylab.legend(loc = 4)
 pylab.show()

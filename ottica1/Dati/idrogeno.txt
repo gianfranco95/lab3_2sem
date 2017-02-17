@@ -1,24 +1,24 @@
-#angolo	#primi
+#angolo	#primi	#n2	#ordine
 
-269	3	#prima viola
-269	4
-269	5
-269	17	#seconda viola
-269	17
-269	17.5
-272	53.5	#azzurro
-272	54
-272	51
-276	11	#primo verde
-276	12
-276	11.5	
-284	48 	#rosso
-284	46.5	
-284	49
-299	24	#viola secondo ordine
-299	27
-299     26.5
-306	48	#azzurro secondo ordine
-306     47
-306	48.5
+269	3	5	1	#prima viola
+269	4	5	1
+269	5	5	1
+269	17	5	1	#seconda viola
+269	17	5	1
+269	17.5	5	1
+272	53.5	4	1	#azzurro
+272	54	4	1
+272	51	4	1
+276	11	4	1	#primo verde
+276	12	4	1
+276	11.5	4	1	
+284	48 	3	1	#rosso
+284	46.5	3	1	
+284	49	3	1
+299	24	5	2	#viola secondo ordine
+299	27	5	2
+299     26.5	5	2	
+306	48	4	2	#azzurro secondo ordine
+306     47	4	2
+306	48.5	4	2
 

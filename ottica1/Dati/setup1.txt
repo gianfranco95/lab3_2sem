@@ -1,3 +1,4 @@
-#centro #primi_c	#destro	#primi_d	#sinistro	#primi_s
-203 	42		203	44		203		40
+203 	42	#destro	#primi_d
+203	44	#centro #primi_c
+203	40	#sinistro#primi_s
    

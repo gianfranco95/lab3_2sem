@@ -138,3 +138,10 @@ theta1=(pylab.pi-ti)*pylab.ones(2)-theta1
 dtheta1=numpy.sqrt(disp**2 +((dtheta0-(dti*180/math.pi))*numpy.ones(2))**2)*math.pi/180
 lambda_sodio=(d*(pylab.sin(ti)-pylab.sin(theta1)))/1
 dlambda_sodio=pylab.sqrt( (dd*lambda_sodio/d)**2 + (d*pylab.cos(ti)*dti)**2 + (d*pylab.cos(theta1)*dtheta1)**2 )/1
+
+##tabella in latex
+i=0
+while i<len(theta1):
+    print('%f & %f & %f & %f \\\ '%(theta1[i]*180/math.pi,dtheta1[i]*180/math.pi,lambda_sodio[i],dlambda_sodio[i]))
+    i=i+1
+    

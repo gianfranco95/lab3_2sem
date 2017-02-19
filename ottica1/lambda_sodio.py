@@ -27,7 +27,7 @@ while i <len(theta):
     disp[(1/3)*i]=theta[i+2]-theta[i]
     i=i+3
     
-y=media-theta0
+y=media
 dy=disp
 lungh_onda=numpy.array([508.6,643.8,467.8,480.0])       #nanometri
 x=1/(lungh_onda)
@@ -60,7 +60,7 @@ print('Chi quadro/ndof = %f/%f\nprobabilità associata = %f'%(chisquare,dof,pchi
 #Grafico
 pylab.figure(2)
 pylab.subplot(211)
-pylab.ylabel('$theta$ [rad]')
+pylab.ylabel('$ theta$ [gradi]')
 pylab.title('Data')
 pylab.grid(color='gray')
 pylab.plot(x,y, 'o')

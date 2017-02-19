@@ -1,13 +1,13 @@
 \section{Misura della costante di Rydberg}
 
 \subsection{Misura del passo reticolare}
-Si è utilizzato lo strumento nella configurazione in \fig{spettroscopio_reticolo}, con la lampada al mercurio in ingresso. Dapprima sono state regolate le messe a fuoco dei due telescopi in modo tale da osservare un'immagine nitida. E' stato regolato lo spessore della fenditura in modo tale da non essere troppo spessa aumentando l'incertezza nè troppo piccolo compromettendo la visualizzazione di alcune bande. Si è dunque misurato l'angolo di riferimento corrispondente ai due telescopi allineati sull'asse ottico.\\
+Si è utilizzato lo strumento nella configurazione in \fig{spettroscopio_reticolo}, con la lampada al mercurio in ingresso. Dapprima sono state regolate le messe a fuoco dei due telescopi in modo tale da osservare un'immagine nitida. E' stato regolato lo spessore della fenditura in modo tale da non essere troppo spessa, aumentando così l'incertezza, nè troppo piccola compromettendo la visualizzazione di alcune bande. Si è dunque misurato l'angolo di riferimento corrispondente ai due telescopi allineati sull'asse ottico.\\
  In seguito sono stati misurati gli angoli $\alpha_{0}$ e $\alpha_{d}$ di deflessione rispetto all'asse ottico rispettivamente del fascio riflesso e del fascio relativo al primo ordine di diffrazione relativo alla banda verde del mercurio. Ne sono stati dunque ricavati gli angoli di incidenza $\theta_{i}$ e quello di diffrazione $\theta_{d}$, entrambi rispetto alla normale del reticolo, tramite le relazioni:
  \begin{equation}
  \theta_{i}=\frac{\pi-\alpha_{0}}{2}
  \end{equation}
  \begin{equation}
-  \theta_{d}=\pi-\theta_{i}-\alpha{d}
+  \theta_{d}=\pi-\theta_{i}-\alpha_d
  \end{equation}
  
  Infine è stato possibile calcolare il passo reticolare dell'elemento diffrattore grazie alla relazione:
@@ -15,7 +15,7 @@ Si è utilizzato lo strumento nella configurazione in \fig{spettroscopio_reticol
 d = \frac{m\lambda}{sen\theta_{i} - sen\theta_{d}}
 \label{legge_diffrazione}
 \end{equation} 
-dove $m$ è l'ordine di diffrazione. Nella misura è stata utilizzata la lunghezza d'onda nominale di ?? corrispondente al colore verde. E' stato scelto un angolo di incidenza ampio in modo tale da ridurre l'incertezza sui seni in \ref{legge_diffrazione} \\
+dove $m$ è l'ordine di diffrazione. Nella misura è stata utilizzata la lunghezza d'onda nominale di $546.074$nm  corrispondente al colore verde. E' stato scelto un angolo di incidenza ampio in modo tale da ridurre l'incertezza sui seni in \ref{legge_diffrazione} \\
 
 I valori ottenuti per gli angoli sono riportati in \tab{passo_reticolare}.
 \begin{table}[h]
@@ -28,7 +28,7 @@ I valori ottenuti per gli angoli sono riportati in \tab{passo_reticolare}.
 	\caption{angolo di riflessione $\theta_i$ e rifrazione $\theta_d$ del primo ordine(banda verde) per il mercurio. }
 	\label{t:passo_reticolare}
 \end{table}
-Come nelle sezioni precedenti è stato determinato l'errore effettuando separatamente più misure di ciascun angolo e determinandone media e dispersione.
+Come nelle sezioni precedenti è stato determinato l'errore effettuando separatamente più misure di ciascun angolo e determinandone media e semidispersione.
 \newline
 Dalla \ref{legge_diffrazione} si ottiene il valore  d=$\SI{835(1)}{\nano\meter}$. L'errore sul passo reticolare discende da quello sugli angoli trascurando invece quello sul'ultima cifra della lunghezza d'onda che risulta trascurabile.
 
@@ -68,10 +68,10 @@ dove $n_1$ e $n_2$  sono due numeri quantici associati all'idrogeno ed R è la c
 
 l'intercetta non risulta compatibile con il valore nullo.
 
-Si nota dal grafico \ref{rydberg1} che la misura associata alla riga verde si discosta molto ( $ \approx 40\space \sigma$ ) dall'andamento lineare. Rimuovendo questa misura dal fit numerico (\fig{rydberg2}) si ottiene un nuovo valore per la costante di Rydberg:
+Si nota dal grafico in (\fig{rydberg1}) che la misura associata alla riga verde si discosta molto ( $ \approx 40\space \sigma$ ) dall'andamento lineare. Rimuovendo questa misura dal fit numerico (\fig{rydberg2}) si ottiene un nuovo valore per la costante di Rydberg:
 \begin{itemize}
-\item	m=$1.089\pm0.005$[$10^{7}$m]
-\item	q= $7 \pm 10$[m]
+\item	m=$1.089\pm0.005$[$10^{7}$m$^{-1}$]
+\item	q= $7 \pm 10$[$m^{-1}$]
 \item	covarianza normalizzata = -0.99
 \item	$\chi^{2}/ndof= 6.7/2$
 \item	probabilità associata $= 0.04$
@@ -79,8 +79,8 @@ Si nota dal grafico \ref{rydberg1} che la misura associata alla riga verde si di
 l'intercetta risulta compatibile con il valore nullo e m è il valore della costante di Rydberg che si voleva misurare.
 
 \section{Doppietto giallo del sodio e precisione dello strumento}
-Allo stesso apparato di misura è stata sostituita la lampada all'idrogeno con quella al sodio. Nella prima sezione si era determinata la lunghezza d'onda dello spettro di emissione tramite uno spettroscopio a rifrazione. Utilizzando lo spettroscopio a diffrazione si può osservare, corrispondentemente alla stessa lunghezz d'onda, un doppietto. Lo scopo è misurare la lunghezza d'onda del doppietto giallo e confrontarla con ricavata usando il prisma.
-E' stata effettuata (allo stesso modo delle sezioni precedenti) la misura dei due angoli corrispondenti alle due diverse bande. Utilizzando la \ref{e:legge_diffrazione} si è ottenuto:
+Allo stesso apparato di misura è stata sostituita la lampada all'idrogeno con quella al sodio. Nella prima sezione si era determinata la lunghezza d'onda dello spettro di emissione tramite uno spettroscopio a rifrazione. Utilizzando lo spettroscopio a diffrazione si può osservare, corrispondentemente alla stessa lunghezza d'onda, un doppietto. Lo scopo è misurare la lunghezza d'onda del doppietto giallo e confrontarla con quella ricavata usando il prisma.
+E' stata effettuata (allo stesso modo delle sezioni precedenti) la misura dei due angoli corrispondenti alle due diverse bande. Utilizzando la \ref{legge_diffrazione} si è ottenuto:
 
 \begin{table}[h]
 	\centering
@@ -91,7 +91,7 @@ E' stata effettuata (allo stesso modo delle sezioni precedenti) la misura dei du
 	9.02 & 0.02 & 589.9 & 0.8 \\ 
 	\end{tabular}
 	\caption{ogni riga riporta ii valori relativi ad una singola banda del doppietto. }
-	\label{t:spettro_idrogeno}
+	\label{t:doppietto_sodio}
 \end{table}
 
 La distanza nominale tra le due lunghezze d'onda è $\delta\lambda = 0.6$ nm. \\

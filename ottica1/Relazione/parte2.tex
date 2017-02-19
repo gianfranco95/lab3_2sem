@@ -3,19 +3,19 @@
 \subsection{Misura del passo reticolare}
 Si è utilizzato lo strumento nella configurazione in \fig{spettroscopio_reticolo}, con la lampada al mercurio in ingresso. Dapprima sono state regolate le messe a fuoco dei due telescopi in modo tale da osservare un'immagine nitida. E' stato regolato lo spessore della fenditura in modo tale da non essere troppo spessa aumentando l'incertezza nè troppo piccolo compromettendo la visualizzazione di alcune bande. Si è dunque misurato l'angolo di riferimento corrispondente ai due telescopi allineati sull'asse ottico.\\
  In seguito sono stati misurati gli angoli $\alpha_{0}$ e $\alpha_{d}$ di deflessione rispetto all'asse ottico rispettivamente del fascio riflesso e del fascio relativo al primo ordine di diffrazione relativo alla banda verde del mercurio. Ne sono stati dunque ricavati gli angoli di incidenza $\theta_{i}$ e quello di diffrazione $\theta_{d}$, entrambi rispetto alla normale del reticolo, tramite le relazioni:
-\begin{equation}
+ \begin{equation}
  \theta_{i}=\frac{\pi-\alpha_{0}}{2}
-\end{equation}
-\begin{equation}
- \theta_{d}=\pi-\theta_{i}-\alpha{d}
-\end{equation}
+ \end{equation}
+ \begin{equation}
+  \theta_{d}=\pi-\theta_{i}-\alpha{d}
+ \end{equation}
  
-Infine è stato possibile calcolare il passo reticolare dell'elemento diffrattore grazie alla relazione:
+ Infine è stato possibile calcolare il passo reticolare dell'elemento diffrattore grazie alla relazione:
 \begin{equation}
 d = \frac{m\lambda}{sen\theta_{i} - sen\theta_{d}}
-\label{e:legge_diffrazione}
-\end{equation}
-dove $m$ è l'ordine di diffrazione. Nella misura è stata utilizzata la lunghezza d'onda nominale di $\SI{546.074}{\nano\meter}$  corrispondente al colore verde. E' stato scelto un angolo di incidenza ampio in modo tale da ridurre l'incertezza sui seni in (\ref{legge_diffrazione})\\
+\label{legge_diffrazione}
+\end{equation} 
+dove $m$ è l'ordine di diffrazione. Nella misura è stata utilizzata la lunghezza d'onda nominale di ?? corrispondente al colore verde. E' stato scelto un angolo di incidenza ampio in modo tale da ridurre l'incertezza sui seni in \ref{legge_diffrazione} \\
 
 I valori ottenuti per gli angoli sono riportati in \tab{passo_reticolare}.
 \begin{table}[h]
@@ -30,12 +30,11 @@ I valori ottenuti per gli angoli sono riportati in \tab{passo_reticolare}.
 \end{table}
 Come nelle sezioni precedenti è stato determinato l'errore effettuando separatamente più misure di ciascun angolo e determinandone media e dispersione.
 \newline
-Dalla \ref{legge_diffrazione} si ottiene il valore  d=$\SI{835(1)}{\nano\meter}$.  L'errore sul passo reticolare discende da quello sugli angoli trascurando invece quello sull'ultima cifra della lunghezza d'onda che risulta trascurabile.
+Dalla \ref{legge_diffrazione} si ottiene il valore  d=$\SI{835(1)}{\nano\meter}$. L'errore sul passo reticolare discende da quello sugli angoli trascurando invece quello sul'ultima cifra della lunghezza d'onda che risulta trascurabile.
 
 \subsection{Righe spettrali dell'idrogeno}
 
-Sostituendo alla lampada a mercurio la lampada a idrogeno, abbiamo misurato l'angolo di riflessione e gli angoli di diffrazione per le bande viola e azzurra (primi due ordini) e per le banda rossa (solo primo ordine). Noto il passo reticolare $d$ e misurati gli angoli, abbiamo quindi calcolato la lunghezza d'onda $\lambda$ invertendo la \ref{legge_diffrazione}. I risultati sono riportati in \tab{spettro_idrogeno}:
-
+Sostituendo alla lampada a mercurio la lampada a idrogeno, abbiamo misurato l'angolo di riflessione e gli angoli di diffrazione per le bande viola e azzurra (primi due ordini) e per le bande verde e rossa (solo primo ordine). Qualora vi fosse più di una banda dello stesso colore, abbiamo misurato l'angolo per la più evidente. Noto il passo reticolare $d$ e misurati gli angoli, abbiamo quindi calcolato la lunghezza d'onda $\lambda$ invertendo la \ref{legge_diffrazione}. I risultati sono riportati in \tab{spettro_idrogeno}.\\
 \begin{table}[h]
 	\centering
 	\begin{tabular}{ *{4}{S[table-figures-exponent = 5]} }
@@ -52,26 +51,36 @@ Sostituendo alla lampada a mercurio la lampada a idrogeno, abbiamo misurato l'an
 	\label{t:spettro_idrogeno}
 \end{table}
 
-Per alcune bande si è misurato sia il primo che il secondo ordine di diffrazione e i due valori ricavati per le lunghezze d'onda sono compatibili tra loro entro 1 sigma.
+Per alcune bande si è misurato sia il primo che il secondo ordine di diffrazione e i due valori ricavati per le lunghezze d'onda sono compatibili tra loro entro 1$\sigma$. Avendo due misure della stessa banda di emissione si è dunque presa come misura della lunghezza d'onda la media delle due.
 
 E' nota l'equazione di Rydberg:
 \begin{equation}
 \frac{1}{\lambda} = R (\frac{1}{n_{1}^2} - \frac{1}{n_{2}^2})
-\end{equation}
- 
-dove $n_1$ e $n_2$  sono due numeri quantici associati all'idrogeno ed R è la costante di Rydberg. Conoscendo preliminarmente l'ordine di grandezza della costante R si sono stimati i valori dei due numeri quantici per ciascuna lunghezza d'onda. E' stato eseguito un fit lineare numerico a due parametri y=mx+q, ottenendo: 
+\end{equation} 
+
+dove $n_1$ e $n_2$  sono due numeri quantici associati all'idrogeno ed R è la costante di Rydberg. Conoscendo preliminarmente l'ordine di grandezza della costante R si sono stimati i valori dei due numeri quantici per ciascuna lunghezza d'onda. E' stato eseguito un fit lineare numerico a due parametri al modello y=mx+q, ottenendo (\fig{rydberg1}): 
 \begin{itemize}
-\item	m=$1.0909\pm0.0047$[$10^{7}$m]
-\item	q= $40 \pm 90$[m]
+\item	m=$1.051\pm0.005$[$10^{7} m^{-1}$]
+\item	q= $40 \pm 10$[$10^{4} m^{-1}$]
 \item	covarianza normalizzata = -0.99
-\item	$\chi^{2}/ndof= 8.08/4$
-\item	probabilità associata $= 0.088$
+\item	$\chi^{2}/ndof= 2100/3$
 \end{itemize}
 
+l'intercetta non risulta compatibile con il valore nullo.
+
+Si nota dal grafico \ref{rydberg1} che la misura associata alla riga verde si discosta molto ( $ \approx 40\space \sigma$ ) dall'andamento lineare. Rimuovendo questa misura dal fit numerico (\fig{rydberg2}) si ottiene un nuovo valore per la costante di Rydberg:
+\begin{itemize}
+\item	m=$1.089\pm0.005$[$10^{7}$m]
+\item	q= $7 \pm 10$[m]
+\item	covarianza normalizzata = -0.99
+\item	$\chi^{2}/ndof= 6.7/2$
+\item	probabilità associata $= 0.04$
+\end{itemize}
 l'intercetta risulta compatibile con il valore nullo e m è il valore della costante di Rydberg che si voleva misurare.
 
-\subsection{Misura doppietto giallo del sodio}
-Si è sostituita la lampada ad idrogeno con quella a sodio. Lo scopo è misurare la lunghezza d'onda del doppietto giallo e confrontarla con ricavata usando il prisma. Utilizzando la \ref{legge_diffrazione} si è ottenuto:
+\section{Doppietto giallo del sodio e precisione dello strumento}
+Allo stesso apparato di misura è stata sostituita la lampada all'idrogeno con quella al sodio. Nella prima sezione si era determinata la lunghezza d'onda dello spettro di emissione tramite uno spettroscopio a rifrazione. Utilizzando lo spettroscopio a diffrazione si può osservare, corrispondentemente alla stessa lunghezz d'onda, un doppietto. Lo scopo è misurare la lunghezza d'onda del doppietto giallo e confrontarla con ricavata usando il prisma.
+E' stata effettuata (allo stesso modo delle sezioni precedenti) la misura dei due angoli corrispondenti alle due diverse bande. Utilizzando la \ref{e:legge_diffrazione} si è ottenuto:
 
 \begin{table}[h]
 	\centering
@@ -84,3 +93,18 @@ Si è sostituita la lampada ad idrogeno con quella a sodio. Lo scopo è misurare
 	\caption{ogni riga riporta ii valori relativi ad una singola banda del doppietto. }
 	\label{t:spettro_idrogeno}
 \end{table}
+
+La distanza nominale tra le due lunghezze d'onda è $\delta\lambda = 0.6$ nm. \\
+
+
+Essendo la risoluzione dello strumento pari a 0.5 primi si distinguono 8 intervalli di risoluzione.
+Da cui la risoluzione delle lunghezze d'onda è dell'ordine di 0.08 nm. \newline
+Questo valore ottenuto è una stima della risoluzione dello strumento. Si può notare che in tutte le misure è dominante (circa un ordine di grandezza più grande) l'errore statistico dovuto al posizionamento del telescopio mobile, stimato facendo la dispersione di tre misure effettuate indipendentemente. Proprio per questo motivo la stessa stima della precisione ha una tolleranza che è dell'ordine del 30 \%.
+
+\section{conclusioni}
+Lo spettroscopio a diffrazione ha consentito una misura della lunghezza d'onda del doppietto di emissione del sodio, allo 0.5 \%. Questa precisione non ha consentito di distinguere le due bande del doppietto.
+E' stato analizzato lo spettroscopio a reticolo di diffrazione ed è stata valutata la sua precisione.\\
+E' stato osservato lo spettro di emissione della lampada ad idrogeno. Sono state determinate le lunghezze d'onda di emissione allo 0.2\%. Ciò che ci si aspetta per l'idrogeno è che per ogni coppia di numeri quantici esista una frequenza di emissione secondo l'equazione di Rydberg. Ciò non si osserva nei dati: compaiono doppietti a cui non si possono associare due diverse coppie di numeri quantici, la banda del verde è completamente fuori dall'andamento lineare. \\
+Ciò è dovuto al fatto che l'equazione di Rydberg è valida per singoli atomi di idrogeno non interagenti tra loro (esempio gas monoatomico rarefatto) e non per molecole biatomiche e non rarefatte come nel caso della lampada. In tal caso si formano diversi livelli energetici.\\
+Tutte le misure tramite reticolo di diffrazione di angoli effettuate sono affette principalmente da errore statistico dovute al posizionamento manuale del telescopio mobile. Questo tipo di errore sovrasta la risoluzione dello strumento.
+

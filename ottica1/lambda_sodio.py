@@ -16,6 +16,8 @@ theta=rawdata[0]+(rawdata[1]/60)
 
 media=numpy.empty(len(theta)/3)
 disp=numpy.empty(len(theta)/3)
+theta0=203*numpy.ones(len(media))
+dtheta0=(42/60)*numpy.ones(len(media))
 
 i=0
 while i <len(theta):
@@ -25,7 +27,7 @@ while i <len(theta):
     disp[(1/3)*i]=theta[i+2]-theta[i]
     i=i+3
     
-y=media
+y=media-theta0
 dy=disp
 lungh_onda=numpy.array([508.6,643.8,467.8,480.0])       #nanometri
 x=1/(lungh_onda)
@@ -83,3 +85,10 @@ L=m_fit/(theta-q_fit)
 dL=math.sqrt( (dm_fit/(theta-q_fit))**2 + ((m_fit/((theta-q_fit)**2))**2 )*(dq_fit**2+dtheta**2)+ 2*mq_cov*(m_fit/(theta-q_fit)**3))
 
 print('Lunghezza d\'onda=%f+-%f'%(L,dL))
+
+
+##tabella in latex
+i=0
+while i<len(media):
+    print('%f & %f $\pi$ %f \\\ '%(lungh_onda[i],media[i],disp[i]))
+    i=i+1

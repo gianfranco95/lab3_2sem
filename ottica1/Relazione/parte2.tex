@@ -1,27 +1,30 @@
 \section{Misura della costante di Rydberg}
 
 \subsection{Misura del passo reticolare}
-Si è utilizzato lo strumento nella configurazione in \fig{spettroscopio_reticolo}, con la lampada al mercurio in ingresso. E' stato possibile calcolare il passo reticolare dell'elemento diffrattore grazie alla relazione:
+Si è utilizzato lo strumento nella configurazione in \fig{spettroscopio_reticolo}, con la lampada al mercurio in ingresso. Dapprima sono state regolate le messe a fuoco dei due telescopi in modo tale da osservare un'immagine nitida. E' stato regolato lo spessore della fenditura in modo tale da non essere troppo doppio aumentando l'incertezza nè troppo piccolo compromettendo la visualizzazione di alcune bande. Si è dunque misurato l'angolo di riferimento corrispondente ai due telescopi allineati sull'asse ottico.\\
+ In seguito sono stati misurati gli angoli $\alpha_{0}$ e $\alpha_{d}$ di deflessione rispetto all'asse ottico rispettivamente del fascio riflesso e del fascio relativo al primo ordine di diffrazione relativo alla banda verde del mercurio. Ne sono stati dunque ricavati gli angoli di incidenza $\theta_{i}$ e quello di diffrazione $\theta_{d}$, entrambi rispetto alla normale del reticolo, tramite le relazioni:
+ \begin{equation}
+ \theta_{i}=\frac{\pi-\alpha_{0}}{2}
+ \end{equation}
+ \begin{equation}
+  \theta_{d}=\pi-\theta_{i}-\alpha{d}
+ \end{equation}
+ Infine è stato possibile calcolare il passo reticolare dell'elemento diffrattore grazie alla relazione:
 \begin{equation}
 d = \frac{m\lambda}{sen\theta_{i} - sen\theta_{d}}
 \label{legge_diffrazione}
-\end{equation} dove $m$ è l'ordine di diffrazione, $\theta_{i}$ l'angolo di incidenza e $\theta_{d}$ l'angolo di diffrazione (tutti rispetto alla normale del reticolo). Nella misura è stata utilizzata la lunghezza d'onda nominale di ?? corrispondente al colore verde. E' stato scelto un angolo di incidenza ampio in modo tale da ridurre l'incertezza sui seni in ??formula 1 ??\newline
-Dapprima è stato misurato l'angolo di riferimento corrispondente ai due telescopi allineati sull'asse ottico. In seguito sono stati calcolati gli angoli $\alpha_{0}$ e $\alpha_{d}$ di deflessione rispetto all'asse rispettivamente del fascio riflesso e il fascio relativo al primo ordine di diffrazione. Sono stati dunque ricavati i due angoli in ???relazione 1??, tramite le relazioni:
-\begin{equation}
-\theta_{i}=\frac{\pi-\alpha_{0}}{2}
-\end{equation}
-\begin{equation}
- \theta_{d}=\pi-\theta_{i}-\alpha{d}
-\end{equation}
+\end{equation} dove $m$ è l'ordine di diffrazione. Nella misura è stata utilizzata la lunghezza d'onda nominale di ?? corrispondente al colore verde. E' stato scelto un angolo di incidenza ampio in modo tale da ridurre l'incertezza sui seni in \ref{legge_diffrazione}\\
+
 I valori ottenuti per gli angoli sono riportati in \tab{passo_reticolare}.
 ???tabella
 Come nelle sezioni precedenti è stato determinato l'errore effettuando separatamente più misure di ciascun angolo e determinandone media e dispersione.
 \newline
-Dalla ??cito la 1?? si ottiene il valore  d=??. L'errore sul passo reticolare discende da quello sugli angoli trascurando invece quello sul'ultima cifra della lunghezza d'onda che risulta trascurabile.
+Dalla \ref{legge_diffrazione} si ottiene il valore  d=??. L'errore sul passo reticolare discende da quello sugli angoli trascurando invece quello sul'ultima cifra della lunghezza d'onda che risulta trascurabile.
 
 \subsection{Righe spettrali dell'idrogeno}
 
-Sostituendo alla lampada a mercurio la lampada a idrogeno, abbiamo misurato l'angolo di rifllessione e gli angoli di rifrazione per le bande viola e azzurra (primi due ordini) e per le bande verde e rossa (solo primo ordine). Qualora vi fosse più di una banda dello stesso colore, abbiamo misurato l'angolo per la più evidente. Noto $d$ e misurati gli angoli, abbiamo quindi calcolato $\lambda$ invertendo la ??formula 1. I risultati sono riportati in cito tabella 2???.\\
+Sostituendo alla lampada a mercurio la lampada a idrogeno, abbiamo misurato l'angolo di riflessione e gli angoli di diffrazione per le bande viola e azzurra (primi due ordini) e per le bande verde e rossa (solo primo ordine). Qualora vi fosse più di una banda dello stesso colore, abbiamo misurato l'angolo per la più evidente. Noto il passo reticolare $d$ e misurati gli angoli, abbiamo quindi calcolato la lunghezza d'onda $\lambda$ invertendo la \ref{legge_diffrazione}. I risultati sono riportati in ??cito tabella 2??? NB mettere gli angoli del primo e secondo ordine relativi alla stessa banda sulla stessa riga perche sono la stessa cosa???.\\
+Per alcune bande si è misurato sia il primo che il secondo ordine di diffrazione e i due valori ricavati per le lunghezze d'onda sono compatibili tra loro entro ???sigma. Avendo due misure della stessa banda di emissione si è dunque presa come misura della lunghezza d'onda la media delle due.
 
 E' nota l'equazione di Rydberg:
 \begin{equation}

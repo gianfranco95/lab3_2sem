@@ -16,8 +16,8 @@ theta=rawdata[0]+(rawdata[1]/60)
 
 media=numpy.empty(len(theta)/3)
 disp=numpy.empty(len(theta)/3)
-theta0=203*numpy.ones(len(media))
-dtheta0=(42/60)*numpy.ones(len(media))
+theta0=203.7*numpy.ones(len(media))
+dtheta0=(2/60)*numpy.ones(len(media))
 
 i=0
 while i <len(theta):
@@ -27,8 +27,8 @@ while i <len(theta):
     disp[(1/3)*i]=theta[i+2]-theta[i]
     i=i+3
     
-y=media
-dy=disp
+y=media-theta0
+dy=numpy.sqrt((disp/2)**2 + (dtheta0)**2+(1/60)**2)
 lungh_onda=numpy.array([508.6,643.8,467.8,480.0])       #nanometri
 x=1/(lungh_onda)
 dlungh=numpy.ones(len(x))*0.1
@@ -76,10 +76,12 @@ pylab.show()
     
 datafile = 'sodio_giallo.txt'
 rawdata = numpy.loadtxt(os.path.join(folder, 'Dati', datafile)).T
-angolo=rawdata[0]+rawdata[1]/60
-theta=sum(angolo)/(len(angolo))
+theta0=203.7*numpy.ones(len(rawdata[0]))
+dtheta0=(2/60)
+angolo=(rawdata[0]+rawdata[1]/60)-theta0
+theta=(sum(angolo))/(len(angolo))
 angolo[0:len(angolo)].sort()
-dtheta=(angolo[len(angolo)-1]-angolo[0])/2
+dtheta=numpy.sqrt( ((angolo[len(angolo)-1]-angolo[0])/2)**2 +dtheta0**2+(1/60)**2)
 
 L=m_fit/(theta-q_fit)
 dL=math.sqrt( (dm_fit/(theta-q_fit))**2 + ((m_fit/((theta-q_fit)**2))**2 )*(dq_fit**2+dtheta**2)+ 2*mq_cov*(m_fit/(theta-q_fit)**3))
@@ -88,7 +90,7 @@ print('Lunghezza d\'onda=%f+-%f'%(L,dL))
 
 
 ##tabella in latex
-i=0
-while i<len(media):
-    print('%f & %f $\pi$ %f \\\ '%(lungh_onda[i],media[i],disp[i]))
-    i=i+1
+# i=0
+# while i<len(media):
+#     print('%f & %f $\pi$ %f \\\ '%(lungh_onda[i],media[i],disp[i]))
+#     i=i+1

@@ -1,0 +1,12 @@
+Data 3  Ug= 4.2 V Ue 6.7  
+Data 4  Ug= 4.2 V Ue 7.8 
+Data 5  Ug= 4.2 V Ue 9.3
+Data 6  Ug= 4.2 V Ue 10.2  I minimi sono grossomodo a 0
+Data 7  Ug= 4.2 V Ue 4.9
+Data 8  Ug= 4.2 V Ue 2.7
+Data 9  Ug= 4.2 V Ue 1.5
+Data 10  Ug= 4.2 V Ue 0.3
+Data 11  Ug= 4.2 V Ue 3.6
+Data 12  Ug= 4.2 V Ue 5.5
+Data 13  Ug= 4.2 V Ue 8.6
+Data 14  Ug= 4.2 V Ue 11.8

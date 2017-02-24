@@ -1,21 +1,48 @@
 \section{Scopo e strumentazione}
 
-Con questa esperienza abbiamo osservato il comportamento degli elettroni in un tetrodo contenente gas neon, soggetti a un campo elettrico esterno. In particolare abbiamo studiato l'andamento della corrente in uscita in funzione del campo applicato. La strumentazione impiegata acclude, oltre al un tetrodo ELWE U8482230 e ad un sistema di alimentazione e lettura di corrente ELWE, dove i valori delle varie grandezze sono mostrati su un display, un oscilloscopio.\\
-In \fig{circuito} è mostrato lo schema circuitale dell'apparato utilizzato. Nel tetrodo, alle cui estremità vi sono un catodo da cui partono generalmente gli elettroni e un anodo, sono presenti infatti due griglie; tra la griglia più vicina al catodo e il catodo stesso vi è il potenziale 
+Con questa esperienza abbiamo osservato il comportamento degli elettroni in un tetrodo contenente gas neon, soggetti a un campo elettrico esterno. In particolare abbiamo studiato l'andamento della corrente in uscita in funzione del campo applicato. La strumentazione impiegata acclude, un tetrodo ELWE U8482230 e un sistema di alimentazione e lettura di corrente ELWE, dove i valori delle varie grandezze sono mostrati su un display, un oscilloscopio.\\
+In \fig{apparato} è mostrato lo schema circuitale dell'apparato utilizzato. Nel tetrodo, alle cui estremità vi sono un catodo da cui partono generalmente gli elettroni e un anodo, sono presenti infatti due griglie; tra la griglia più vicina al catodo e il catodo stesso vi è il potenziale 
 $U_G$, che incrementa il tasso di emissione degli elettroni. $U_A$ indica invece la differenza di potenziale tra la seconda griglia e il catodo e permette di accelerare gli elettroni. $U_E$ è, diversamente dagli altri, un potenziale frenante ed agisce tra la seconda griglia e l'anodo. Gli elettroni, una volta raggiunto l'anodo, danno luogo ad una debole corrente; un amplificatore permette di incrementarla. Ai due canali dell'oscilloscopio sono osservati i potenziali $U_A$ e $V_{out}$, quest'ultimo proporzionale a $I_C$.
 
 \section{Comportamento degli elettroni in seguito ad urti con atomi di neon}
 
-Dopo aver avuto cura di porre tutte le manopole a 0 in modo da annullare eventuali offset, abbiamo attivato il sistema di alimentazione ponendo la tensione applicata ai capi del filamento, che permette l'emissione di elettroni (non mostrata in figura), a $U_F = 8.0 \pm 0.5$ V.\\  Abbiamo atteso che il catodo raggiungesse una condizione di equilibrio.
+Dopo aver avuto cura di porre tutte le manopole a 0 in modo da annullare eventuali offset, abbiamo attivato il sistema di alimentazione ,impostato la tensione applicata ai capi del filamento, che permette l'emissione di elettroni per effetto termoionico, a $U_F = 8.0 \pm 0.5$ V.\\  Abbiamo atteso che il catodo raggiungesse una condizione di equilibrio.
 
 \subsection{Bande del neon}
 
-Abbiamo lentamente variato $U_G$ finchè non abbiamo distintamente osservato una banda luminosa tra le due griglie, entro il tetrodo. Ciò è avvenuto per $U_G = 4.3 \pm 0.1$ V. Abbiamo dunque agito anche sulla manopola di $U_A$ osservando a partire da un certo valore di tensione la banda arancione. Continuando ad incrementare la tensione abbiamo potuto individuare dapprima due e quindi tre bande ben distinte.  I valori di potenziale e corrente corrispondenti alla comparsa di ciascuna banda ottenuti mantenendo costante $U_G$ e circa nullo il potenziale frenante $U_E$ sono riportati in \emph{Tabella 1}.\\
-In \emph{Tabella 2} sono invece riportati i dati ottenuti con una tensione frenante pari a $U_E = 6.6 \pm 0.1$ V e senza agire sulla manopola di $U_G$. Un simile valore di $U_E$ è necessario per impedire alla corrente di crescere in modo monotono, evidenziando così il comportamento non classico dell'atomo di neon in seguito agli urti con gli elettroni: questi ultimi infatti eccitano gli atomi di neon a ben definiti livelli energetici.\\
+Abbiamo lentamente variato $U_G$ finché non abbiamo distintamente osservato una banda luminosa tra le due griglie. Ciò è avvenuto per $U_G = 4.3 \pm 0.1$ V. Abbiamo dunque agito anche sulla manopola di $U_A$ osservando a partire da un certo valore di tensione la banda arancione. Continuando ad incrementare la $U_a$ abbiamo potuto individuare dapprima due e poi tre bande ben distinte.  I valori di tensione e corrente corrispondenti alla comparsa di ciascuna banda ottenuti mantenendo costante $U_G$ (al valore prima indicato) e circa nullo il potenziale frenante $U_e$ sono riportati in ordine in \tab{Va_Ic}.\\
+
+\begin{table}[h]
+	\centering
+	\begin{tabular}{ *{4}{S[table-figures-exponent = 5]} }
+		{$U_a$ [V]} & {$ \Delta U_a$ [V]} & {$I_C$ [nA]} & {$ \Delta I_C$ [nA]}\\
+		\midrule
+		22.5  &0.5   &8 &1 \\
+		40.5  & 0.5  &20 &1\\
+		59.0  & 0.5  &86 &1\\
+	\end{tabular}
+	\caption{Valori di $I_c$ in funzione di $U_a$}
+	\label{t:Va_Ic}
+\end{table}
+
+In \tab{Va_Ic2} sono invece riportati i dati ottenuti con una tensione frenante pari a $U_E = 6.6 \pm 0.1$ V e senza agire sulla manopola di $U_G$. Un simile valore di $U_E$ è necessario per impedire alla corrente di crescere in modo monotono, evidenziando così il comportamento non classico dell'atomo di neon in seguito agli urti con gli elettroni: questi ultimi infatti eccitano gli atomi di neon a ben definiti livelli energetici.\\
+
+\begin{table}[h]
+	\centering
+	\begin{tabular}{ *{4}{S[table-figures-exponent = 5]} }
+		{$U_a$ [V]} &{$ \Delta U_a$ [V]} &{$I_C$ [nA]} &{$ \Delta I_C$ [nA]}\\
+		\midrule
+		25.0 & 0.5  & 0 & 1 \\
+		43.5 & 0.5  & 2 & 1\\
+		60.5 & 0.5 & 14 & 1\\
+	\end{tabular}
+	\caption{Valori di $I_c$ in funzione di $U_a$}
+	\label{t:Va_Ic2}
+\end{table}
 
 \subsection{Generatore di rampa}
 
-Abbiamo attivato un generatore di potenziale dipendente linearmente dal tempo agendo sulla manopola apposita ed abbiamo posto la tensione di accelerazione al suo livello massimo possibile $U_A = 80 \pm 0.5$ V. Ponendo l'oscilloscopio in modalità X-Y abbiamo così potuto osservare $I_C$ in funzione di $U_A$, realizzando un grafico riportato in \fig{Potenziale di accelerazione in funzione della corrente di collettore}. \\
+Abbiamo attivato un generatore di potenziale dipendente linearmente dal tempo agendo sulla manopola apposita ed abbiamo posto la tensione di accelerazione al suo livello massimo possibile $U_A = 80 \pm 0.5$ V. Ponendo l'oscilloscopio in modalità X-Y abbiamo così potuto osservare $I_C$ in funzione di $U_A$, realizzando un grafico riportato in \fig{figura_1}. \\
 Risulta evidente l'andamento non esponenziale, con la presenza di tre minimi che corrispondono alla comparsa di ciascuna delle tre bande e di tre massimi corrispondenti. Infatti in corrispondenza di ogni minimo il neon sottrae energia agli elettroni. Il secondo massimo ha un valore di corrente di collettore pari a circa il doppio rispetto a quella del primo.\\
 Facendo attenzione a non saturare la corrente di collettore ed agendo quindi opportunamente sul guadagno, abbiamo ricercato il comportamento di $I_C(U_A)$ al variare di $U_E$. In particolare, la corrente diminuisce all'aumentare della tensione frenante, mentre i minimi, e soprattutto il terzo minimo, si spostano verso destra. Per $U_E$ grande il terzo e il secondo minimo diventano negativi (ho corrente di elettroni dall'anodo al catodo).\\
-Abbiamo ricercato il valore di $U_E = 10.2$ V per cui i minimi si disponessero approssimativamente a $I_C = 0$ nA.
+Abbiamo ricercato il valore di $U_E = 10.2$ V per cui i minimi si disponessero approssimativamente a $I_C = 0$ nA come in \fig{figura_3}.\\

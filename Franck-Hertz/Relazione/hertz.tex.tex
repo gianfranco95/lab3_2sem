@@ -5,10 +5,10 @@
 
 \documentclass[a4paper,11pt]{article}
 
-\usepackage[italian]{babel}
+%\usepackage[italian]{babel}
 \usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
-%\usepackage[T1]{fontenc} % OT1: basic, T1: western, T3 and T5: exotic, T4: lots of characters but WORSE READABILITY
-%\usepackage[utf8x]{inputenc} % utf8x supports more characters than utf8
+\usepackage[T1]{fontenc} % OT1: basic, T1: western, T3 and T5: exotic, T4: lots of characters but WORSE READABILITY
+\usepackage[utf8x]{inputenc} % utf8x supports more characters than utf8
 \usepackage{graphicx} % import PNG, JPG and PDF with \includegraphics
 \usepackage[usenames,table]{xcolor} % \color
 \usepackage{amssymb}
@@ -18,7 +18,7 @@
 \usepackage{xfrac} % \sfrac
 \usepackage{cancel} % \cancel \cancelto
 \usepackage{hyperref} % interactive links in TOC, URLs and references
-\usepackage{fixltx2e} % provides \textsubscript and makes some fixes
+%\usepackage{fixltx2e} % provides \textsubscript and makes some fixes
 \usepackage[version=3]{mhchem} % \ce (chemical formula)
 \usepackage{siunitx} % \num \si \SI
 \usepackage{alltt} % {alltt} (like verbatim but with commands)
@@ -134,8 +134,8 @@
 \begin{document}
 \maketitle
 
-\insertpart{parte1}{} 
-\insertpart{parte2}{}
-\insertpart{immagini}{}
+\insertpart{parte1}
+\insertpart{parte2}
+\insertpart{immagini}
 
 \end{document}

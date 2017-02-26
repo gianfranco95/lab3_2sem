@@ -1,10 +1,39 @@
 \subsection{Generatore di rampa, acquisizioni misure}
-Variando i valori minimi e massimi di $U_{a}$ si può osservare una variazione del numero di massimi e minimi della della curva della corrente di collettore in funzione del potenziale $U_{a}$. Il maggior numero di massimi visualizzabile è quello di 3, nel caso in cui $U_{A,min}= 0.0 \pm 0.5$ V, $U_{A,max}= 80.0 \pm 0.5$ V (in \fig{figura_3}) 
+Sempre utilizzando il generatore di un potenziale a rampa, variando i valori minimi e massimi di $U_{a}$ si può osservare una variazione del numero di massimi e minimi della della curva della corrente di collettore in funzione del potenziale $U_{a}$. Il maggior numero di massimi visualizzabile è quello di 3, nel caso in cui $U_{A,min}= 0.0 \pm 0.5$ V, $U_{A,max}= 80.0 \pm 0.5$ V (in \fig{figura_3}) 
 In queste condizioni sono esplorati tutti i valori di potenziali possibili e quindi, al variare del potenziale nel tempo di salita della rampa, tra le griglie sono presenti dapprima una sola banda luminosa, in seguito due ed infine tre.\\
 Si è regolato il guadagno dell'amplificatore in modo tale che non fosse il più grande possibile, evitando che saturasse, in modo tale da poter visualizzare sull'oscilloscopio un segnale sufficientemente elevato.\\
 Si è posto l'oscilloscopio in modalità due tracce(potenziale tra le griglie e potenziale proporzionale alla corrente di collettore in funzione del tempo). Sono state effettuate acquisizioni al variare del potenziale frenante.
 Si è osservata la curva della corrente di collettore in funzione del tempo (e quindi del potenziale $U_{A}$), al variare del potenziale frenante.\\
- Il potenziale frenante $U_{E}$ è stato variato nel range $U_{E,min}=0.3\pm 0.1$V  $U_{E,max}=11.8 \pm 0.1$V . \\ 
-Sono stati realizzati alcuni grafici che rappresentano i valori dei minimi, e dei massimi della curva della corrente, al variare del potenziale frenante: \fig{massimi_frenante}; \fig{minimi_frenante}.
-Si osserva dai grafici l'andamento decrescente atteso. Inoltre si misura in corrispondenza dei minimi una corrente negativa per valori di potenziale frenante sufficientemente elevati. \\
-E' stata effettuata inoltre una acquisizione tramite oscilloscopio della curva della corrente di collettore in funzione del potenziale tra le griglie, nelle stesse condizioni in cui era stata svolta in modalità manuale la misura iniziale. E' stato ottenuto:
+E' stata effettuata dapprima una acquisizione tramite oscilloscopio della curva della corrente di collettore in funzione del potenziale tra le griglie, nelle stesse condizioni in cui era stata svolta in modalità manuale la misura iniziale ($U_E$=6.6$\pm$0.1 V). E' stato ottenuto:
+\begin{table}[h]
+	\centering
+	\begin{tabular}{ *{4}{S[table-figures-exponent = 5]} }
+		{$U_a$ [V] massimi} & {$ \Delta U_a$ [V]} & {$U_a$ [V] minimi} & {$ \Delta U_a$ [V]}\\
+		\midrule
+		 18 & 2 & 24 & 1\\
+		 36 & 2 & 44 & 2\\
+		 58 & 1 & 61& 2\\
+	\end{tabular}
+	\caption{Valori i $U_a$ in funzione dei massimi e minimi di $I_c$}
+	\label{t:Va_maxmin}
+\end{table}
+
+Si nota come i valori corrispondenti ai minimi sono in accordo entro una banda d'errore con quelli misurati manualmente nella sezione precedente.\\
+Il potenziale frenante $U_{E}$ è stato variato nel range $U_{E,min}=0.3\pm 0.1$V  $U_{E,max}=11.8 \pm 0.1$V . \\ 
+Sono stati realizzati alcuni grafici che rappresentano i valori dei massimi(\fig{figura_0},\fig{figura_2}, \fig{figura_4}) e dei minimi (\fig{figura_6}, \fig{figura_8}, \fig{figura_10}) della curva della corrente, al variare del potenziale frenante \footnote{Non sono stati misurati massimi e minimi per potenziali minori di 6 V in quanto non erano distinguibili nella curva acquisita}.\\
+Si osserva dai grafici l'andamento crescente già discusso relativo soltanto ai minimi e non ai massimi. Questi ultimi risultano compatibili tra loro in una banda d'errore a $U_E$ fissato.\\
+Inoltre si misura in corrispondenza dei minimi una corrente negativa per valori di potenziale frenante sufficientemente elevati. \\
+In quanto misura di massimi e minimi, le grandezze sono affette da un elevato errore.
+\section{stima livello energetico del neon}
+Si può dare una stima delle energie dei primi livelli energetici del neon, relativi alle configurazioni 1s. Essendo queste energie vicine tra loro si è data una stima {$E_a$} valida per tutte. Il valore che ci aspettiamo è $\sim$ 16.7 eV\\
+Si considera il fatto che una volta raggiunta l'energia del primo livello la particella percorra il suo cammino libero medio prima di eccitare il neon. Da ciò si può dedurre:
+\begin{equation}
+E_n= E_{a}n + E_{a}\frac{\lambda}{L}n^{2}
+\label{parab}
+\end{equation}
+Dove {$E_n$} è il potenziale stabilito tra le due griglie.\\
+Il fit numerico al modello \ref{parab} restituisce ($\chi^2$/ndof=0.2/1) il valore $E_a$= 16 $\pm$ 2 eV. Il valore è in accordo con quello atteso.
+
+\section{conclusioni}
+E' stato osservato il comportamento quantistico dell'eccitazione del neon dapprima in modo qualitativo ed attraverso l'osservazione diretta delle bande luminose. In seguito è stata svolta un'analisi più quantitativa. Quest'ultima, risulta essere in accordo con le osservazioni qualitative iniziali ed ha permesso di misurare alcune grandezze seppure con errori relativi piuttosto elevati.\\
+E' stata in fine data una stima anche dell'energia dei primi stati eccitati del neon

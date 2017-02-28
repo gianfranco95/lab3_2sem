@@ -19,12 +19,12 @@ py.show()
 datafile='maxmin.txt'
 rawdata = np.loadtxt(os.path.join(folder, 'Dati', datafile)).T
 
-i=10
+i=0
 
 py.figure(i)
 py.xlabel('$V_e$ [V]')
 py.ylabel('$V_a$ [V]')
-py.title('valori di $V_a$ vs $V_e$ per terzo minimo di $I_c$')
+py.title('valori di $V_a$ vs $V_e$ per primo massimo di $I_c$')
 py.errorbar(rawdata[12],rawdata[i],rawdata[i+1],rawdata[13],'o')
 i=i+2
 py.show()

@@ -20,8 +20,8 @@ E' stata effettuata dapprima una acquisizione tramite oscilloscopio della curva 
 
 Si nota come i valori corrispondenti ai minimi sono in accordo entro una banda d'errore con quelli misurati manualmente nella sezione precedente.\\
 Il potenziale frenante $U_{E}$ è stato variato nel range $U_{E,min}=0.3\pm 0.1$V  $U_{E,max}=11.8 \pm 0.1$V . \\ 
-Sono stati realizzati alcuni grafici che rappresentano i valori dei massimi(\fig{figura_0},\fig{figura_2}, \fig{figura_4}) e dei minimi (\fig{figura_6}, \fig{figura_8}, \fig{figura_10}) della curva della corrente, al variare del potenziale frenante \footnote{Non sono stati misurati massimi e minimi per potenziali minori di 6 V in quanto non erano distinguibili nella curva acquisita}.\\
-Si osserva dai grafici l'andamento crescente già discusso relativo soltanto ai minimi e non ai massimi. Questi ultimi risultano compatibili tra loro in una banda d'errore a $U_E$ fissato.\\
+Sono stati realizzati alcuni grafici che rappresentano i valori di $U_A$ corrispondneti ai massimi(\fig{figura_0},\fig{figura_2}, \fig{figura_4}) e ai minimi (\fig{figura_6}, \fig{figura_8}, \fig{figura_10}) della curva della corrente, al variare del potenziale frenante \footnote{Non sono stati misurati massimi e minimi per potenziali minori di 6 V in quanto non erano distinguibili nella curva acquisita}.\\
+Si osserva dai grafici l'andamento crescente in funzione di $U_E$, già discusso, relativo soltanto ai minimi e non ai massimi. Questi ultimi risultano compatibili tra loro in una banda d'errore.\\
 Inoltre si misura in corrispondenza dei minimi una corrente negativa per valori di potenziale frenante sufficientemente elevati. \\
 In quanto misura di massimi e minimi, le grandezze sono affette da un elevato errore.
 \section{Stima livello energetico del neon}
@@ -29,10 +29,11 @@ Si può dare una stima delle energie dei primi livelli energetici del neon, rela
 Si considera il fatto che una volta raggiunta l'energia del primo livello la particella percorra il suo cammino libero medio prima di eccitare il neon. Da ciò si può dedurre:
 \begin{equation}
 E_n= E_{a}n + E_{a}\frac{\lambda}{L}n^{2}
-\label{e:parab}
+\label{parab}
 \end{equation}
 Dove {$E_n$} è l'energia del livello n-esimo .\\
-Il fit numerico al modello (\ref{parab}) restituisce ($\chi^2$/ndof=0.2/1) il valore $E_a$= 16 $\pm$ 2 eV. Il valore è in accordo con quello atteso.
+Il fit numerico al modello (\ref{parab}) utilizzando i valori dei massimi in \tab{Va_maxmin} restituisce ($\chi^2$/ndof=0.2/1) il valore $E_a$= 16 $\pm$ 2 eV. Il valore è in accordo con quello atteso.\\
+Si ottiene inoltre dal fit $\frac{\lambda}{L}$=0.06$\pm$0.05 . Dato che l'errore su questo parametro è elevato e non è stata misurata la distanza L tra le due griglie, non è possibile dare una misura del cammino libero medio. Tuttavia è possibile avere un'idea del suo ordine di grandezza: la distanza tra le due griglie è dell'ordine di 1 cm, di conseguenza $\lambda$ è dell'ordine del mezzo millimetro. 
 
 \section{conclusioni}
 E' stato osservato il comportamento quantistico dell'eccitazione del neon dapprima in modo qualitativo ed attraverso l'osservazione diretta delle bande luminose. In seguito è stata svolta un'analisi più quantitativa. Quest'ultima, risulta essere in accordo con le osservazioni qualitative iniziali ed ha permesso di misurare alcune grandezze seppure con errori relativi piuttosto elevati.\\

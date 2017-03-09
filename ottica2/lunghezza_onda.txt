@@ -1,0 +1,5 @@
+#y [cm] posizione banda dy[cm] m ordine diffrazione
+4 1 0
+3 1 1
+4 1 2
+6 1 3

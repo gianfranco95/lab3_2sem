@@ -28,13 +28,13 @@ while i <len(rawdata[0]):
     x[(1/3)*i]=rawdata[2][i]
     i=i+3
 
-yr = 4 #posizione del raggio sullo schermo in assenza di reticolo
-dyr = 1
-y0 = (yr+h[0])/2
-dy0 = 0.5*pylab.sqrt(dyr**2+dh[0]**2)
-print ('Quota del calibro = ', y0, dy0)
+# yr = 4 #posizione del raggio sullo schermo in assenza di reticolo
+# dyr = 1
+# y0 = (yr+h[0])/2
+# dy0 = 0.5*pylab.sqrt(dyr**2+dh[0]**2)
+# print ('Quota del calibro = ', y0, dy0)
 
-h = h-y0
+
 y = D/pylab.sqrt(D**2+h**2)
 dy = pylab.sqrt(((((D**2+h**2)-D)/((D**2+h**2)**(3/2)))*dD)**2+((h*dh)/((D**2+h**2)**(3/2)))**2)
 

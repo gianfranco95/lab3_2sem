@@ -4,7 +4,7 @@ Abbiamo impiegato due diversi dispositivi (un calibro utilizzato come reticolo d
 \subsection{Lunghezza d'onda di un laser He-Ne}
 Abbiamo posto il laser su un tavolo in modo da avere un'emissione quasi ortogonale alla normale al tavolo stesso. Infatti solo così il passo reticolare visto dalla radiazione diviene confrontabile con la lunghezza d'onda (di circa 650 nm) ed è quindi visualizzabile la figura di diffrazione. Quest'ultima compare su uno schermo(costituito da un foglio) posto a circa 2.5 m dall'estremo del tavolo.\\
 \subsection{Interferometro di Michelson}
-L'interferometro è costituito da due bracci disposti a croce, ciascuno dei quali termina con degli specchi che riflettono la radiazione luminosa. Esistono due cammini ottici possibili; in uno di questi la luce procede fino allo specchio M$_2$, da cui viene riflessa per poi essere mandata dal beam splitter allo schermo. Nel secondo cammino ottico la luce è riflessa dal beam splitter su M$_1$, da cui torna all'osservatore. Lo specchio M_2 può essere soltanto orientato manovrando due viti al fine di allineare l'interferometro. Lo specchio M$_1$ può invece essere spostato agendo su un micrometro avente risoluzione di 10 $\mu$m: in tal modo può essere variato il cammino ottico e le frange circolari della figura di diffrazione scorrono, dando luogo a interferenza.
+L'interferometro è costituito da due bracci disposti a croce, ciascuno dei quali termina con degli specchi che riflettono la radiazione luminosa. Esistono due cammini ottici possibili; in uno di questi la luce procede fino allo specchio M$_2$, da cui viene riflessa per poi essere mandata dal beam splitter allo schermo. Nel secondo cammino ottico la luce è riflessa dal beam splitter su M$_1$, da cui torna all'osservatore. Lo specchio M$_2$ può essere soltanto orientato manovrando due viti al fine di allineare l'interferometro. Lo specchio M$_1$ può invece essere spostato agendo su un micrometro avente risoluzione di 10 $\mu$m: in tal modo può essere variato il cammino ottico e le frange circolari della figura di diffrazione scorrono, dando luogo a interferenza.
 
 \section{Misura della lunghezza d'onda di un laser He-Ne}
 
@@ -13,8 +13,39 @@ Abbiamo allora segnato con una matita tanto la posizione del livello quanto lo s
 
 \subsection{Analisi dati}
 
-Utilizzando il metro si è potuto misurare la distanza tra il punto medio, utilizzato come riferimento, e ciascuno dei livelli precedentemente individuati. In \tab{tabella 1} sono riportati i dati, compreso un errore, e l'ordine di diffrazione m. L'errore è ottenuto dalla somma in quadratura dell'errore dovuto allo spessore di ciascuna tacca, l'errore dovuto alla risoluzione del metro ed un errore di 5 mm corrispondente al raggio del cerchio (incertezza sulla posizione di riferimento).
-%tabella 1
+Utilizzando il metro si è potuto misurare la distanza tra il punto medio, utilizzato come riferimento, e ciascuno dei livelli precedentemente individuati. In \tab{tabella1} sono riportati i dati, compreso un errore, e l'ordine di diffrazione m. L'errore è ottenuto dalla somma in quadratura dell'errore dovuto allo spessore di ciascuna tacca ed un errore di 5 mm corrispondente al raggio del cerchio (incertezza sulla posizione di riferimento), mentre l'errore di risoluzione del metro, minore di quelli sopra considerati, è stato trascurato.
+\begin{table}[h]
+	\centering
+	\begin{tabular}{*{4}{S[table-figures-exponent = 2]} }
+		{$h$[cm]} &{$\Delta h$[cm]} & {m} \\
+		\midrule
+		6.4 & 0.5 &  0 \\ 
+		9.7 & 0.5 &  1 \\ 
+		12.1 & 0.5 &  2 \\ 
+		14.1 & 0.5 &  3 \\ 
+		15.9 & 0.5 &  4 \\ 
+		17.5 & 0.5 &  5 \\ 
+		19.0 & 0.5 &  6 \\ 
+		20.4 & 0.5 &  7 \\ 
+		21.7 & 0.5 &  8 \\ 
+		22.9 & 0.5 &  9 \\ 
+		24.0 & 0.5 & 10 \\ 
+		25.1 & 0.5 & 11 \\ 
+		26.2 & 0.5 & 12 \\ 
+		27.2 & 0.5 & 13 \\ 
+		28.2 & 0.5 & 14 \\ 
+		29.1 & 0.5 & 15 \\ 
+		30.1 & 0.5 & 16 \\ 
+		31.0 & 0.5 & 17 \\ 
+		31.9 & 0.5 & 18 \\ 
+		32.8 & 0.5 & 19 \\ 
+		33.5 & 0.5 & 20 \\ 
+
+	\end{tabular}
+	\caption{$h$ e $\Delta h $ sono rispettivamente misura ed errore dell'altezza dei vari ordini di diffrazione numerati con $m$. }
+	\label{t:tabella1}
+\end{table}
+
 Essendo l'angolo di diffrazione il complementare dell'angolo di cui è nota la tangente tan$\theta$ = h/D, si ha la relazione, essendo $\theta_i$ l'angolo di incidenza rispetto alla normale, d il passo reticolare e $\lambda$ la lunghezza d'onda:
 \begin{equation}
 cos\theta = sen\theta_i - m \frac{\lambda}{d}
@@ -27,12 +58,6 @@ Noto quindi $cos\theta = \frac {1}{\sqrt{1+tan\theta ^2}}$, abbiamo svolto un fi
 \item $cov = -0.62$ come valore di covarianza normalizzata
 \item $\chi^2 = 0.07$ con 19 gradi di libertà.
 \end{itemize}
-Il valore del $\chi^2$ fa pensare ad una possibile sovrastima dell'errore; del resto in esso sono state inserite parti sistematiche. Noto d, si è ottenuta una lunghezza d'onda $\lambda = 626 \pm 8$ nm, pienamente compatibile con il valore atteso di 632.8 nm. Riportiamo infine in \fig{2} il grafico di $cos\theta (m)$
-\begin{figure}[h]
-	\centering
-	\includegraphics[scale=0.5]{grafico.pdf}
-	\caption{}
-	\label{f:spettroscopio_reticolo}
-\end{figure}
+Il valore del $\chi^2$ fa pensare ad una possibile sovrastima dell'errore; del resto in esso sono state inserite parti sistematiche. Noto d, si è ottenuta una lunghezza d'onda $\lambda = 626 \pm 8$ nm, pienamente compatibile con il valore atteso di 632.8 nm. Riportiamo infine in \fig{figura_2} il grafico di $cos\theta (m)$, dove è mostrato anche l'andamento dei residui.
 
 

@@ -13,7 +13,7 @@ d = 0.1
 
 datafile = 'lunghezza_onda.txt'
 h,m,dh=pylab.loadtxt(os.path.join(folder, 'Dati', datafile)).T
-dh = numpy.sqrt((0.1*numpy.ones(len(h)))**2+(0.5*numpy.ones(len(h)) )**2  )
+dh = numpy.sqrt((0.1*numpy.ones(len(h)))**2+(0.5*numpy.ones(len(h)) )**2 )
 
 #modello Y=ax+b; 
 #Y=sin(theta_d);  a=-l/d;  x=m;   b=sin(theta_i)
@@ -25,13 +25,6 @@ Y=1/pylab.sqrt(1+(c**2))
 dY=dc*c/( (1+c**2)**(3/2))
 
 #fit
-pylab.figure(1)
-pylab.xlabel('x')
-pylab.ylabel('y')
-pylab.title('Data')
-pylab.grid(color='gray')
-pylab.plot(x,Y, 'o')
-pylab.errorbar(x,Y,yerr=dY,xerr=None,linestyle='')
 
 def f(x,a,b):
     return a*x+b
@@ -49,15 +42,16 @@ dof=len(Y)-2
 pchi = scipy.special.chdtrc(dof,chisquare)
 print('Chi quadro/ndof = %f/%f\nprobabilità associata = %f'%(chisquare,dof,pchi))
 #Grafico
-pylab.figure(2)
 pylab.subplot(211)
-pylab.ylabel('Y')
-pylab.title('Data')
+pylab.ylabel('y')
+pylab.xlim(-1,22)
+pylab.title('Misura lunghezza onda laser He-Ne')
 pylab.grid(color='gray')
 pylab.plot(x,Y, 'o')
+pylab.plot(x,f(x,a_fit,b_fit), color='black')
 pylab.errorbar(x,Y,yerr=dY,xerr=None,linestyle='')
-pylab.plot(x,f(x,a_fit,b_fit), color='black',label = "retta di fit")
 pylab.subplot(212)
+pylab.xlim(-1,22)
 pylab.title('Residui')
 pylab.xlabel(' m')
 pylab.plot(x,(Y-f(x,a_fit,b_fit))/dY,'o',linestyle='',markersize = 5)

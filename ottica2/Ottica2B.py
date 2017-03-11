@@ -13,12 +13,13 @@ import scipy.special
 #lambda lunghezza d'onda del laser
 #calibrazione q 
 lamb=625
+dlamb=8
 m = numpy.array([50,51,56,85,60])
 dm= numpy.array([0,1,1,1,1])
 n=numpy.array([9,9,10,15,11]) #numero tacchette lette sul micrometro
 dn=numpy.array([1,0,0,0,0])
 q= (m*lamb)/(2*n)  #[nanometri]
-dq=q*numpy.sqrt(((dm/m)**2 + (dn/n)**2))
+dq=q*numpy.sqrt(((dm/m)**2 + (dn/n)**2)+(dlamb/lamb)**2)
 q01=(q/(dq**2)).sum()
 q02=(1/(dq**2)).sum()
 q0=q01/q02

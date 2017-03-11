@@ -11,33 +11,43 @@ import scipy.special
 #m numero massimi e minimi contati con il laser
 #n numero tacchette
 #lambda lunghezza d'onda del laser
-#calibrazione q (circa 10 um)
-lamb=632.8
+#calibrazione q 
+lamb=625
 m = numpy.array([50,51,56,85,60])
-Dx=numpy.array([90,90,100,150,110])
-q=(2*Dx*(10**3))/(m*lamb)
-dq=q*pylab.sqrt((10/Dx)**2+(1/m)**2)
-q01 = (q/(dq**2)).sum()
-q02 = (1/(dq**2)).sum()
-q0 = q01/q02
-dq0 = pylab.sqrt(1/q02)
-
+dm= numpy.array([0,1,1,1,1])
+n=numpy.array([9,9,10,15,11]) #numero tacchette lette sul micrometro
+dn=numpy.array([1,0,0,0,0])
+q= (m*lamb)/(2*n)  #[nanometri]
+dq=q*numpy.sqrt(((dm/m)**2 + (dn/n)**2))
+q01=(q/(dq**2)).sum()
+q02=(1/(dq**2)).sum()
+q0=q01/q02
+dq0=numpy.sqrt(1/q02)
+# qqq=(1/5)*q.sum()
+# dqqq=(1/5)*dq.sum()
 print('calibrazione =%f+-%f'%(q0,dq0))
+
 
 #Misura lunghezza d'onda mercurio 546 nm
 #M numero massimi e minimi contati
 #N numero tacchette
 M=numpy.array([71,60,75,97,79])
-dM =1
-N=numpy.array([120000,100000,120000,150000,130000])
-dN=10000
-l=(2*N)/(q0*M)
+dM =numpy.array([3,3,3,1,1])
+N=numpy.array([12,10,12,15,13])
+dN=numpy.array([1,1,1,0,0])
+l=(2*q*N)/M
 dl=l*pylab.sqrt(  (dN/N)**2+(dq0/q0)**2+(dM/M)**2 )
 l01 = (l/(dl**2)).sum()
 l02 = (1/(dl**2)).sum()
 l0 = l01/l02
-dl0 = pylab.sqrt(1/l02)
+dl0= numpy.sqrt(1/l02)
+# lamdaa=(1/5)*((2*qqq*N)/M).sum()
+# dlamdaa=(1/5)*(lamdaa*pylab.sqrt(  (dN/N)**2+(dqqq/qqq)**2+(dM/M)**2 )).sum()
+print('lunghezza d onda==%f+-%f'%(l0,dl0))
 
-print('lunghezza d onda= ',l0,dl0)
-
+##tabella in latex
+# i=0
+# while i<len(m):
+#     print('%2.f & %1.f & %2.f & %2.f\\\ '%(M[i],dM[i],10*N[i],10*dN[i]))
+#     i=i+1
 

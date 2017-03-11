@@ -19,7 +19,7 @@ dh = numpy.sqrt((0.1*numpy.ones(len(h)))**2+(0.5*numpy.ones(len(h)) )**2  )
 #Y=sin(theta_d);  a=-l/d;  x=m;   b=sin(theta_i)
 x=m
 c=h/D
-dc=pylab.sqrt( (dh/D)**2 + ( h*dD/(D**2) )**2 )
+dc=pylab.sqrt( (dh/D)**2 + ( h*dD/(D**2) )**2 ) 
 Y=1/pylab.sqrt(1+(c**2))
 
 dY=dc*c/( (1+c**2)**(3/2))
@@ -62,8 +62,15 @@ pylab.title('Residui')
 pylab.xlabel(' m')
 pylab.plot(x,(Y-f(x,a_fit,b_fit))/dY,'o',linestyle='',markersize = 5)
 pylab.legend(loc = 4)
-pylab.show()
+# pylab.show()
 
 l=-d*a_fit*10**5
 dl=d*da_fit*10**5
 print('lambda=%f +-%f'%(l,dl))
+
+
+##tabella in latex
+# i=0
+# while i<len(h):
+#     print('%2.1f & %1.1f & %2.f \\\ '%(h[i],dh[i],m[i]))
+#     i=i+1

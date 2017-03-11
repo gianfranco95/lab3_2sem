@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6100 64-bit) (preloaded format=pdflatex 2016.12.29)  11 MAR 2017 16:24
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6100 64-bit) (preloaded format=pdflatex 2016.12.29)  11 MAR 2017 16:35
 entering extended mode
 **./relazione_ottica2.tex
 (relazione_ottica2.tex
@@ -1347,7 +1347,7 @@ File: ../Figs-Tabs/grafico.pdf Graphic file (type pdf)
 
 <use ../Figs-Tabs/grafico.pdf>
 Package pdftex.def Info: ../Figs-Tabs/grafico.pdf used on input line 10.
-(pdftex.def)             Requested size: 289.07928pt x 215.9061pt.
+(pdftex.def)             Requested size: 462.52863pt x 345.45107pt.
 
 <../Figs-Tabs/frange_mercurio.jpg, id=80, 4143.48pt x 2330.7075pt>
 File: ../Figs-Tabs/frange_mercurio.jpg Graphic file (type jpg)
@@ -1410,9 +1410,9 @@ iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX 2.9/
 fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type
 1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public
 /amsfonts/cm/cmsy8.pfb>
-Output written on relazione_ottica2.pdf (6 pages, 1585982 bytes).
+Output written on relazione_ottica2.pdf (6 pages, 1591736 bytes).
 PDF statistics:
- 350 PDF objects out of 1000 (max. 8388607)
+ 368 PDF objects out of 1000 (max. 8388607)
  29 named destinations out of 1000 (max. 500000)
  61 words of extra memory for PDF output out of 10000 (max. 10000000)
 

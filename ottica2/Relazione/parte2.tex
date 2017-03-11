@@ -1,10 +1,10 @@
 \section{Interferometro di Michelson}
 \subsection{Calibrazione}
-In primo luogo si è calibrato l'interferometro. E' stato utilizzato un laser con frequenza di emissione di $\lambda$=632.8 nm. 
+In primo luogo si è calibrato l'interferometro. E' stato utilizzato un laser con frequenza di emissione nominale di $\lambda$=632.8 nm. 
 E' stato posizionato lo specchio ruotabile in modo tale che i due fasci di luce si sovrapponessero e quindi in modo tale da osservare interferenza sullo schermo.
-Si osservava sullo schermo una struttura di interferenza a formata da circonferenze concentriche. \\
+Si osservava sullo schermo una struttura di interferenza formata da circonferenze concentriche. \\
 Spostando, tramite il micrometro, l'altro specchio parallelamente a se stesso, è stato possibile variare la lunghezza di un braccio ed osservare le frange di interferenza spostarsi.\\
-Fissato un punto dello schermo, è stato contato il numero di massimi (o minimi) che si susseguivano al variare della lunghezza del braccio. Sapendo quindi il numero di frange (m) e il numero di tacche (n)(intervalli di risoluzione) del micrometro corripondenti allo spostamento effettuato, è stata effettuata la calibrazione: dati in \tab{calibrazione_michelson}. Se $\Delta x$ è lo spostamento dello specchio si ha:
+Fissato un punto dello schermo, è stato contato il numero di massimi (o minimi) di intensità che si susseguivano al variare della lunghezza del braccio. Sapendo quindi il numero di frange (m) e il numero di tacche (n)(intervalli di risoluzione) del micrometro corripondenti allo spostamento effettuato, è stata effettuata la calibrazione: dati in \tab{calibrazione_michelson}. Se $\Delta x$ è lo spostamento dello specchio si ha:
 \begin{equation}
 \Delta x = \frac{m\lambda}{2}
 \end{equation}
@@ -12,25 +12,54 @@ E quindi il fattore di calibrazione, definito come lo spostamento dello specchio
 \begin{equation}
 q={m\lambda}{2n}
 \end{equation}
-Sono state effettuate diverse misure per la calibrazione. La prima è stata effettuata spostando lo specchio fin quando non si contassero 50 frange. In corrispondenza di un certo numero di frange però in generale il micrometro segna un valore compreso tra due tacche. Essendo il numero di tacche dell'ordine di 10, l'errore è in percentuale il 10\%. Per le altre misure si è operato in altro modo: è stato spostato lo specchio finchè il micrometro segnasse un numero esatto di tacche (non si fermasse quindi tra due di esse), cosicchè l'errore sul micrometro fosse trascurabile($\sim$0). La parte significativa dell'incertezza in questo caso proviene dal numero di frange contate ed è dell'ordine dell'1 \%.\\
-%tabella
+Sono state effettuate diverse misure per la calibrazione. La prima è stata effettuata spostando lo specchio fin quando non si contassero 50 frange. In corrispondenza di un certo numero di frange però in generale il micrometro segna un valore compreso tra due tacche. Perciò, è assegnata come incertezza una tacca. Essendo il numero di tacche dell'ordine di 10, l'errore è in percentuale il 10\%. Per le altre misure si è operato in altro modo: è stato spostato lo specchio finchè il micrometro segnasse un numero esatto di tacche (non si fermasse quindi tra due di esse), cosicchè l'errore sul micrometro fosse trascurabile($\sim$0). La parte significativa dell'incertezza in questo caso proviene dal numero di frange contate ed è dell'ordine dell'1 \%.\\
+\begin{table}[h]
+	\centering
+	\begin{tabular}{*{4}{S[table-figures-exponent = 2]} }
+		{ $N_{bande}$} &{$\Delta N_{bande}$} & {$X$ [\SI{}{\micro\meter}]} &{$\Delta X $[\SI{}{\micro\meter}]} \\
+		\midrule
+		50 & 0 & 90 & 10\\ 
+		51 & 1 & 90 &  0\\ 
+		56 & 1 & 100 &  0\\ 
+		85 & 1 & 150 &  0\\ 
+		60 & 1 & 110 &  0\\ 
+
+	\end{tabular}
+	\caption{$N_{bande}$ è il numero di bande contate sullo schermo a muro con il relativo errore. X è invece il valore letto sul micrometro. Laddove l'errore è 0, significa che può essere trascurato rispetto agli altri. }
+	\label{t:calibrazione_michelson}
+\end{table}
 Si ottengono diversi valori per il fattore di calibrazione.
 E' stata effettuata una media pesata dei valori e si è considerato il valore nominale per la lunghezza d'onda del laser $\lambda$=632.8 nm, ottenendo: q=1.77 $\pm$ 0.01 $\mu$m
 \subsection{Lunghezza d'onda mercurio}
-E' stata misurata una lunghezza d'onda di emission del mercurio nel verde.\\ Nello stesso apparato sperimentale è stato sostituito la sorgente laser con la lampada a mercurio.\\
+E' stata misurata una lunghezza d'onda di emissione del mercurio nel verde.\\ Nello stesso apparato sperimentale è stato sostituito la sorgente laser con la lampada a mercurio. Si visualizzava una struttura di interferenza formata da circonferenze concentriche, simile a quella del laser: \fig{frange_mercurio}\\
 Analogamente alle misure di calibrazione, sono state effettuate due tipi di misure: le prime tre contando un numero prestabilito di frange e avendo un'elevata incertezza sul micrometro, le ultime due contando un numero esatto di tacche. I risultati sono riportati in \tab{mercurio_michelson}:
-%Tabella
+\begin{table}[h]
+	\centering
+	\begin{tabular}{*{4}{S[table-figures-exponent = 2]} }
+		{ $N_{bande}$} &{$\Delta N_{bande}$} & {$X$ [\SI{}{\micro\meter}]} &{$\Delta X $[\SI{}{\micro\meter}]} \\
+		\midrule
+		71 & 3 & 120 & 10\\ 
+		60 & 3 & 100 & 10\\ 
+		75 & 3 & 120 & 10\\ 
+		97 & 1 & 150 &  0\\ 
+		79 & 1 & 130 &  0\\ 
+
+	\end{tabular}
+	\caption{$N_{bande}$ è il numero di bande contate osservando direttamente il fascio luminoso. X è invece il valore letto sul micrometro. Laddove l'errore è 0, significa che può essere trascurato rispetto agli altri. }
+	\label{t:mercurio_michelson}
+\end{table}
 Sapendo il numero di tacche N e quello di frange M è stato possibile ricavare la lunghezza d'onda:
 \begin{equation}
 \lambda = \frac{2qN}{M}
 \end{equation}
-Come nella sezione precedente si sono ottenuti più valori della lunghezza d'onda, effettuando una media pesata: $\lambda$=560 $\pm$ 5 nm\\
-A partire dagli stesssi dati è stata effettuato il calcolo del fattore di calibrazione e della lunghezza d'onda del mercurio a partire dalla lunghezza d'onda del laser misurata della prima parte di esperienza ($\lambda$=??) e si ottiene q=1.75$\pm$ 0.02 $\mu$m e $\lambda_mercurio$554 $\pm$ 6 nm. Questa stima è da considerarsi solo indicativa, in quanto il laser di cui si è misurata la lunghezza d'onda, sebbene dello stesso tipo, non era lo stesso di quello usato nell'interferometro
+Come nella sezione precedente si sono ottenuti più valori della lunghezza d'onda, effettuando una media pesata: $\lambda_mercurio$=560 $\pm$ 5 nm\\
+A partire dagli stesssi dati è stata effettuato il calcolo del fattore di calibrazione e della lunghezza d'onda del mercurio a partire dalla lunghezza d'onda del laser misurata della prima parte di esperienza ($\lambda$=??) e si ottiene q=1.75$\pm$ 0.02 $\mu$m e $\lambda_mercurio$554 $\pm$ 6 nm. Questa stima è da considerarsi solo indicativa, in quanto il laser di cui si è misurata la lunghezza d'onda, sebbene dello stesso tipo, non era lo stesso di quello usato nell'interferometro.\\
+La prima misura dista 3 bande d'errore dal valore nominale di 546 nm, mentre la seconda stima dista 2 bande d'errore.
 \subsection{Luce bianca}
 E' stata posta in ingresso all'interferometro una lampada a luce bianca.\\
-Inizialmente la lunghezza dei due bracci dell'interferometro era diversa e non si osservava alcuna interferenza. E' stata quindi rimossa la luce bianca e posta nuovamente la sorgente laser. E' stata cambiata di qualche millimetro la lunghezza del braccio variabile in modo tale che fosse circa ugaule a quella dell'altro braccio, a meno di una distanza pari all'ordine di grandezza delle lunghezze d'onda in gioco, ovvero quelle del visibile $\sim$600 nm. E' stata variata l'orientazione dell'altro specchio in modo tale da allineare nuovamente i due fasci luminosi, ed è stato possibile verificarlo tramite la sorgente laser. Quindi è stata posta in ingresso la lampada bianca, ed agendo sul micrometro si è corretta la lunghezza del braccio dell'ordine dei centinaia di nanometri, fino ad osservare frange di interferenza.\\
-L'interferenza per la luce bianca si può verificare solo nel caso in cui le lunghezze dei due bracci $L_1$ ed $L_2$sono uguali. Infatti per ogni frequenz adeve essere soddisfatta la relazione $abs{L_1-L_2}=m\lambda$ con m numero intero. Questo, nel caso di molte frequenze è soddisfatto solo se m=0 e le lunghezze sono uguali.\\
+Inizialmente la lunghezza dei due bracci dell'interferometro era diversa e non si osservava alcuna interferenza. E' stata quindi rimossa la luce bianca e posta nuovamente la sorgente laser. E' stata cambiata di qualche millimetro la lunghezza del braccio variabile in modo tale che fosse circa uguale a quella dell'altro braccio, a meno di una distanza pari all'ordine di grandezza delle lunghezze d'onda in gioco, ovvero quelle del visibile $\sim$600 nm. E' stata variata l'orientazione dell'altro specchio in modo tale da allineare nuovamente i due fasci luminosi, ed è stato possibile verificarlo tramite la sorgente laser. Quindi è stata posta in ingresso la lampada bianca, ed agendo sul micrometro si è corretta la lunghezza del braccio dell'ordine dei centinaia di nanometri, fino ad osservare frange di interferenza(\fig{frange_bianca}).\\
+L'interferenza per la luce bianca si può verificare solo nel caso in cui le lunghezze dei due bracci $L_1$ ed $L_2$ sono uguali. Infatti per ogni frequenza deve essere soddisfatta la relazione $abs{L_1-L_2}=m\lambda$ con m numero intero. Questo, nel caso di molte frequenze è soddisfatto solo se m=0 e le lunghezze sono uguali.\\
 %Spiegare perchè si vedonon diffrazioni diverse al variare del braccio
 \section{conclusioni}
-E' stata misurata con il solo uso di metro a nastro e riga, la lunghezza d'onda del laser all'1\%. Il valore ottenuto è in accordo con il valore nominale conosciuto\\
-Tramite interferometro di Michelson è stata misurata la lunghezza d'onda della banda verde di emissione del mercurio anche essa all'1\%. Il valore ottenuto dista 
+E' stata misurata la lunghezza d'onda del laser all'1\%. Il valore ottenuto è in accordo con il valore nominale conosciuto di 632.8 nm\\
+Tramite interferometro di Michelson è stata misurata la lunghezza d'onda della banda verde di emissione del mercurio anche essa all'1\%. Il valore ottenuto è in accordo entro tre bande d'errore  con quello nominale\\ E' stata inoltre osservata la diffrazione di luce non monocromatica.

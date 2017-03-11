@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6100 64-bit) (preloaded format=pdflatex 2016.12.29)  11 MAR 2017 16:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6100 64-bit) (preloaded format=pdflatex 2016.12.29)  11 MAR 2017 16:24
 entering extended mode
 **./relazione_ottica2.tex
 (relazione_ottica2.tex
@@ -1386,10 +1386,6 @@ Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 141.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 141.
 Package rerunfilecheck Info: File `relazione_ottica2.out' has not changed.
 (rerunfilecheck)             Checksum: 674B27344F1407A9059E5A3B4E7B299C;306.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 141.
  ) 
 Here is how much of TeX's memory you used:
@@ -1414,9 +1410,9 @@ iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX 2.9/
 fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type
 1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public
 /amsfonts/cm/cmsy8.pfb>
-Output written on relazione_ottica2.pdf (6 pages, 1586229 bytes).
+Output written on relazione_ottica2.pdf (6 pages, 1585982 bytes).
 PDF statistics:
- 351 PDF objects out of 1000 (max. 8388607)
+ 350 PDF objects out of 1000 (max. 8388607)
  29 named destinations out of 1000 (max. 500000)
  61 words of extra memory for PDF output out of 10000 (max. 10000000)
 

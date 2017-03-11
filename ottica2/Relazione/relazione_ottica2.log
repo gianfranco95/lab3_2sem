@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6100 64-bit) (preloaded format=pdflatex 2016.12.29)  11 MAR 2017 16:15
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6100 64-bit) (preloaded format=pdflatex 2016.12.29)  11 MAR 2017 16:20
 entering extended mode
 **./relazione_ottica2.tex
 (relazione_ottica2.tex
@@ -1335,49 +1335,27 @@ Underfull \hbox (badness 10000) in paragraph at lines 59--63
  []
 
 ) (immagini.tex
+<../Figs-Tabs/Interferometro.png, id=68, 395.3169pt x 261.6174pt>
+File: ../Figs-Tabs/Interferometro.png Graphic file (type png)
 
-LaTeX Warning: File `Interferometro.png' not found on input line 4.
-
-
-! Package pdftex.def Error: File `Interferometro.png' not found.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.4 ...ludegraphics[scale=0.5]{Interferometro.png}
-                                                  
-Using draft setting for this image.
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 4.
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\t1cmtt.fd"
-File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-) [4]
-<../Figs-Tabs/grafico.pdf, id=77, 578.16pt x 431.81326pt>
+<use ../Figs-Tabs/Interferometro.png>
+Package pdftex.def Info: ../Figs-Tabs/Interferometro.png used on input line 4.
+(pdftex.def)             Requested size: 197.65796pt x 130.80836pt.
+ [4]
+<../Figs-Tabs/grafico.pdf, id=79, 578.16pt x 431.81326pt>
 File: ../Figs-Tabs/grafico.pdf Graphic file (type pdf)
 
 <use ../Figs-Tabs/grafico.pdf>
 Package pdftex.def Info: ../Figs-Tabs/grafico.pdf used on input line 10.
 (pdftex.def)             Requested size: 289.07928pt x 215.9061pt.
 
+<../Figs-Tabs/frange_mercurio.jpg, id=80, 4143.48pt x 2330.7075pt>
+File: ../Figs-Tabs/frange_mercurio.jpg Graphic file (type jpg)
 
-LaTeX Warning: File `frange_mercurio.pdf' not found on input line 17.
-
-
-! Package pdftex.def Error: File `frange_mercurio.pdf' not found.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.17 ...degraphics[scale=0.5]{frange_mercurio.pdf}
-                                                  
-Using draft setting for this image.
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
+<use ../Figs-Tabs/frange_mercurio.jpg>
+Package pdftex.def Info: ../Figs-Tabs/frange_mercurio.jpg used on input line 17
+.
+(pdftex.def)             Requested size: 414.37227pt x 233.0844pt.
 
 Underfull \hbox (badness 3758) in paragraph at lines 18--18
 []\T1/cmr/m/n/10.95 Figure 3: |Frange de-ter-mi-nate dalla luce verde emessa da
@@ -1385,61 +1363,60 @@ l mer-cu-rio os-ser-vate all'uscita
  []
 
 
-LaTeX Warning: File `frange_bianca.pdf' not found on input line 24.
+LaTeX Warning: `h' float specifier changed to `ht'.
 
+<../Figs-Tabs/frange_bianca.jpg, id=81, 4143.48pt x 3107.61pt>
+File: ../Figs-Tabs/frange_bianca.jpg Graphic file (type jpg)
 
-! Package pdftex.def Error: File `frange_bianca.pdf' not found.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 ...ludegraphics[scale=0.5]{frange_bianca.pdf}
-                                                  
-Using draft setting for this image.
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
+<use ../Figs-Tabs/frange_bianca.jpg>
+Package pdftex.def Info: ../Figs-Tabs/frange_bianca.jpg used on input line 24.
+(pdftex.def)             Requested size: 414.37227pt x 310.7792pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 )
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 141.
- [5 <../Figs-Tabs/grafico.pdf>] [6]
+ [5 <../Figs-Tabs/Interferometro.png> <../Figs-Tabs/grafico.pdf>] [6 <../Figs-T
+abs/frange_mercurio.jpg> <../Figs-Tabs/frange_bianca.jpg>]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 141.
- (relazione_ottica2.aux)
+
+(relazione_ottica2.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 141.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 141.
 Package rerunfilecheck Info: File `relazione_ottica2.out' has not changed.
 (rerunfilecheck)             Checksum: 674B27344F1407A9059E5A3B4E7B299C;306.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 141.
  ) 
 Here is how much of TeX's memory you used:
- 24713 strings out of 493333
- 458264 string characters out of 3139181
+ 24707 strings out of 493333
+ 458109 string characters out of 3139181
  677259 words of memory out of 3000000
- 27892 multiletter control sequences out of 15000+200000
- 19306 words of font info for 59 fonts, out of 3000000 for 9000
+ 27889 multiletter control sequences out of 15000+200000
+ 18992 words of font info for 58 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  44i,16n,49p,10409b,1049s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\gianfraco\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi
-600\ectt1095.pk> <C:\Users\gianfraco\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\j
-knappen\ec\dpi600\tcrm1095.pk> <C:\Users\gianfraco\AppData\Local\MiKTeX\2.9\fon
-ts\pk\ljfour\jknappen\ec\dpi600\ecbx1200.pk> <C:\Users\gianfraco\AppData\Local\
-MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1095.pk> <C:\Users\gianfraco\
-AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1440.pk> <C:\Us
+600\tcrm1095.pk> <C:\Users\gianfraco\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\j
+knappen\ec\dpi600\ecbx1200.pk> <C:\Users\gianfraco\AppData\Local\MiKTeX\2.9\fon
+ts\pk\ljfour\jknappen\ec\dpi600\ecrm1095.pk> <C:\Users\gianfraco\AppData\Local\
+MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1440.pk> <C:\Users\gianfraco\
+AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1200.pk> <C:\Us
 ers\gianfraco\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1
-200.pk> <C:\Users\gianfraco\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\e
-c\dpi600\ecrm1728.pk><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/c
-m/cmmi10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.
-pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/P
-rogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Fil
-es/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 
-2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/font
-s/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on relazione_ottica2.pdf (6 pages, 169455 bytes).
+728.pk><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
+C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Progra
+m Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/M
+iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX 2.9/
+fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type
+1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public
+/amsfonts/cm/cmsy8.pfb>
+Output written on relazione_ottica2.pdf (6 pages, 1586229 bytes).
 PDF statistics:
- 369 PDF objects out of 1000 (max. 8388607)
+ 351 PDF objects out of 1000 (max. 8388607)
  29 named destinations out of 1000 (max. 500000)
- 46 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 61 words of extra memory for PDF output out of 10000 (max. 10000000)
 

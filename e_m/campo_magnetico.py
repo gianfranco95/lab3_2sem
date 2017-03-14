@@ -5,11 +5,16 @@ import math
 import pylab
 import scipy
 import scipy.special
-
+from importare_dati import importa
 #singola bobina
 # N numero spire
 # r0 raggio bobina
 #punto da analizzare in posizione (y0,z0)
+datafile=['datiB6.txt']
+V,r=importa(datafile)
+pylab.figure(3)
+pylab.plot(r,V,'o')
+pylab.show()
 
 def rx(phi,r0):
     return -r0*pylab.cos(phi)

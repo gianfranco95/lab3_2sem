@@ -8,8 +8,10 @@ import scipy.special
 import numpy.linalg
 from importare_dati import importa
 
-datafile=(['cerchio.txt'])
+datafile=(['cerchio52.txt'])
 x,y=importa(datafile)
+x=x/2
+y=y/2
 sigma=0.001
 
 def fit(x,y,sigma):
@@ -118,10 +120,9 @@ def fit(x,y,sigma):
         s= s + Q_x[0][i]**2 + Q_y[0][i]**2 
         t= t + Q_x[1][i]**2 + Q_y[1][i]**2 
         r= r + Q_x[0][i]*Q_x[1][i] +Q_y[0][i]*Q_y[1][i]
-    
     dA=sigma*numpy.sqrt(s)
     dB=sigma*numpy.sqrt(t)
-    covAB=sigma*numpy.sqrt(r)
+    covAB=sigma*numpy.sqrt(numpy.abs(r))
     dR=sigma*numpy.sqrt( sum(R_y**2 + R_x**2) )
         
         

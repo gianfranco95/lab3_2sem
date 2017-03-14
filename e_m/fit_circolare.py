@@ -8,15 +8,15 @@ import scipy.special
 import numpy.linalg
 from importare_dati import importa
 
+datafile=(['cerchio.txt'])
+x,y=importa(datafile)
+sigma=0.001
+
 def fit(x,y,sigma):
     D=numpy.diag((0,0,0))
     D_inv=numpy.diag((0,0,0))
     E=numpy.zeros(3)
     Q=numpy.zeros(3)
-    
-    # x=(['Cerchio.txt'])
-    # data=importa(x)
-    #errore sulla misura di x e y
     
     D[0][0]=2*(sum(x))
     D[0][1]=2*(sum(y))
@@ -35,10 +35,10 @@ def fit(x,y,sigma):
     D_inv= numpy.linalg.inv(D)
     
     def molti(A,b): #prodotto matrice vettore
-        for i in range(0,2):
+        for i in range(0,3):
             s=0
-            for j in range(0,2):
-                s=s+ A[i][j]*b[j]
+            for j in range(0,3):
+                s= s+ A[i][j]*b[j]
             x[i]=s
         return x
     
@@ -83,21 +83,25 @@ def fit(x,y,sigma):
         D_y[2][1][i]=4*y[i]
         D_y[2][2][i]=1
     
+    
+    W=numpy.ndarray(shape=(3,len(x)), dtype=float, order='F')
+    V=numpy.ndarray(shape=(3,len(x)), dtype=float, order='F')
+    
     for j in range(0,len(x)-1):
-        for i in range(0,2):
+        for i in range(0,3):
             s=0
             t=0
-            for k in range(0,2):
+            for k in range(0,3):
                 s=s+ D_x[i][k][j]*Q[k]
                 t=t+ D_y[i][k][j]*Q[k]
             W[i][j]=s
             V[i][j]=t
     
     for j in range(0,len(x)-1):
-        for i in range(0,2):
+        for i in range(0,3):
             s=0
             t=0
-            for k in range(0,2):
+            for k in range(0,3):
                 s=s + D_inv[i][k]*(E_x[k][j] - W[k][j])
                 t=t+ D_inv[i][k]*(E_y[k][j] - V[k][j])
             Q_x[i][j]=s
@@ -106,7 +110,7 @@ def fit(x,y,sigma):
     for i in range(0,len(x)-1):
         R_x[i]=(1/R)*(2*Q[0]*Q_x[0][i] + 2*Q[1]*Q_x[1][i] + Q_x[2][i])
         R_y[i]=(1/R)*(2*Q[0]*Q_y[0][i] + 2*Q[1]*Q_y[1][i] + Q_y[2][i])
-
+    
     s=0
     t=0
     r=0
@@ -119,11 +123,23 @@ def fit(x,y,sigma):
     dB=sigma*numpy.sqrt(t)
     covAB=sigma*numpy.sqrt(r)
     dR=sigma*numpy.sqrt( sum(R_y**2 + R_x**2) )
-    ##stima di sigma dai parametri di fit
+        
+        
+        ##stima di sigma dai parametri di fit
     # sigma_fit= numpy.sqrt( (sum( ( (x-Q[0])**2 + (y-Q[1])**2 -R**2)**2 ))/(4*R**2*len(x)) )   
     # 
     # dA=sigma_fit*numpy.sqrt(s)
     # dB=sigma_fit*numpy.sqrt(t)
     # covAB=sigma_fit*numpy.sqrt(r)
     # dR=sigma_fit*numpy.sqrt( sum(R_y**2 + R_x**2) )
-    return Q[0],dA,Q[1],dB,covAB,R,dR
+    
+    
+    print('R=%f+-%f'%(R,dR))
+    print('A=%f+-%f'%(Q[0],dA))
+    print('B=%f+-%f'%(Q[1],dB))
+    print('cov_normAB=%f'%(covAB/(dA*dB)))
+    
+    return Q[0],dA,Q[1],dB,covAB/(dA*dB),R,dR
+    
+    
+pop=fit(x,y,sigma)

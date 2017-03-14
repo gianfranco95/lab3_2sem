@@ -1,6 +1,7 @@
 import pylab as py
 import os
 import numpy as np
+import scipy
 
 def importa(datafile):
     folder = os.path.realpath('.')

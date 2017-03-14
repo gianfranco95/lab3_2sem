@@ -7,12 +7,24 @@ import scipy
 import scipy.special
 import numpy.linalg
 from importare_dati import importa
+from calibrazione_foto import calibrazione
 
-datafile=(['cerchio52.txt'])
-x,y=importa(datafile)
-x=x/2
-y=y/2
-sigma=0.001
+
+dati = (['calibrazione27.txt'])
+calib = calibrazione(dati)
+
+data='foto.txt'
+foto=pylab.loadtxt(os.path.join(folder,'Dati',data)).T
+
+Vacc=foto[1][11]
+Icoil=foto[2][11]
+
+datafile=(['cerchio11.txt'])
+x0,y0=importa(datafile)
+x= (x0- calib[2])/calib[0]      #così x e y e sigma sono in centimetri
+y=(y0-calib[2])/calib[0]
+sigma= numpy.sqrt( (calib[3]/calib[0])**2 +( y*calib[1]/calib[0] )**2 )
+sigma=sum(sigma)/len(y)
 
 def fit(x,y,sigma):
     D=numpy.diag((0,0,0))
@@ -46,6 +58,7 @@ def fit(x,y,sigma):
     
     Q=molti(D_inv,E)
     R=pylab.sqrt(Q[2]+ Q[0]**2 + Q[1]**2)
+    # print(R)
     
     #calcolo errori sui parametri
     
@@ -124,7 +137,7 @@ def fit(x,y,sigma):
     dB=sigma*numpy.sqrt(t)
     covAB=sigma*numpy.sqrt(numpy.abs(r))
     dR=sigma*numpy.sqrt( sum(R_y**2 + R_x**2) )
-        
+    # print(dR)
         
         ##stima di sigma dai parametri di fit
     # sigma_fit= numpy.sqrt( (sum( ( (x-Q[0])**2 + (y-Q[1])**2 -R**2)**2 ))/(4*R**2*len(x)) )   
@@ -144,3 +157,9 @@ def fit(x,y,sigma):
     
     
 pop=fit(x,y,sigma)
+
+##calcolo e/m [valore atteso : 1.7588*10^(11) C/Kg]
+e_m = 2*Vacc/(10**(-4)*pop[5]**2*(7.8*10**(-4)*Icoil)**2)*10**(-11)
+de_m = ( (0.1/Vacc) + 2*(pop[6]/pop[5]) + 2*(0.01/Icoil) )*e_m
+
+print('e_m=%f +- %f'%(e_m,de_m))

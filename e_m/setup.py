@@ -20,7 +20,6 @@ dVh=pylab.sqrt((dVout/A)**2 + (Vout*dA/(A**2))**2)
 
 B=Vh/Q #Gauss
 dB=pylab.sqrt((dVh/Q)**2 + (Vh*dQ/(Q**2))**2)
-
 print('Campo in Gauss = %f +- %f' % (B,dB))
 
 ##Altre cose che si possono fare: 

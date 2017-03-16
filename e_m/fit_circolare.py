@@ -2,7 +2,7 @@ import  os
 folder = os.path.realpath('.')
 import numpy
 import math
-import pylab
+import pylab 
 import scipy
 import scipy.special
 import numpy.linalg
@@ -10,7 +10,7 @@ from importare_dati import importa
 from calibrazione_foto import calibrazione
 
 
-dati = (['calibrazione27.txt'])
+dati = (['calibrazione22.txt'])
 calib = calibrazione(dati)
 
 data='foto.txt'
@@ -21,8 +21,12 @@ Icoil=foto[2][11]
 
 datafile=(['cerchio11.txt'])
 x0,y0=importa(datafile)
-x= (x0- calib[2])/calib[0]      #così x e y e sigma sono in centimetri
+x= (x0- calib[2])/calib[0]      #così x,y e sigma sono in centimetri
 y=(y0-calib[2])/calib[0]
+pylab.figure(2)
+pylab.plot(x0,y0,'.')
+pylab.plot(x,y,'o')
+pylab.show()
 sigma= numpy.sqrt( (calib[3]/calib[0])**2 +( y*calib[1]/calib[0] )**2 )
 sigma=sum(sigma)/len(y)
 
@@ -157,6 +161,11 @@ def fit(x,y,sigma):
     
     
 pop=fit(x,y,sigma)
+aa=pylab.linspace(-10,10,1000)
+bb=pylab.linspace(-10,10,1000)
+pylab.plot(aa, pop[2] + pylab.sqrt(-(aa-pop[0])**2+pop[5]**2))
+pylab.plot(aa, pop[2] -pylab.sqrt(-(aa-pop[0])**2+pop[5]**2))
+pylab.show()
 
 ##calcolo e/m [valore atteso : 1.7588*10^(11) C/Kg]
 e_m = 2*Vacc/(10**(-4)*pop[5]**2*(7.8*10**(-4)*Icoil)**2)*10**(-11)

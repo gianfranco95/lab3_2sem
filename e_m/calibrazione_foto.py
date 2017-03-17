@@ -42,8 +42,8 @@ def calibrazione(datafile):
     py.plot(x,f(x,a_fit,b_fit), color='black')
     py.errorbar(x,y,yerr=dy,xerr=None,linestyle='')
     py.show()
-    # a_fit0 = a_fit*(54.9/64.9)
-    # da_fit0 = a_fit0*py.sqrt((da_fit/a_fit)**2+(0.1/54.9)**2+(0.1/64.9)**2)
-    return  a_fit,da_fit,b_fit,db_fit,ab_cov
+    a_fit0 = a_fit*(54.9/64.9)
+    da_fit0 = a_fit0*py.sqrt((da_fit/a_fit)**2+(0.1/54.9)**2+(0.1/64.9)**2)
+    return  a_fit0,da_fit0,b_fit,db_fit,ab_cov
 
 # aaa=calibrazione(['calibrazione31.txt'])

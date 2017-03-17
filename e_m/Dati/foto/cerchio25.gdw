@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GetDataWorkspace>
+  <version>2.26.0.20</version>
+  <WSversion>10</WSversion>
+  <File>
+    <Name>C:\lab3_2semestre\e_m\Dati\foto\foto_25.JPG</Name>
+    <Width>4608</Width>
+    <Height>3072</Height>
+  </File>
+  <Line>
+    <Caption>Linea #1</Caption>
+    <LineColor>38,86,87</LineColor>
+    <BkColor>21,2,4</BkColor>
+    <PtColor>220,70,220</PtColor>
+    <LineType>0</LineType>
+    <Points MF="9">18481,21388,17356,20938,16771,20578,16096,20083,15691,19678,15241,19066,14818,18463,14458,17761,14233,16906,14116,16213</Points>
+    <Points MF="9">14098,15556,14098,14863,14233,14143,14413,13486,14683,12901,14908,12316,15151,12073,15511,11578,15781,11326,16231,10903</Points>
+    <Points MF="9">16618,10633,16906,10363,17293,10093,17743,9913,18346,9643,18913,9508,24763,10426,25033,10651,25366,11083,25636,11443</Points>
+    <Points MF="9">25951,11821,26203,12181,26428,12586,26671,12973,26878,13423,27031,13801,27175,14161,27211,14485,27319,14845,27355,15277</Points>
+    <Points MF="9">27355,15637,27355,16087,27355,16339,27292,16807,27229,17131,27139,17509,26923,18301,26788,18778,26581,19111,26311,19651</Points>
+    <Points MF="9">25978,20038,25618,20596,25213,20956,24826,21226,24133,21811</Points>
+  </Line>
+  <CurrentLine>0</CurrentLine>
+  <Xmin MF="9">4,27643,0.000000e+000</Xmin>
+  <Xmax MF="9">41467,27643,4.607000e+003</Xmax>
+  <Ymin MF="9">4,27643,0.000000e+000</Ymin>
+  <Ymax MF="9">4,4,3.071000e+003</Ymax>
+  <XScale>linear</XScale>
+  <YScale>linear</YScale>
+  <Position>1346,906</Position>
+  <Zoom>
+    <Scale>40.0</Scale>
+  </Zoom>
+  <Digitize>
+    <IgnorePixels>1</IgnorePixels>
+    <LineIDMethod>2</LineIDMethod>
+  </Digitize>
+  <AutoTrace>
+    <TraceDistance>8</TraceDistance>
+    <SmoothLines>1</SmoothLines>
+  </AutoTrace>
+  <DigitizeArea>
+    <LineOrArea>0</LineOrArea>
+    <RotateAngle>0.000000</RotateAngle>
+    <dx>8.000000</dx>
+  </DigitizeArea>
+  <GridSettings>
+    <ShowGrid>0</ShowGrid>
+    <AreaType>0</AreaType>
+    <dx>15.000000</dx>
+    <dy>15.000000</dy>
+  </GridSettings>
+</GetDataWorkspace>

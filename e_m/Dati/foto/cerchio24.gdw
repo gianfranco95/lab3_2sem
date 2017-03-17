@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GetDataWorkspace>
+  <version>2.26.0.20</version>
+  <WSversion>10</WSversion>
+  <File>
+    <Name>C:\lab3_2semestre\e_m\Dati\foto\foto_24.JPG</Name>
+    <Width>4608</Width>
+    <Height>3072</Height>
+  </File>
+  <Line>
+    <Caption>Linea #1</Caption>
+    <LineColor>56,119,121</LineColor>
+    <BkColor>20,2,3</BkColor>
+    <PtColor>220,70,220</PtColor>
+    <LineType>0</LineType>
+    <Points MF="9">18751,21856,18166,21676,17581,21406,17176,21163,16798,20821,16411,20533,16123,20173,15853,19813,15529,19345,15313,18931</Points>
+    <Points MF="9">15115,18409,14917,17761,14845,17167,14791,16537,14863,15907,14971,15133,15187,14539,15367,13963,15727,13315,16213,12811</Points>
+    <Points MF="9">16915,12073,17401,11767,18031,11353,18607,11065,19255,10849,19939,10723,20731,10669,21541,10759,22243,10921,22909,11173</Points>
+    <Points MF="9">23557,11479,24205,11929,24691,12379,25159,12865,25573,13351,25951,13909,26095,14341,26293,14791,26437,15169,26545,15655</Points>
+    <Points MF="9">26617,16177,26671,16645,26671,17185,26563,17896,26383,18643,26086,19309,25789,19939,25339,20533,24763,21073,24196,21613</Points>
+  </Line>
+  <CurrentLine>0</CurrentLine>
+  <Xmin MF="9">4,27643,0.000000e+000</Xmin>
+  <Xmax MF="9">41467,27643,4.607000e+003</Xmax>
+  <Ymin MF="9">4,27643,0.000000e+000</Ymin>
+  <Ymax MF="9">4,4,3.071000e+003</Ymax>
+  <XScale>linear</XScale>
+  <YScale>linear</YScale>
+  <Position>581,555</Position>
+  <Zoom>
+    <Scale>30.0</Scale>
+  </Zoom>
+  <Digitize>
+    <IgnorePixels>1</IgnorePixels>
+    <LineIDMethod>2</LineIDMethod>
+  </Digitize>
+  <AutoTrace>
+    <TraceDistance>8</TraceDistance>
+    <SmoothLines>1</SmoothLines>
+  </AutoTrace>
+  <DigitizeArea>
+    <LineOrArea>0</LineOrArea>
+    <RotateAngle>0.000000</RotateAngle>
+    <dx>8.000000</dx>
+  </DigitizeArea>
+  <GridSettings>
+    <ShowGrid>0</ShowGrid>
+    <AreaType>0</AreaType>
+    <dx>15.000000</dx>
+    <dy>15.000000</dy>
+  </GridSettings>
+</GetDataWorkspace>

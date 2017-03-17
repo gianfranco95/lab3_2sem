@@ -16,15 +16,15 @@ calib = calibrazione(dati)
 data='foto.txt'
 foto=pylab.loadtxt(os.path.join(folder,'Dati',data)).T
 
-Vacc=foto[1][14]
-Icoil=foto[2][14]
+Vacc=foto[1][11]
+Icoil=foto[2][11]
 
-datafile=(['cerchio14.txt'])
+datafile=(['cerchio11.txt'])
 x0,y0=importa(datafile)
 x= (x0- calib[2])/calib[0]      #così x,y e sigma sono in centimetri
 y=(y0-calib[2])/calib[0]
-x=x*(54.9/64.9)             #correzione proiettiva
-y=y*(54.9/64.9)
+# x=x*(54.9/64.9)             #correzione proiettiva
+# y=y*(54.9/64.9)
 pylab.figure(2)
 pylab.plot(x0,y0,'.')
 pylab.plot(x,y,'o')

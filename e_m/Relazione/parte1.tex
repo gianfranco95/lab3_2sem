@@ -1,0 +1,58 @@
+\section{Scopo e strumentazione}
+
+L'esperienza ha l'obiettivo di eseguire una misura ragionevole del rapporto tra carica e massa dell'elettrone. Viene impiegato un apparato costituito da due bobine coassiali costituite da 130 spire, nelle quali può scorrere una corrente I$_{coil}$ che genera un campo magnetico. Una sonda ad effetto Hall permette di eseguire una mappatura del campo magnetico in funzione della distanza dal piano parallelo alle bobine e passante dal punto medio tra le stesse, lungo l'asse passante dai centri. Essa è inoltre collegata ad un circuito amplificatore che applica alla tensione di uscita V$_H$ un fattore $A = 11.1 \pm 0.1$. Un multimetro digitale permette di misurare il valore della tensione di uscita V$_{out}$. Un righello con risoluzione 1 mm é utilizzato onde effettuare le misure di posizione. Una bussola permette inoltre di rilevare l'orientazione del campo magnetico terrestre e di comportarsi di conseguenza.\\ Nella seconda parte dell'esperienza è utilizzato un bulbo di vetro che funge da tubo catodico, contenente neon rarefatto, che a contatto con gli elettroni sparati da un cannone regolato da una tensione V$_{heat }$ emette radiazione nel visibile. Una macchina fotografica digitale, munita di cavalletto, permette di fotografare la traccia lasciata dal pennello elettronico; con un programma di digitalizzazione è possibile poi ricavare, in un dato sistema di riferimento, le coordinate di punti scelti della rappresentazione fotografica della traccia. Per effettuare la calibrazione si utilizza un righello graduato collocato dietro al bulbo e dotato di un dispositivo di illuminazione. Un alimentatore fornisce V$_{heat}$ e V$_{acc}$, quest'ultima necessaria per accelerare gli elettroni. Il dispositivo è raffigurato in \fig
+\section{Misura della lunghezza d'onda di un laser He-Ne}
+
+Abbiamo dapprima agito sulla posizione ed orientamento del calibro, in modo che la luce incidesse sulla parte graduata. Quindi abbiamo variato l'inclinazione del fascio agendo sulla vite posta sul retro dello specchio, in modo da avere una figura di diffrazione evidente, con almeno 15 ordini chiaramente visualizzabili ed in modo che lo spessore delle tracce fosse il minore possibile.\\
+Abbiamo allora segnato con una matita tanto la posizione del livello quanto lo spessore della traccia luminosa, ripetendo il procedimento per ciascun livello (ne abbiamo contati in totale 21), compreso l'ordine 0 di riflessione. Abbiamo anche individuato la posizione della traccia, di forma circolare come l'apertura del laser, corrispondente alla parte di segnale non deviato. Con il metro si è così potuto misurare la distanza tra il centro del cerchio e l'ordine 0, segnando a matita il punto medio tra queste due posizioni. Abbiamo allora misurato la distanza tra questo punto medio ed i due estremi della figura luminosa presente sul calibro, considerando poi media e semidispersione per ottenere la distanza tra il calibro e lo schermo pari a $D = 206.0 \pm 1.5$ cm. Abbiamo valutato l'errore dato dalla semidispersione prevalente sugli errori dovuti al non perfetto allineamento.
+
+\subsection{Analisi dati}
+
+Utilizzando il metro si è potuto misurare la distanza tra il punto medio, utilizzato come riferimento, e ciascuno dei livelli precedentemente individuati. In \tab{tabella1} sono riportati i dati, compreso un errore, e l'ordine di diffrazione m. L'errore è ottenuto dalla somma in quadratura dell'incertezza dovuta alla sensibilità della riga ed un errore di 5 mm corrispondente al raggio del cerchio (incertezza sulla posizione di riferimento), mentre l'errore dovuto allo spessore delle tacche è stato trascurato.
+\begin{table}[h]
+	\centering
+	\begin{tabular}{*{4}{S[table-figures-exponent = 2]} }
+		{$h$[cm]} &{$\Delta h$[cm]} & {m} \\
+		\midrule
+		6.4 & 0.5 &  0 \\ 
+		9.7 & 0.5 &  1 \\ 
+		12.1 & 0.5 &  2 \\ 
+		14.1 & 0.5 &  3 \\ 
+		15.9 & 0.5 &  4 \\ 
+		17.5 & 0.5 &  5 \\ 
+		19.0 & 0.5 &  6 \\ 
+		20.4 & 0.5 &  7 \\ 
+		21.7 & 0.5 &  8 \\ 
+		22.9 & 0.5 &  9 \\ 
+		24.0 & 0.5 & 10 \\ 
+		25.1 & 0.5 & 11 \\ 
+		26.2 & 0.5 & 12 \\ 
+		27.2 & 0.5 & 13 \\ 
+		28.2 & 0.5 & 14 \\ 
+		29.1 & 0.5 & 15 \\ 
+		30.1 & 0.5 & 16 \\ 
+		31.0 & 0.5 & 17 \\ 
+		31.9 & 0.5 & 18 \\ 
+		32.8 & 0.5 & 19 \\ 
+		33.5 & 0.5 & 20 \\ 
+
+	\end{tabular}
+	\caption{$h$ e $\Delta h $ sono rispettivamente misura ed errore dell'altezza dei vari ordini di diffrazione numerati con $m$. }
+	\label{t:tabella1}
+\end{table}
+
+Essendo l'angolo di diffrazione il complementare dell'angolo di cui è nota la tangente tan$\theta$ = h/D, si ha la relazione, essendo $\theta_i$ l'angolo di incidenza rispetto alla normale, d il passo reticolare e $\lambda$ la lunghezza d'onda:
+\begin{equation}
+cos\theta = sen\theta_i - m \frac{\lambda}{d}
+\label{legge_diffrazione}
+\end{equation}
+Noto quindi $cos\theta = \frac {1}{\sqrt{1+tan\theta ^2}}$, abbiamo svolto un fit lineare del coseno in funzione dell'ordine di diffrazione, mantenendo come parametri $a = -\frac{\lambda}{d}$ e $b = sen\theta_i$ e considerando come errore solo l'errore sul coseno, ottenuto dalla propagazione degli errori su h e su D. I risultati ottenuti sono i seguenti:
+\begin{itemize}
+\item $a = -0.000626 \pm 0.000008$
+\item $b = 0.99952 \pm 0.00006$, quindi angolo di incidenza, come atteso, molto vicino a $\pi$/2
+\item $cov = -0.62$ come valore di covarianza normalizzata
+\item $\chi^2 = 0.07$ con 19 gradi di libertà.
+\end{itemize}
+Il valore del $\chi^2$ fa pensare ad una possibile sovrastima dell'errore; del resto in esso sono state inserite parti sistematiche, in particolare quelle dovute alla dimensione del segnale non riflesso nè rifratto. Noto d, si è ottenuta una lunghezza d'onda $\lambda = 626 \pm 8$ nm, pienamente compatibile con il valore atteso di 632.8 nm. Riportiamo infine in \fig{figura_2} il grafico di $cos\theta (m)$, dove è mostrato anche l'andamento dei residui.
+
+

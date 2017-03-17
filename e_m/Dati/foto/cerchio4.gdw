@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GetDataWorkspace>
+  <version>2.26.0.20</version>
+  <WSversion>10</WSversion>
+  <File>
+    <Name>C:\Lab3\Nuova cartella (3)\e_m\Dati\foto\foto_4.JPG</Name>
+    <Width>4608</Width>
+    <Height>3072</Height>
+  </File>
+  <Line>
+    <Caption>Line #1</Caption>
+    <LineColor>69,136,135</LineColor>
+    <BkColor>20,3,1</BkColor>
+    <PtColor>220,70,220</PtColor>
+    <LineType>0</LineType>
+    <Points MF="9">23701,22009,23899,21847,24079,21631,24241,21469,24475,21271,24673,21019,24817,20785,25105,20425,25285,20083,25033,20605</Points>
+    <Points MF="9">25465,19741,25663,19363,25771,18949,25807,18589,25897,18229,25897,17923,25897,17491,25897,17095,25861,16861,25789,16573</Points>
+    <Points MF="9">25735,16285,25609,16051,25429,15763,25285,15403,25105,15187,25015,15007,24781,14719,24493,14449,24349,14251,24079,13927</Points>
+    <Points MF="9">23881,13819,23665,13639,23395,13513,23035,13333,18733,13261,18517,13333,18175,13495,17869,13729,18967,13099,19219,13027</Points>
+    <Points MF="9">19633,12883,20065,12793,20479,12757,20803,12757,21217,12793,21505,12829,21829,12847,22261,12937,22549,13081,22801,13225</Points>
+    <Points MF="9">17581,13891,17383,14071,17185,14269,17005,14503,16825,14737,16645,15025,16483,15313,16357,15619,16231,15871,16123,16141</Points>
+    <Points MF="9">16033,16465,15961,16843,15925,17167,15925,17455,15943,17923,15961,18175,15943,17617,15997,18373,16069,18679,16141,18913</Points>
+    <Points MF="9">16231,19147,16321,19417,16447,19651,16609,19921,16717,20137,17077,20515,16861,20353,17275,20749,17491,20929,17725,21145</Points>
+    <Points MF="9">17923,21271,18157,21433,18391,21559,18769,21721</Points>
+  </Line>
+  <CurrentLine>0</CurrentLine>
+  <Xmin MF="9">4,27643,0.000000e+000</Xmin>
+  <Xmax MF="9">41467,27643,4.607000e+003</Xmax>
+  <Ymin MF="9">4,27643,0.000000e+000</Ymin>
+  <Ymax MF="9">4,4,3.071000e+003</Ymax>
+  <XScale>linear</XScale>
+  <YScale>linear</YScale>
+  <Position>1427,1291</Position>
+  <Zoom>
+    <Scale>50.0</Scale>
+  </Zoom>
+  <Digitize>
+    <IgnorePixels>1</IgnorePixels>
+    <LineIDMethod>2</LineIDMethod>
+  </Digitize>
+  <AutoTrace>
+    <TraceDistance>8</TraceDistance>
+    <SmoothLines>1</SmoothLines>
+  </AutoTrace>
+  <DigitizeArea>
+    <LineOrArea>0</LineOrArea>
+    <RotateAngle>0.000000</RotateAngle>
+    <dx>8.000000</dx>
+  </DigitizeArea>
+  <GridSettings>
+    <ShowGrid>0</ShowGrid>
+    <AreaType>0</AreaType>
+    <dx>15.000000</dx>
+    <dy>15.000000</dy>
+  </GridSettings>
+</GetDataWorkspace>

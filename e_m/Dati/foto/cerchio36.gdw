@@ -3,21 +3,19 @@
   <version>2.26.0.20</version>
   <WSversion>10</WSversion>
   <File>
-    <Name>C:\lab3_2semestre\e_m\Dati\foto\foto_12.JPG</Name>
+    <Name>C:\Lab3\Nuova cartella (3)\e_m\Dati\foto\foto_36.JPG</Name>
     <Width>4608</Width>
     <Height>3072</Height>
   </File>
   <Line>
-    <Caption>Linea #1</Caption>
-    <LineColor>39,87,86</LineColor>
-    <BkColor>20,3,3</BkColor>
+    <Caption>Line #1</Caption>
+    <LineColor>73,61,65</LineColor>
+    <BkColor>11,4,6</BkColor>
     <PtColor>220,70,220</PtColor>
     <LineType>0</LineType>
-    <Points MF="9">17194,20479,17005,20137,16780,19777,16510,19300,16420,18895,16357,18265,16285,17869,16294,17302,16357,16762,16510,16312</Points>
-    <Points MF="9">16762,15655,17050,15160,17464,14710,17779,14377,18202,14170,18562,13909,19120,13657,19570,13540,20047,13450,20524,13360</Points>
-    <Points MF="9">20875,13387,21334,13387,21847,13387,22225,13522,22612,13765,22945,13909,23260,14197,23602,14332,23980,14584,24259,14899</Points>
-    <Points MF="9">24565,15214,24709,15439,24925,15772,25204,16222,25384,16645,25465,17104,25564,17572,25195,19984,25024,20317,25609,18049</Points>
-    <Points MF="9">25609,18544,25564,19057,25474,19444,25312,19732,24880,20677,24529,21109</Points>
+    <Points MF="9">21559,20785,20866,20245,20416,19642,20164,19084,20038,18544,20065,17851,20128,17302,20407,16708,20722,16231,21118,15853</Points>
+    <Points MF="9">21748,15511,22477,15403,22963,15439,23395,15466,23989,15628,24484,15853,24844,16141,25123,16456,25384,16843,25654,17284</Points>
+    <Points MF="9">25771,17779,25798,18013,25807,18256,25807,18535,25807,18751,25789,19111,25663,19624,25555,19957,25285,20479</Points>
   </Line>
   <CurrentLine>0</CurrentLine>
   <Xmin MF="9">4,27643,0.000000e+000</Xmin>
@@ -26,9 +24,9 @@
   <Ymax MF="9">4,4,3.071000e+003</Ymax>
   <XScale>linear</XScale>
   <YScale>linear</YScale>
-  <Position>2953,2237</Position>
+  <Position>2140,1655</Position>
   <Zoom>
-    <Scale>50.0</Scale>
+    <Scale>90.0</Scale>
   </Zoom>
   <Digitize>
     <IgnorePixels>1</IgnorePixels>

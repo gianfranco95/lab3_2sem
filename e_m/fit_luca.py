@@ -51,12 +51,13 @@ def fit(x,y,sigma):
     D_inv= numpy.linalg.inv(D)
     
     def molti(A,b): #prodotto matrice vettore
+        bb=numpy.zeros(3)
         for i in range(0,3):
             s=0
             for j in range(0,3):
                 s= s+ A[i][j]*b[j]
-            x[i]=s
-        return x
+            bb[i]=s
+        return bb
     
     Q=molti(D_inv,E)
     R=pylab.sqrt(Q[2]+ Q[0]**2 + Q[1]**2)
@@ -156,10 +157,11 @@ def fit(x,y,sigma):
     # print('cov_normAB=%f'%(covAB/(dA*dB)))
     
     return Q[0],dA,Q[1],dB,covAB/(dA*dB),R,dR
-   
+    
+print(X)  
 pop=fit(X,Y,sigma)
 print(X)
-aa=pylab.linspace(min(x),max(x),3000)
+aa=pylab.linspace(0,12,3000)
 # bb=pylab.linspace(-10,10,1000)
 pylab.plot(aa, pop[2] + pylab.sqrt(-(aa-pop[0])**2+pop[5]**2))
 pylab.plot(aa, pop[2] -pylab.sqrt(-(aa-pop[0])**2+pop[5]**2))

@@ -46,7 +46,7 @@ def calibrazione(datafile):
     py.plot(y,x, 'o')
     py.plot(y,f1(y,a_fit), color='black')
     py.errorbar(y,x,yerr=dx,xerr=dy,linestyle='')
-    py.show()
+    # py.show()
     
     py.figure(20)
     py.ylabel('z')
@@ -56,7 +56,7 @@ def calibrazione(datafile):
     py.plot(y,z, 'o')
     py.plot(y,f1(y,b_fit), color='black')
     py.errorbar(y,z,yerr=None,xerr=dy,linestyle='')
-    py.show()
+    # py.show()
     tan=b_fit/math.sqrt(1+a_fit**2)
     dtan=math.sqrt((db_fit*tan/b_fit)**2 + (b_fit*a_fit/(math.sqrt(1+a_fit**2)**3))**2)
     # print(db_fit/b_fit)

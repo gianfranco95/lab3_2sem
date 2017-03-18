@@ -10,15 +10,16 @@ from importare_dati import importa
 from calibrazione_foto import calibrazione
 
 
-def e_m(calib,i,s):
+def e_m(calib,i):
     alfa,dalfa=calibrazione([calib])
-    data='foto.txt'
+    data='fotobis.txt'
     foto=pylab.loadtxt(os.path.join(folder,'Dati',data)).T
     nmr=i
     Vacc=foto[1][nmr]
     dVacc=1
     Icoil=foto[2][nmr]
     dIcoil=0.01
+    s=foto[2][nmr]
     
     datafile=(['cerchio{}.txt'.format(i)])
     x0,y0=importa(datafile)
@@ -29,10 +30,12 @@ def e_m(calib,i,s):
     dxd=pylab.zeros(k)
     dyd=pylab.zeros(k)
     if(s==1):
-        xd=(x0[:k]+x0[k:])/2
-        yd=(x0[:k]+y0[k:])/2
-        dxd=abs(x0[:k]-x0[k:])/2
-        dyd=abs(x0[:k]-y0[k:])/2
+        for j in range(0,k):
+            xd[j]=(x0[j]+x0[j+k])/2
+            yd[j]=(y0[j]+y0[j+k])/2
+            dxd[j]=abs(x0[j]-x0[j+k])/2
+            dyd[j]=abs(y0[j]-y0[j+k])/2
+            
     else:
         yd=y0
         xd=x0

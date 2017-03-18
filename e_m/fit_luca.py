@@ -9,8 +9,7 @@ import numpy.linalg
 from importare_dati import importa
 from calibrazione_foto import calibrazione
 
-alfa=(math.sqrt( (2770-1816)**2 + (1583-1574)**2))/6
-
+alfa,dalfa=calibrazione(['calibrazione26_luca.txt'])
 data='foto.txt'
 foto=pylab.loadtxt(os.path.join(folder,'Dati',data)).T
 nmr=11
@@ -20,9 +19,11 @@ Icoil=foto[2][nmr]
 datafile=(['cerchio11.txt'])
 x0,y0=importa(datafile)
 x=x0/alfa     #così x,y e sigma sono in centimetri
-y=y0/alfa             #correzione proiett
+y=y0/alfa #correzione proiett
+X=x0/alfa
+Y=y0/alfa          
 pylab.figure(2)
-pylab.plot(x0,y0,'.')
+# pylab.plot(x0,y0,'.')
 pylab.plot(x,y,'o')
 pylab.show()
 sigma=5
@@ -149,16 +150,16 @@ def fit(x,y,sigma):
     # dR=sigma_fit*numpy.sqrt( sum(R_y**2 + R_x**2) )
     
     
-    print('R=%f+-%f'%(R,dR))
-    print('A=%f+-%f'%(Q[0],dA))
-    print('B=%f+-%f'%(Q[1],dB))
-    print('cov_normAB=%f'%(covAB/(dA*dB)))
+    # print('R=%f+-%f'%(R,dR))
+    # print('A=%f+-%f'%(Q[0],dA))
+    # print('B=%f+-%f'%(Q[1],dB))
+    # print('cov_normAB=%f'%(covAB/(dA*dB)))
     
     return Q[0],dA,Q[1],dB,covAB/(dA*dB),R,dR
-    
-    
-pop=fit(x,y,sigma)
-aa=pylab.linspace(-10,10,1000)
+   
+pop=fit(X,Y,sigma)
+print(X)
+aa=pylab.linspace(min(x),max(x),3000)
 # bb=pylab.linspace(-10,10,1000)
 pylab.plot(aa, pop[2] + pylab.sqrt(-(aa-pop[0])**2+pop[5]**2))
 pylab.plot(aa, pop[2] -pylab.sqrt(-(aa-pop[0])**2+pop[5]**2))

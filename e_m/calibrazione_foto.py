@@ -10,7 +10,7 @@ def calibrazione(datafile):
     data=importa(datafile)
     x=data[0]
     y=data[1]
-    z_min=-34
+    z_min=-44
     z_max=35
     x0=x[0]
     y0=y[0]
@@ -18,10 +18,8 @@ def calibrazione(datafile):
     y=y-y0
     y.sort()
     x.sort()
-    dy=np.ones(len(data[0]))*5
+    dy=np.ones(len(data[0]))*3
     dx=np.ones(len(data[0]))*4
-    print(dx/x)
-    print(x)
     z=np.ones(len(data[0]))
     for i in range(z_min,z_max):
         z[i]=i
@@ -61,10 +59,5 @@ def calibrazione(datafile):
     py.show()
     tan=b_fit/math.sqrt(1+a_fit**2)
     dtan=math.sqrt((db_fit*tan/b_fit)**2 + (b_fit*a_fit/(math.sqrt(1+a_fit**2)**3))**2)
-    print(db_fit/b_fit)
+    # print(db_fit/b_fit)
     return  1/tan,dtan/(tan**2)
-
-
-
-w=calibrazione(['calibrazione26_luca.txt'])
-print(w)

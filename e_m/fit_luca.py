@@ -12,16 +12,16 @@ from calibrazione_foto import calibrazione
 alfa,dalfa=calibrazione(['calibrazione26_luca.txt'])
 data='foto.txt'
 foto=pylab.loadtxt(os.path.join(folder,'Dati',data)).T
-nmr=11
+nmr=19
 Vacc=foto[1][nmr]
+dVacc=1
 Icoil=foto[2][nmr]
+dIcoil=0.01
 
-datafile=(['cerchio11.txt'])
+datafile=(['cerchio19.txt'])
 x0,y0=importa(datafile)
 x=x0/alfa     #così x,y e sigma sono in centimetri
-y=y0/alfa #correzione proiett
-X=x0/alfa
-Y=y0/alfa          
+y=y0/alfa  #correzione proiett        
 pylab.figure(2)
 # pylab.plot(x0,y0,'.')
 pylab.plot(x,y,'o')
@@ -158,17 +158,25 @@ def fit(x,y,sigma):
     
     return Q[0],dA,Q[1],dB,covAB/(dA*dB),R,dR
     
-print(X)  
-pop=fit(X,Y,sigma)
-print(X)
-aa=pylab.linspace(0,12,3000)
+pop=fit(x,y,sigma)
+A=pop[0]
+dA=pop[1]
+B=pop[2]
+dB=pop[3]
+cov_AB=pop[4]
+R=pop[5]
+dR=pop[6]
+aa=pylab.linspace(min(x),max(x),3000)
 # bb=pylab.linspace(-10,10,1000)
 pylab.plot(aa, pop[2] + pylab.sqrt(-(aa-pop[0])**2+pop[5]**2))
 pylab.plot(aa, pop[2] -pylab.sqrt(-(aa-pop[0])**2+pop[5]**2))
 pylab.show()
 
 ##calcolo e/m [valore atteso : 1.7588*10^(11) C/Kg]
-e_m = 2*Vacc/(10**(-4)*pop[5]**2*(7.8*10**(-4)*Icoil)**2)*10**(-11)
-de_m = ( (0.1/Vacc) + 2*(pop[6]/pop[5]) + 2*(0.01/Icoil) )*e_m
+B=7.8*10**(-4)*Icoil
+dB= dIcoil*B/Icoil
+e_m = 2*Vacc /( 10**(-4)* (R**2) * (B)**2 )*10**(-11)
+# de_m = ( (0.1/Vacc) + 2*(pop[6]/pop[5]) + 2*(0.01/Icoil) )*e_m
+de_m=pylab.sqrt( (dVacc*e_m/Vacc)**2 + (dB*2*e_m/B)**2 + (dR*2*e_m/R)**2 )
 
 print('e_m=%f +- %f'%(e_m,de_m))

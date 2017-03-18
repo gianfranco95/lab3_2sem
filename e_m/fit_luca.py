@@ -30,12 +30,12 @@ def e_m(calib,i):
     dxd=pylab.zeros(k)
     dyd=pylab.zeros(k)
     if(s==1):
-        for j in range(0,k):
-            xd[j]=(x0[j]+x0[j+k])/2
-            yd[j]=(y0[j]+y0[j+k])/2
-            dxd[j]=abs(x0[j]-x0[j+k])/2
-            dyd[j]=abs(y0[j]-y0[j+k])/2
-            
+        while(j<k):
+            xd[j]=(x0[j]+x0[j+1])/2
+            yd[j]=(y0[j]+y0[j+1])/2
+            dxd[j]=abs(x0[j]-x0[j+1])/2
+            dyd[j]=abs(y0[j]-y0[j+1])/2
+            j=j+2
     else:
         yd=y0
         xd=x0

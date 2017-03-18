@@ -2,44 +2,69 @@ import pylab as py
 import os
 import numpy as np
 import scipy
+import math
 from importare_dati import importa
-
+#errore sullo zero y=5  x=4
+## x-ay=0   z-by=0
 def calibrazione(datafile):
     data=importa(datafile)
-    y=data[0]
+    x=data[0]
+    y=data[1]
+    z_min=-34
+    z_max=35
+    x0=x[0]
+    y0=y[0]
+    x=x-x0
+    y=y-y0
     y.sort()
-    dy=np.ones(len(data[0]))
-    x=np.ones(len(data[0]))
-    for i in range(-50,41):
-        x[i]=i
-    x=x/10
     x.sort()
+    dy=np.ones(len(data[0]))*5
+    dx=np.ones(len(data[0]))*4
+    print(dx/x)
+    print(x)
+    z=np.ones(len(data[0]))
+    for i in range(z_min,z_max):
+        z[i]=i
+    z=z/10
+    z.sort()
     
-    def f(x,a,b):
-        return a*x+b
+    def f1(x,a):
+        return a*x
         
     from scipy.optimize import curve_fit
-    popt, pcov=curve_fit(f,x,y,py.array([400.,0.]),sigma=dy,absolute_sigma=True)
-    a_fit,b_fit=popt
-    da_fit,db_fit=py.sqrt(pcov.diagonal())
-    ab_cov=pcov[0,1]
-    ab_norm_cov=ab_cov/(da_fit*db_fit)
-    # print('Fit numerico (errore y)\n a=%f+-%f \n b=%f+-%f  covarianza(normalizzata)=%f(%f)'%(a_fit,da_fit,b_fit,db_fit,ab_cov,ab_norm_cov))
-    #Chi quadro
-    chisquare=sum(((y-f(x,a_fit,b_fit))**2)/((dy)**2))
-    dof=len(y)-2
-    pchi = scipy.special.chdtrc(dof,chisquare)
-    # print('Chi quadro/ndof = %f/%f\nprobabilità associata = %f'%(chisquare,dof,pchi))
+    popt, pcov=curve_fit(f1,y,x,py.array([400.]),sigma=dx,absolute_sigma=True)
+    a_fit=popt
+    da_fit=py.sqrt(pcov.diagonal())
     
-    py.figure(1)
-    py.ylabel('punti[u.a.]')
-    py.xlabel('tacche scala[cm]')
+    popt, pcov=curve_fit(f1,y,z,py.array([400.]),sigma=dy,absolute_sigma=True)
+    b_fit=popt
+    db_fit=py.sqrt(pcov.diagonal())
+    
+    py.figure(10)
+    py.ylabel('x')
+    py.xlabel('y')
     py.title('calibrazione')
     py.grid(color='gray')
-    py.plot(x,y, 'o')
-    py.plot(x,f(x,a_fit,b_fit), color='black')
-    py.errorbar(x,y,yerr=dy,xerr=None,linestyle='')
+    py.plot(y,x, 'o')
+    py.plot(y,f1(y,a_fit), color='black')
+    py.errorbar(y,x,yerr=dx,xerr=dy,linestyle='')
     py.show()
-    a_fit0 = a_fit*(54.9/64.9)
-    da_fit0 = a_fit0*py.sqrt((da_fit/a_fit)**2+(0.1/54.9)**2+(0.1/64.9)**2)
-    return  157,da_fit0,b_fit,db_fit,ab_cov
+    
+    py.figure(20)
+    py.ylabel('z')
+    py.xlabel('y')
+    py.title('calibrazione')
+    py.grid(color='gray')
+    py.plot(y,z, 'o')
+    py.plot(y,f1(y,b_fit), color='black')
+    py.errorbar(y,z,yerr=None,xerr=dy,linestyle='')
+    py.show()
+    tan=b_fit/math.sqrt(1+a_fit**2)
+    dtan=math.sqrt((db_fit*tan/b_fit)**2 + (b_fit*a_fit/(math.sqrt(1+a_fit**2)**3))**2)
+    print(db_fit/b_fit)
+    return  1/tan,dtan/(tan**2)
+
+
+
+w=calibrazione(['calibrazione26_luca.txt'])
+print(w)

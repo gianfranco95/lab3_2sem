@@ -54,12 +54,12 @@ def e_m(calib,i):
     g=54.9/64.9 ##correzione proiettiva
     x=x*g      
     y=y*g  
-    print(x0)
-    print(xd)
+    
+    print(x)
     pylab.figure(27)
     # pylab.plot(x0,y0,'.')
-    pylab.plot(x0/alfa,y0/alfa,'o')
-    pylab.plot(xd/alfa,yd/alfa,'o')
+    pylab.plot(x0*g/alfa,y0*g/alfa,'o')
+    pylab.plot(x,y,'o')
     pylab.show()
     sigma=(sum(dx)+sum(dy))/(2*len(x))
     
@@ -203,6 +203,8 @@ def e_m(calib,i):
     dR=pop[6]
     aa=pylab.linspace(min(x),max(x),3000)
     # bb=pylab.linspace(-10,10,1000)
+    print(x)
+    pylab.figure(27)
     pylab.plot(aa, pop[2] + pylab.sqrt(abs(-(aa-pop[0])**2+pop[5]**2)))
     pylab.plot(aa, pop[2] -pylab.sqrt(abs(-(aa-pop[0])**2+pop[5]**2)))
     pylab.show()

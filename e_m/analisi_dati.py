@@ -9,7 +9,7 @@ import numpy.linalg
 from importare_dati import importa
 from calibrazione_foto import calibrazione
 from fit_luca import e_m
-i=10
+i=42
 
 Val,dVal=e_m('calibrazione26_luca.txt',i)
 

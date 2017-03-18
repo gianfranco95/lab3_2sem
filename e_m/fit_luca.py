@@ -19,7 +19,7 @@ def e_m(calib,i):
     dVacc=1
     Icoil=foto[2][nmr]
     dIcoil=0.01
-    s=foto[2][nmr]
+    s=int(foto[3][nmr])
     
     datafile=(['cerchio{}.txt'.format(i)])
     x0,y0=importa(datafile)
@@ -29,19 +29,23 @@ def e_m(calib,i):
     yd=pylab.zeros(k)
     dxd=pylab.zeros(k)
     dyd=pylab.zeros(k)
+    
     if(s==1):
+        j=0
+        f=0
         while(j<k):
-            xd[j]=(x0[j]+x0[j+1])/2
-            yd[j]=(y0[j]+y0[j+1])/2
-            dxd[j]=abs(x0[j]-x0[j+1])/2
-            dyd[j]=abs(y0[j]-y0[j+1])/2
-            j=j+2
+            xd[j]=(x0[f]+x0[f+1])/2
+            yd[j]=(y0[f]+y0[f+1])/2
+            dxd[j]=abs(x0[f]-x0[f+1])/2
+            dyd[j]=abs(y0[f]-y0[f+1])/2
+            j=j+1
+            f=f+2
     else:
         yd=y0
         xd=x0
         dyd=3
         dxd=3
-    # print('ciaooo',xd)
+    
     x=xd/alfa     #così x,y e sigma sono in centimetri
     y=yd/alfa  
     dx=dxd/alfa   
@@ -49,9 +53,12 @@ def e_m(calib,i):
     g=54.9/64.9 ##correzione proiettiva
     x=x*g      
     y=y*g  
-    pylab.figure(2)
+    print(x0)
+    print(xd)
+    pylab.figure(27)
     # pylab.plot(x0,y0,'.')
-    pylab.plot(x,y,'o')
+    pylab.plot(x0/alfa,y0/alfa,'o')
+    pylab.plot(xd/alfa,yd/alfa,'o')
     pylab.show()
     sigma=(sum(dx)+sum(dy))/(2*len(x))
     

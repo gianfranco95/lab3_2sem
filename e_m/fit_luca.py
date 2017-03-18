@@ -25,7 +25,7 @@ def e_m(calib,i):
     datafile=(['cerchio{}.txt'.format(i)])
     x0,y0=importa(datafile)
     k=int(len(x0)/2)
-    # print('ciaooo',len(x0))
+    
     xd=pylab.zeros(k)
     yd=pylab.zeros(k)
     dxd=pylab.zeros(k)
@@ -44,8 +44,8 @@ def e_m(calib,i):
     else:
         yd=y0
         xd=x0
-        dyd=3
-        dxd=3
+        dyd=3*pylab.ones(len(x0))
+        dxd=3*pylab.ones(len(x0))
     
     x=xd/alfa     #così x,y e sigma sono in centimetri
     y=yd/alfa  
@@ -55,11 +55,12 @@ def e_m(calib,i):
     x=x*g      
     y=y*g  
     
-    print(x)
-    pylab.figure(27)
-    # pylab.plot(x0,y0,'.')
+    
+    pylab.figure(i)
+    
     pylab.plot(x0*g/alfa,y0*g/alfa,'o')
     pylab.plot(x,y,'o')
+    pylab.errorbar(x,y,dx,dy,linestyle='')
     pylab.show()
     sigma=(sum(dx)+sum(dy))/(2*len(x))
     
@@ -203,8 +204,8 @@ def e_m(calib,i):
     dR=pop[6]
     aa=pylab.linspace(min(x),max(x),3000)
     # bb=pylab.linspace(-10,10,1000)
-    print(x)
-    pylab.figure(27)
+    
+    pylab.figure(i)
     pylab.plot(aa, pop[2] + pylab.sqrt(abs(-(aa-pop[0])**2+pop[5]**2)))
     pylab.plot(aa, pop[2] -pylab.sqrt(abs(-(aa-pop[0])**2+pop[5]**2)))
     pylab.show()

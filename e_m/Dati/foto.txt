@@ -42,3 +42,4 @@
 #83	righello	
 40	265.2	1.47	#focus_min
 41	265.2	1.47	#focus_max
+42	279.9	1.55	#doppio

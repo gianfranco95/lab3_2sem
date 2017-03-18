@@ -22,26 +22,28 @@ def e_m(calib,i,s):
     
     datafile=(['cerchio{}.txt'.format(i)])
     x0,y0=importa(datafile)
-    k=len(x0)/2
+    k=int(len(x0)/2)
+    # print('ciaooo',len(x0))
     xd=pylab.zeros(k)
     yd=pylab.zeros(k)
     dxd=pylab.zeros(k)
     dyd=pylab.zeros(k)
     if(s==1):
-        xd=(x0[i<k]+x0[i>=k])/2
-        yd=(x0[i<k]+y0[i>=k])/2
-        dxd=abs(x0[i<k]-x0[i>=k])/2
-        dyd=abs(x0[i<k]-y0[i>=k])/2
+        xd=(x0[:k]+x0[k:])/2
+        yd=(x0[:k]+y0[k:])/2
+        dxd=abs(x0[:k]-x0[k:])/2
+        dyd=abs(x0[:k]-y0[k:])/2
     else:
         yd=y0
         xd=x0
         dyd=3
         dxd=3
+    # print('ciaooo',xd)
     x=xd/alfa     #così x,y e sigma sono in centimetri
     y=yd/alfa  
     dx=dxd/alfa   
     dy=dyd/alfa
-    g=54.9/64.9
+    g=54.9/64.9 ##correzione proiettiva
     x=x*g      
     y=y*g  
     pylab.figure(2)
@@ -190,8 +192,8 @@ def e_m(calib,i,s):
     dR=pop[6]
     aa=pylab.linspace(min(x),max(x),3000)
     # bb=pylab.linspace(-10,10,1000)
-    pylab.plot(aa, pop[2] + pylab.sqrt(-(aa-pop[0])**2+pop[5]**2))
-    pylab.plot(aa, pop[2] -pylab.sqrt(-(aa-pop[0])**2+pop[5]**2))
+    pylab.plot(aa, pop[2] + pylab.sqrt(abs(-(aa-pop[0])**2+pop[5]**2)))
+    pylab.plot(aa, pop[2] -pylab.sqrt(abs(-(aa-pop[0])**2+pop[5]**2)))
     pylab.show()
     
     ##calcolo e/m [valore atteso : 1.7588*10^(11) C/Kg]

@@ -8,7 +8,7 @@ import scipy
 import scipy.special
 import numpy.linalg
 from importare_dati import importa
-from calibrazione_foto import calibrazione
+from calibrazione_iniziale import calibrazione
 from fit_luca import e_m
 data='fotobis.txt'
 i=42

@@ -25,14 +25,22 @@ def e_m(calib,i,s):
     k=len(x0)/2
     xd=pylab.zeros(k)
     yd=pylab.zeros(k)
+    dxd=pylab.zeros(k)
+    dyd=pylab.zeros(k)
     if(s==1):
-        xd=x0[i<k]+x0[i>=k]
-        yd=x0[i<k]+y0[i>=k]
+        xd=(x0[i<k]+x0[i>=k])/2
+        yd=(x0[i<k]+y0[i>=k])/2
+        dxd=abs(x0[i<k]-x0[i>=k])/2
+        dyd=abs(x0[i<k]-y0[i>=k])/2
     else:
         yd=y0
         xd=x0
+        dyd=3
+        dxd=3
     x=xd/alfa     #così x,y e sigma sono in centimetri
     y=yd/alfa  
+    dx=dxd/alfa   
+    dy=dyd/alfa
     g=54.9/64.9
     x=x*g      
     y=y*g  
@@ -40,7 +48,7 @@ def e_m(calib,i,s):
     # pylab.plot(x0,y0,'.')
     pylab.plot(x,y,'o')
     pylab.show()
-    sigma=5
+    sigma=(sum(dx)+sum(dy))/(2*len(x))
     
     def fit(x,y,sigma):
         D=numpy.diag((0,0,0))

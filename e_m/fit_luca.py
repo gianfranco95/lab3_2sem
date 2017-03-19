@@ -214,7 +214,7 @@ def e_m(calib,i):
     pylab.show()
     
     ##calcolo e/m [valore atteso : 1.7588*10^(11) C/Kg]
-    g=1/g
+    # g=1/g
     R=g*r/alfa
     dR=pylab.sqrt((dg*r/alfa)**2 + (dr*g/alfa)**2+ (dalfa*R/alfa)**2)
     

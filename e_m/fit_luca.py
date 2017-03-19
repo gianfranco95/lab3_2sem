@@ -52,6 +52,7 @@ def e_m(calib,i):
     dx=pylab.sqrt( (dxd/alfa)**2 + (dalfa*x/alfa)**2)   
     dy=pylab.sqrt( (dyd/alfa)**2 + (dalfa*y/alfa)**2) 
     g=54.9/64.9 ##correzione proiettiva
+    g=(64.9-15.8837/2)/63.9
     dg=g*1/100
     x=x*g      
     y=y*g  
@@ -213,8 +214,9 @@ def e_m(calib,i):
     pylab.show()
     
     ##calcolo e/m [valore atteso : 1.7588*10^(11) C/Kg]
-    R=r/alfa
-    dR=pylab.sqrt((dr/alfa)**2+ (dalfa*R/alfa)**2)
+    g=1/g
+    R=g*r/alfa
+    dR=pylab.sqrt((dg*r/alfa)**2 + (dr*g/alfa)**2+ (dalfa*R/alfa)**2)
     
     
     

@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6100 64-bit) (preloaded format=pdflatex 2016.12.29)  19 MAR 2017 12:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6100 64-bit) (preloaded format=pdflatex 2016.12.29)  19 MAR 2017 15:13
 entering extended mode
-**./relazione_ottica2.tex
-(relazione_ottica2.tex
+**./e_m.tex
+(e_m.tex
 LaTeX2e <2016/03/31> patch level 3
 Babel <3.9r> and hyphenation patterns for 75 language(s) loaded.
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\article.cls"
@@ -1175,9 +1175,8 @@ File: lstlang1.sty 2015/06/04 1.6 listings language file
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\listings\lstmisc.sty"
 File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
-)
-(relazione_ottica2.aux)
-\openout1 = `relazione_ottica2.aux'.
+) (e_m.aux)
+\openout1 = `e_m.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 134.
 LaTeX Font Info:    ... okay on input line 134.
@@ -1194,7 +1193,8 @@ LaTeX Font Info:    ... okay on input line 134.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 134.
 LaTeX Font Info:    Try loading font information for TS1+cmr on input line 134.
 
- ("C:\Program Files\MiKTeX 2.9\tex\latex\base\ts1cmr.fd"
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\ts1cmr.fd"
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 134.
@@ -1279,9 +1279,9 @@ LaTeX Info: Redefining \ref on input line 134.
 LaTeX Info: Redefining \pageref on input line 134.
 LaTeX Info: Redefining \nameref on input line 134.
 
-(relazione_ottica2.out) (relazione_ottica2.out)
+(e_m.out) (e_m.out)
 \@outlinefile=\write3
-\openout3 = `relazione_ottica2.out'.
+\openout3 = `e_m.out'.
 
 .................................................
 . chemgreek info: "mapping-activated"
@@ -1323,10 +1323,25 @@ Overfull \hbox (12.82945pt too wide) in paragraph at lines 3--4
  []
 
 
+Overfull \hbox (3.04169pt too wide) detected at line 25
+ 
+ []
+
+
+Overfull \hbox (3.04169pt too wide) detected at line 26
+ 
+ []
+
+
+Overfull \hbox (3.04169pt too wide) detected at line 27
+ 
+ []
+
+
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 41--42
+Underfull \hbox (badness 10000) in paragraph at lines 35--36
 
  []
 
@@ -1343,22 +1358,21 @@ Package pdftex.def Info: ../Figs-Tabs/apparato.png used on input line 5.
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 141.
  [2 <../Figs-Tabs/apparato.png>]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 141.
-
-(relazione_ottica2.aux)
+ (e_m.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 141.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 141.
-Package rerunfilecheck Info: File `relazione_ottica2.out' has not changed.
+Package rerunfilecheck Info: File `e_m.out' has not changed.
 (rerunfilecheck)             Checksum: CED2CD59EC0ECB678ECF6E75C0FDB6C9;166.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 141.
  ) 
 Here is how much of TeX's memory you used:
  24646 strings out of 493333
- 457063 string characters out of 3139181
- 680259 words of memory out of 3000000
+ 456867 string characters out of 3139181
+ 678245 words of memory out of 3000000
  27861 multiletter control sequences out of 15000+200000
  15668 words of font info for 52 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 44i,15n,49p,10409b,725s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 44i,15n,49p,10395b,725s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\gianfraco\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi
 600\ecrm1095.pk> <C:\Users\gianfraco\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\j
 knappen\ec\dpi600\ecbx1440.pk> <C:\Users\gianfraco\AppData\Local\MiKTeX\2.9\fon
@@ -1370,9 +1384,9 @@ pe1/public/amsfonts/cm/cmmi6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publi
 c/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfont
 s/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8
 .pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on relazione_ottica2.pdf (2 pages, 137908 bytes).
+Output written on e_m.pdf (2 pages, 140508 bytes).
 PDF statistics:
- 205 PDF objects out of 1000 (max. 8388607)
+ 210 PDF objects out of 1000 (max. 8388607)
  9 named destinations out of 1000 (max. 500000)
  30 words of extra memory for PDF output out of 10000 (max. 10000000)
 

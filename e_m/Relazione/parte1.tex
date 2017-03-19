@@ -1,39 +1,39 @@
 \section{Scopo e strumentazione}
 
-L'esperienza ha l'obiettivo di eseguire una misura ragionevole del rapporto tra carica e massa dell'elettrone. Viene impiegato un apparato costituito da due bobine coassiali costituite da 130 spire, nelle quali può scorrere una corrente I$_{coil}$ che genera un campo magnetico. Una sonda ad effetto Hall permette di eseguire una mappatura del campo magnetico in funzione della distanza dal piano parallelo alle bobine e passante dal punto medio tra le stesse, lungo l'asse passante dai centri. Essa è inoltre collegata ad un circuito amplificatore che applica alla tensione di uscita V$_H$ un fattore $A = 11.090 \pm 0.03$, rilevato sul datasheet. Un multimetro digitale permette di misurare il valore della tensione di uscita V$_{out}$. Un righello con risoluzione 1 mm é utilizzato onde effettuare le misure di posizione. Una bussola permette inoltre di rilevare l'orientazione del campo magnetico terrestre e di comportarsi di conseguenza.\\ Nella seconda parte dell'esperienza è utilizzato un bulbo di vetro che funge da tubo catodico, contenente neon rarefatto, che a contatto con gli elettroni sparati da un cannone regolato da una tensione V$_{heat }$ emette radiazione nel visibile. Una macchina fotografica digitale, munita di cavalletto, permette di fotografare la traccia lasciata dal pennello elettronico; con un programma di digitalizzazione è possibile poi ricavare, in un dato sistema di riferimento, le coordinate di punti scelti della rappresentazione fotografica della traccia. Per effettuare la calibrazione si utilizza un righello graduato collocato dietro al bulbo e dotato di un dispositivo di illuminazione. Un alimentatore fornisce V$_{heat}$ e V$_{acc}$, quest'ultima necessaria per accelerare gli elettroni. Il dispositivo è raffigurato in \fig{figura1}
+L'esperienza ha l'obiettivo di eseguire una misura ragionevole del rapporto tra carica e massa dell'elettrone. Viene impiegato un apparato costituito da due bobine coassiali costituite da 130 spire, nelle quali può scorrere una corrente I$_{coil}$ che genera un campo magnetico. Una sonda ad effetto Hall permette di eseguire una mappatura del campo magnetico in funzione della distanza dall'asse delle bobine.  Essa è inoltre collegata ad un circuito amplificatore che applica alla tensione di uscita V$_H$ un fattore $A = 11.090 \pm 0.03$, rilevato sul datasheet. Un multimetro digitale permette di misurare il valore della tensione di uscita V$_{out}$. Un righello con risoluzione 1 mm é utilizzato per effettuare le misure di posizione. Una bussola permette inoltre di rilevare l'orientazione del campo magnetico terrestre .\\ Nella seconda parte dell'esperienza è utilizzato un bulbo di vetro che funge da tubo catodico, contenente neon rarefatto, che a contatto con gli elettroni sparati da un cannone regolato da una tensione V$_{heat }$ emette radiazione nel visibile. Una macchina fotografica digitale, munita di cavalletto, permette di fotografare la traccia lasciata dal pennello elettronico; con un programma di digitalizzazione è possibile poi ricavare, in un dato sistema di riferimento, le coordinate di punti scelti della rappresentazione fotografica della traccia. Per effettuare la calibrazione si utilizza un righello graduato collocato dietro al bulbo e dotato di un dispositivo di illuminazione. Un alimentatore fornisce V$_{heat}$ e V$_{acc}$, quest'ultima necessaria per accelerare gli elettroni. Il dispositivo è raffigurato in \fig{apparato}
 \section{Mappatura del campo magnetico}
 
 Abbiamo dapprima collocato le bobine in modo da minimizzare l'effetto del campo magnetico terrestre, il cui orientamento ci è stato rivelato dalla bussola: infatti il campo da noi considerato, generato dalla corrente nelle bobine, è diretto lungo l'asse delle stesse, mentre abbiamo posto il campo terrestre in direzione ortogonale. Quindi abbiamo calibrato la sonda ad effetto Hall in modo da avere V$_{out}=0$ per B$=0$; concretamente abbiamo posto la bacchetta in direzione ortogonale al campo terrestre ed abbiamo svolto una rotazione di 180 gradi (portando la faccia superiore in posizione inferiore e viceversa). Regolando il potenziometro del circuito di amplificazione, cui la bacchetta contenente la sonda ad effetto hall è collegata, è stata raggiunta una condizione per cui si avevano due letture opposte di V$_{out}$.
-Quindi abbiamo immerso la bacchetta nel campo generato dalle bobine, ponendola lungo l'asse delle stesse, dove due dispositivi a raggiera con un'apertura centrale collegati a ciascuna bobina la mantenevano in equilibrio, ed abbiamo misurato la posizione dell'estremo della bacchetta a partire da una delle due aperture. In \tab{tabella1} sono riportati i dati, compreso il campo magnetico corrispondente a ciascuna misura di posizione; queste ultime vanno sottratte a metà della distanza tra le bobine, trovata come differenza tra misura di posizione con la sonda ad un'apertura e misura con la sonda all'altra apertura. Viene inoltre riportato il valore del campo magnetico diretto lungo l'asse delle bobine per ciascuna misura di posizione, dato da B$_z = \frac{V_{out}}{AQ}$, dove Q$=0.0050 \pm 0.0001$ V/G è un fattore di calibrazione indicato sul datasheet.
+Quindi abbiamo inserito la bacchetta nell'apposito ingresso , ponendola ortogonale  all'asse delle bobine  ed abbiamo misurato la posizione dell'estremo della bacchetta a partire da uno dei due ingressi. In \tab{tabella1} sono riportati i dati, compreso il campo magnetico corrispondente a ciascuna misura di posizione; queste ultime vanno sottratte a metà della distanza tra le bobine, trovata come differenza tra misura di posizione con la sonda ad un'apertura e misura con la sonda all'altra apertura. Viene inoltre riportato il valore del campo magnetico diretto lungo l'asse delle bobine per ciascuna misura di posizione, dato da B$_z = \frac{V_{out}}{AQ}$, dove Q$=0.0050 \pm 0.0001 \frac{V}{G}$ è un fattore di calibrazione indicato sul datasheet.
 \begin{table}[h]
 	\centering
 	\begin{tabular}{*{4}{S[table-figures-exponent = 2]} }
-		{$B$[G]} &{$\Delta B$[G]} & {$r$[cm]} \\
+		{$B$[G]} &{$\Delta B$[G]} & {$d$[cm]} \\
 		\midrule
-		6.4 & 0.5 &  0 \\ 
-		9.7 & 0.5 &  1 \\ 
-		12.1 & 0.5 &  2 \\ 
-		14.1 & 0.5 &  3 \\ 
-		15.9 & 0.5 &  4 \\ 
-		17.5 & 0.5 &  5 \\ 
-		19.0 & 0.5 &  6 \\ 
-		20.4 & 0.5 &  7 \\ 
-		21.7 & 0.5 &  8 \\ 
-		22.9 & 0.5 &  9 \\ 
-		24.0 & 0.5 & 10 \\ 
-		25.1 & 0.5 & 11 \\ 
-		26.2 & 0.5 & 12 \\ 
-		27.2 & 0.5 & 13 \\ 
-		28.2 & 0.5 & 14 \\ 
-		29.1 & 0.5 & 15 \\ 
-		30.1 & 0.5 & 16 \\ 
-		31.0 & 0.5 & 17 \\ 
-		31.9 & 0.5 & 18 \\ 
-		32.8 & 0.5 & 19 \\ 
-		33.5 & 0.5 & 20 \\ 
+		6.1 & 0.1 & 11.7 \\ 
+		6.9 & 0.1 & 10.5 \\ 
+		7.4 & 0.1 & 9.6 \\ 
+		7.9 & 0.2 & 8.0 \\ 
+		8.2 & 0.2 & 6.3 \\ 
+		8.3 & 0.2 & 2.4 \\ 
+		8.3 & 0.2 & 0.2 \\ 
+		8.3 & 0.2 & -2.2 \\ 
+		8.3 & 0.2 & -4.4 \\ 
+		8.2 & 0.2 & -6.2 \\ 
+		8.0 & 0.2 & -7.8 \\ 
+		7.5 & 0.2 & -9.9 \\ 
+		6.8 & 0.1 & -11.4 \\ 
+		5.2 & 0.1 & -13.2 \\ 
+		7.1 & 0.1 & -10.8 \\ 
+		7.4 & 0.1 & -9.9 \\  
 
 	\end{tabular}
-	\caption{ }
+	\caption{Campionamento del campo magnetico in funzione della distanza dall'asse delle bobine.Gli errori su $r$ sono tutti uguali e pari a $0.03$mm}
 	\label{t:tabella1}
 \end{table}
 
+Si è calcolato numericamente il campo magnetico generato da due bobine coassiali in un generico punto dello spazio. Dalla nota formula di Biot-Savart:\\
+\begin{equation}
+\vec{B}(\vec{r}) = \frac{\mu_0 N I_{coil}}{4\pi} \oint_{spira} \frac{\vec{dl}\land \vec{r}}{r^3} 
+\end{equation}
+si è prima calcolato il campo magnetico dovuto a una sola bobina e poi con il principio di sovrapposizione quello totale di entrambe le bobine. Il calcolo è stato fatto numericamente scrivendo un apposito codice in python che svolgesse l'integrale come somma finita di termini. Si è poi fatto un fit a due parametri del campo magnetico ,in funzione della distanza dall'asse, in modo da determinare la distanza tra le bobine e il raggio delle stesse. Questi due parametri sono fondamentali per lo scopo dell'esperienza, in quanto servono per determinare la correzione proiettiva sul raggio della traccia lasciata dagli elettroni all'interno del bulbo. Correzioni B/Bmax ??????  fit del campo magnetico????

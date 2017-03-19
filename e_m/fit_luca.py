@@ -8,7 +8,7 @@ import scipy
 import scipy.special
 import numpy.linalg
 from importare_dati import importa
-from calibrazione_iniziale import calibrazione
+from calibrazione_foto import calibrazione
 
 
 def e_m(calib,i):
@@ -52,7 +52,7 @@ def e_m(calib,i):
     dx=dxd/alfa   
     dy=dyd/alfa
     g=54.9/64.9 ##correzione proiettiva
-    g=1
+    
     x=x*g      
     y=y*g  
     

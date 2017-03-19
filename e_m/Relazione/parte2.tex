@@ -5,48 +5,62 @@ Svolte le operazioni indicate, che includono la messa a fuoco e la copertura del
 Per poter svolgere la calibrazione è invece necessario, in assenza di bulbo, fotografare la scala graduata (con il dispositivo di illuminazione acceso) e prendere le posizioni delle tacchette; per ciascuna di esse ci sarà quindi un valore in unità arbitrarie (in componenti x ed y, definiti come x e come y rispettivamente) ed un valore in centimetri visualizzabile sul righello, definito come z. Il fattore di calibrazione è $\alpha = \frac{\sqrt{x^2+y^2}}{z} = {\sqrt{1+a^2}}{b} = 158 \pm 23$ pixel/cm. $a = 73.4 \pm 0.1$ e $b = 0.47 \pm 0.07$ cm/pixel sono stati ottenuti da fit lineari ad un parametro svolti rispettivamente per x(y) e per z(y), considerando gli errori sulle ordinate e quelli sulle ascisse, opportunamente propagati. Abbiamo stimato errori di 3 pixel per le y e di 4 pixel per le x, quindi confrontabili tra loro, mentre l'errore sulle z è stato considerato nullo.
 \subsection{Misura dei raggi}
 Abbiamo scattato numerose foto del dispositivo con V$_{heat} = 6$ V, prendendo numerosi punti (nell'ordine del centinaio per ciascuna foto) lungo la traccia (ove visibile), approssimativamente a metà della stessa onde minimizzare la parte statistica dell'errore dovuto allo spessore. Per i set di coordinate relativi a ciascuna foto abbiamo allora svolto un fit circolare. Per tenere conto della geometria proiettiva abbiamo misurato la distanza tra righello ed obiettivo $d=64.9 \pm 0.1$ cm e quella tra obiettivo e centro del bulbo $l=54.9 \pm 0.1$ cm, con l'ausilio del metro, aggiungendo alle misure un fattore l/d a moltiplicare.\\
-Nel fit circolare, numerico, abbiamo considerato come errore una media degli errori sulle x e sulle y, espressi in centimetri e con la correzione dovuta alla geometria proiettiva; per un'immagine sono stati campionati i punti sia lungo il limite esterno che lungo il limite interno della traccia, prendendo poi x e y come una media su due valori e propagando gli errori di conseguenza. Il fit è a tre parametri; tra questi, il raggio. L'operazione di fit viene ripetuta per ciascuna delle 29 foto realizzate ottenendo così 29 diversi valori di raggio. Assieme alla tensione di accelerazione e alla corrente corrispondenti, per cui l'errore è sull'ultima cifra significativa, i risultati sono riportati in \tab{tabella2}. Noto B$_{zmax}[T] = 7.80*10^(-4)I_{coil}[A]$ ed $\frac{e}{m}= \frac{2V_{acc}}{{B_{z}r}^2}, abbiamo anche riportato il valore di e/m.\\
+Nel fit circolare, numerico, abbiamo considerato come errore una media degli errori sulle x e sulle y, espressi in centimetri e con la correzione dovuta alla geometria proiettiva; per un'immagine sono stati campionati i punti sia lungo il limite esterno che lungo il limite interno della traccia, prendendo poi x e y come una media su due valori e propagando gli errori di conseguenza. Il fit è a tre parametri; tra questi, il raggio. L'operazione di fit viene ripetuta per ciascuna delle 29 foto realizzate ottenendo così 29 diversi valori di raggio. Assieme alla tensione di accelerazione e alla corrente corrispondenti, per cui l'errore è sull'ultima cifra significativa, i risultati sono riportati in \tab{tabella2}. Noto B$_{zmax}[T] = 7.80*10^(-4)I_{coil}[A]$ ed $\frac{e}{m}= \frac{2V_{acc}}{{B_{z}r}^2}, abbiamo anche riportato il valore di e/m$.\\
 \begin{table}[h]
 	\centering
-	\begin{tabular}{*{4}{S[table-figures-exponent = 2]} }
-		{$V_{acc}$[V]} &{$I_{coil}$[A]} & {$r$[cm]} & {$dr$[cm]} & {$e/m$[V/C]} \\
+	\begin{tabular}{*{6}{S[table-figures-exponent = 2]} }
+		{$V_{acc}$[V]} & {$I_{coil}$[A]} & {$r$[cm]} & {$\Delta r$[cm]} & {$e/m$[V/C]} & {$\Delta e/m$[V/C]} \\
 		\midrule
-                     293.1 & 1.24
-                     279.9 & 1.24
-                     279.9 & 1.34
-                     279.9 & 1.55
-                     279.9 & 1.87
-	          237 & 1.43
-	          237 & 1.29
-	          237 & 1.58
-	          252.3 & 1.23
-	          252.3 & 1.44
-	          265.2 & 1.23
-	          265.2 & 1.40
-	          265.2 & 1.53
-	          265.2 & 1.70
-	          271.2 & 1.70
-	          271.2 & 1.54
-	          271.2 & 1.39
-	          271.2 & 1.23
-	          292.9 & 1.31
-	          292.9 & 1.44
-	          292.9 & 1.56
-	          292.9 & 1.69
-	          226 & 1.18
-	          246 & 1.24
-	          246 & 1.18
-	          246.1 & 1.18
-	          206.9 & 1.17
-	          206.9 & 1.07
-	          279.9 & 1.55
-
-	\end{tabular}
+		293.1 & 1.24 & 6.3 & 0.9 & 1.6 & 0.5\\ 
+		279.9 & 1.24 & 6.0 & 0.9 & 1.7 & 0.5\\ 
+		279.9 & 1.34 & 5.6 & 0.8 & 1.6 & 0.5\\ 
+		279.9 & 1.55 & 4.9 & 0.7 & 1.6 & 0.5\\ 
+		279.9 & 1.87 & 3.9 & 0.6 & 1.7 & 0.5\\ 
+		237.0 & 1.87 & 2.8 & 0.4 & 2.9 & 0.8\\ 
+		237.0 & 1.43 & 4.7 & 0.7 & 1.7 & 0.5\\ 
+		237.0 & 1.29 & 5.2 & 0.8 & 1.7 & 0.5\\ 
+		237.0 & 1.58 & 4.0 & 0.6 & 2.0 & 0.6\\ 
+		252.3 & 1.23 & 5.7 & 0.8 & 1.7 & 0.5\\ 
+		252.3 & 1.44 & 5.0 & 0.7 & 1.6 & 0.5\\ 
+		252.3 & 1.61 & 4.3 & 0.6 & 1.7 & 0.5\\ 
+		252.3 & 1.76 & 3.7 & 0.5 & 2.0 & 0.6\\ 
+		265.2 & 1.23 & 5.8 & 0.9 & 1.7 & 0.5\\ 
+		265.2 & 1.40 & 5.2 & 0.8 & 1.7 & 0.5\\ 
+		265.2 & 1.53 & 4.8 & 0.7 & 1.6 & 0.5\\ 
+		265.2 & 1.70 & 4.2 & 0.6 & 1.7 & 0.5\\ 
+		271.2 & 1.70 & 4.3 & 0.6 & 1.7 & 0.5\\ 
+		271.2 & 1.54 & 4.8 & 0.7 & 1.6 & 0.5\\ 
+		271.2 & 1.39 & 5.3 & 0.8 & 1.6 & 0.5\\ 
+		271.2 & 1.23 & 6.1 & 0.9 & 1.6 & 0.5\\ 
+		292.9 & 1.31 & 5.9 & 0.9 & 1.6 & 0.5\\ 
+		292.9 & 1.44 & 5.4 & 0.8 & 1.6 & 0.5\\ 
+		292.9 & 1.56 & 5.1 & 0.7 & 1.6 & 0.5\\ 
+		292.9 & 1.69 & 4.7 & 0.7 & 1.5 & 0.5\\ 
+		226.0 & 1.18 & 5.2 & 0.8 & 2.0 & 0.6\\ 
+		226.0 & 1.30 & 5.0 & 0.7 & 1.8 & 0.5\\ 
+		226.0 & 1.40 & 4.5 & 0.7 & 1.9 & 0.6\\ 
+		226.0 & 1.61 & 4.5 & 0.7 & 1.4 & 0.4\\ 
+		246.0 & 1.56 & 4.3 & 0.6 & 1.8 & 0.5\\ 
+		246.0 & 1.24 & 5.5 & 0.8 & 1.7 & 0.5\\ 
+		246.0 & 1.18 & 5.8 & 0.8 & 1.7 & 0.5\\ 
+		246.1 & 1.18 & 5.3 & 0.8 & 2.0 & 0.6\\ 
+		246.1 & 1.18 & 5.6 & 0.8 & 1.8 & 0.5\\ 
+		246.1 & 1.18 & 5.7 & 0.8 & 1.8 & 0.5\\ 
+		246.1 & 1.18 & 5.8 & 0.9 & 1.7 & 0.5\\ 
+		246.1 & 1.18 & 2.3 & 0.3 & 10.8 & 3.2\\ 
+		207.0 & 1.30 & 4.3 & 0.6 & 2.2 & 0.6\\ 
+		206.9 & 1.17 & 5.0 & 0.7 & 2.0 & 0.6\\ 
+		206.9 & 1.07 & 5.3 & 0.8 & 2.1 & 0.6\\ 
+		265.2 & 1.47 & 4.8 & 0.7 & 1.7 & 0.5\\ 
+		265.2 & 1.47 & 5.2 & 0.8 & 1.5 & 0.4\\ 
+		279.9 & 1.55 & 4.9 & 0.7 & 1.6 & 0.5\\ 
+  
+ 	\end{tabular}
 	\caption{ }
 	\label{t:tabella2}
 \end{table}
-Dai risultati abbiamo potuto ricavare una media pesata dei valori di e/m, pari a $\frac{e}{m}_{media} = 2.1 \pm 0.2$ V/C. Essa risulta in accordo entro 2 sigma con il valore atteso $\frac{e}{m}{att} = 1.7589 \pm 0.0002$ V/C. Come errore abbiamo anche considerato la variazione di e/m dovuta alla manipolazione della manovella FOCUS, che dà luogo ad un incertezza aggiuntiva, data dalla semidispersione, di $\Delta \frac{e}{m} = 0.1$ V/C, sommata in quadratura all'incertezza ottenuta dalla media pesata.\\
-Abbiamo realizzato anche un grafico di e/m in funzione di V$_{acc}$, riportato in \fig{figura_8}, mentre in \fig{figura_9} è rappresentato un istogramma diviso in barre spesse 0.1 V/C, con il numero di occorrenze di e/m per ogni barra sulle ordinate. Abbiamo infine riportato in \fig{figura_10} un grafico di ${B_z r}^2$(V$_{acc}$).
+Dai risultati abbiamo potuto ricavare una media pesata dei valori di e/m, pari a $\frac{e}{m}_{media} = 2.1 \pm 0.2 \frac{C}{Kg}$ . Essa risulta in accordo entro 2 sigma con il valore atteso $\frac{e}{m} = 1.7589 10^11 \pm 0.0002 \frac{C}{Kg}$ . Come errore abbiamo anche considerato la variazione di e/m dovuta alla manipolazione della manovella FOCUS, che dà luogo ad un incertezza aggiuntiva, data dalla semidispersione, di $\Delta \frac{e}{m} = 0.1 \frac{C}{Kg}$, sommata in quadratura all'incertezza ottenuta dalla media pesata.\\
+Abbiamo realizzato anche un grafico di e/m in funzione di V$_{acc}$, riportato in \fig{figura_8}, mentre in \fig{figura_9} è rappresentato un istogramma diviso in barre spesse 0.1 , con il numero di occorrenze di e/m per ogni barra sulle ordinate. Abbiamo infine riportato in \fig{figura_10} un grafico di ${B_z r}^2$in funzione di V$_{acc}$.
 
 \section{Conclusioni}
 Esiste la possibilità di una sottostima di $r$ che abbia portato ad una generale sovrastima di e/m.

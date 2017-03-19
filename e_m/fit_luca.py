@@ -214,7 +214,7 @@ def e_m(calib,i):
     pylab.show()
     
     ##calcolo e/m [valore atteso : 1.7588*10^(11) C/Kg]
-    # g=1/g
+    g=1/g
     R=g*r/alfa
     dR=pylab.sqrt((dg*r/alfa)**2 + (dr*g/alfa)**2+ (dalfa*R/alfa)**2)
     
@@ -229,5 +229,17 @@ def e_m(calib,i):
     # print('e_m=%f +- %f'%(e_m,de_m))
     
     # print(R,dR)
+    u=(10**5)*(R*B)**2
+    du=(10**5)*pylab.sqrt( (2*R*dR*(B**2))**2 + (2*B*dB*(R**2))**2)
+    pylab.figure(159)
+    pylab.plot(Vacc,u,'o')
+    pylab.errorbar(Vacc,u,yerr=du,xerr=dVacc,linestyle='')
+    pylab.xlabel('Vacc [V]')
+    pylab.ylabel('$(RB)^2$ [$10^{-5}$ cm T]')
     
+    
+    out_file=open("file_tex.txt","a")
+    out_file.write("%0.1f & %0.2f & %0.1f & %0.1f & %0.1f & %0.1f\\\ \n "%(Vacc, Icoil, R, dR, e_m,de_m) )
+    out_file.close()
+   
     return e_m,de_m

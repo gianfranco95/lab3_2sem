@@ -49,16 +49,15 @@ def e_m(calib,i):
     
     x=xd/alfa     #così x,y e sigma sono in centimetri
     y=yd/alfa  
-    dx=dxd/alfa   
-    dy=dyd/alfa
+    dx=pylab.sqrt( (dxd/alfa)**2 + (dalfa*x/alfa)**2)   
+    dy=pylab.sqrt( (dyd/alfa)**2 + (dalfa*y/alfa)**2) 
     g=54.9/64.9 ##correzione proiettiva
     dg=g*1/100
     x=x*g      
     y=y*g  
     dx=pylab.sqrt( (x*dg)**2 + (dx*g)**2 )      
     dy=pylab.sqrt( (y*dg)**2 + (dy*g)**2 )    
-    
-    
+ 
     pylab.figure(i)
     
     pylab.plot(x0*g/alfa,y0*g/alfa,'o')
@@ -197,14 +196,14 @@ def e_m(calib,i):
         
         return Q[0],dA,Q[1],dB,covAB/(dA*dB),R,dR
         
-    pop=fit(x,y,sigma)
+    pop=fit(x0,y0,sigma)
     A=pop[0]
     dA=pop[1]
     B=pop[2]
     dB=pop[3]
     cov_AB=pop[4]
-    R=pop[5]
-    dR=pop[6]
+    r=pop[5]
+    dr=pop[6]
     aa=pylab.linspace(min(x),max(x),3000)
     # bb=pylab.linspace(-10,10,1000)
     
@@ -214,6 +213,11 @@ def e_m(calib,i):
     pylab.show()
     
     ##calcolo e/m [valore atteso : 1.7588*10^(11) C/Kg]
+    R=r/alfa
+    dR=pylab.sqrt((dr/alfa)**2+ (dalfa*R/alfa)**2)
+    
+    
+    
     B=7.8*10**(-4)*Icoil
     dB= dIcoil*B/Icoil
     e_m = 2*Vacc /( 10**(-4)* (R**2) * (B)**2 )*10**(-11)
@@ -222,6 +226,6 @@ def e_m(calib,i):
     
     # print('e_m=%f +- %f'%(e_m,de_m))
     
-    
+    # print(R,dR)
     
     return e_m,de_m

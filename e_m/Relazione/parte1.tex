@@ -1,17 +1,14 @@
 \section{Scopo e strumentazione}
 
-L'esperienza ha l'obiettivo di eseguire una misura ragionevole del rapporto tra carica e massa dell'elettrone. Viene impiegato un apparato costituito da due bobine coassiali costituite da 130 spire, nelle quali può scorrere una corrente I$_{coil}$ che genera un campo magnetico. Una sonda ad effetto Hall permette di eseguire una mappatura del campo magnetico in funzione della distanza dal piano parallelo alle bobine e passante dal punto medio tra le stesse, lungo l'asse passante dai centri. Essa è inoltre collegata ad un circuito amplificatore che applica alla tensione di uscita V$_H$ un fattore $A = 11.1 \pm 0.1$. Un multimetro digitale permette di misurare il valore della tensione di uscita V$_{out}$. Un righello con risoluzione 1 mm é utilizzato onde effettuare le misure di posizione. Una bussola permette inoltre di rilevare l'orientazione del campo magnetico terrestre e di comportarsi di conseguenza.\\ Nella seconda parte dell'esperienza è utilizzato un bulbo di vetro che funge da tubo catodico, contenente neon rarefatto, che a contatto con gli elettroni sparati da un cannone regolato da una tensione V$_{heat }$ emette radiazione nel visibile. Una macchina fotografica digitale, munita di cavalletto, permette di fotografare la traccia lasciata dal pennello elettronico; con un programma di digitalizzazione è possibile poi ricavare, in un dato sistema di riferimento, le coordinate di punti scelti della rappresentazione fotografica della traccia. Per effettuare la calibrazione si utilizza un righello graduato collocato dietro al bulbo e dotato di un dispositivo di illuminazione. Un alimentatore fornisce V$_{heat}$ e V$_{acc}$, quest'ultima necessaria per accelerare gli elettroni. Il dispositivo è raffigurato in \fig.\\
-\section{Misura della lunghezza d'onda di un laser He-Ne}
+L'esperienza ha l'obiettivo di eseguire una misura ragionevole del rapporto tra carica e massa dell'elettrone. Viene impiegato un apparato costituito da due bobine coassiali costituite da 130 spire, nelle quali può scorrere una corrente I$_{coil}$ che genera un campo magnetico. Una sonda ad effetto Hall permette di eseguire una mappatura del campo magnetico in funzione della distanza dal piano parallelo alle bobine e passante dal punto medio tra le stesse, lungo l'asse passante dai centri. Essa è inoltre collegata ad un circuito amplificatore che applica alla tensione di uscita V$_H$ un fattore $A = 11.090 \pm 0.03$, rilevato sul datasheet. Un multimetro digitale permette di misurare il valore della tensione di uscita V$_{out}$. Un righello con risoluzione 1 mm é utilizzato onde effettuare le misure di posizione. Una bussola permette inoltre di rilevare l'orientazione del campo magnetico terrestre e di comportarsi di conseguenza.\\ Nella seconda parte dell'esperienza è utilizzato un bulbo di vetro che funge da tubo catodico, contenente neon rarefatto, che a contatto con gli elettroni sparati da un cannone regolato da una tensione V$_{heat }$ emette radiazione nel visibile. Una macchina fotografica digitale, munita di cavalletto, permette di fotografare la traccia lasciata dal pennello elettronico; con un programma di digitalizzazione è possibile poi ricavare, in un dato sistema di riferimento, le coordinate di punti scelti della rappresentazione fotografica della traccia. Per effettuare la calibrazione si utilizza un righello graduato collocato dietro al bulbo e dotato di un dispositivo di illuminazione. Un alimentatore fornisce V$_{heat}$ e V$_{acc}$, quest'ultima necessaria per accelerare gli elettroni. Il dispositivo è raffigurato in \fig{figura1}
+\section{Mappatura del campo magnetico}
 
-Abbiamo dapprima collocato le bobine in modo da minimizzare l'effetto del campo magnetico terrestre, il cui orientamento ci è stato rivelato dalla bussola: infatti il campo da noi considerato, generato dalla corrente nelle bobine, è diretto lungo l'asse delle stesse, mentre abbiamo posto il campo terrestre in direzione ortogonale. Quindi abbiamo calibrato la sonda ad effetto Hall in modo da avere V$_{out}=0$ per B$=0$;
-
-\subsection{Analisi dati}
-
-Utilizzando il metro si è potuto misurare la distanza tra il punto medio, utilizzato come riferimento, e ciascuno dei livelli precedentemente individuati. In \tab{tabella1} sono riportati i dati, compreso un errore, e l'ordine di diffrazione m. L'errore è ottenuto dalla somma in quadratura dell'incertezza dovuta alla sensibilità della riga ed un errore di 5 mm corrispondente al raggio del cerchio (incertezza sulla posizione di riferimento), mentre l'errore dovuto allo spessore delle tacche è stato trascurato.
+Abbiamo dapprima collocato le bobine in modo da minimizzare l'effetto del campo magnetico terrestre, il cui orientamento ci è stato rivelato dalla bussola: infatti il campo da noi considerato, generato dalla corrente nelle bobine, è diretto lungo l'asse delle stesse, mentre abbiamo posto il campo terrestre in direzione ortogonale. Quindi abbiamo calibrato la sonda ad effetto Hall in modo da avere V$_{out}=0$ per B$=0$; concretamente abbiamo posto la bacchetta in direzione ortogonale al campo terrestre ed abbiamo svolto una rotazione di 180 gradi (portando la faccia superiore in posizione inferiore e viceversa). Regolando il potenziometro del circuito di amplificazione, cui la bacchetta contenente la sonda ad effetto hall è collegata, è stata raggiunta una condizione per cui si avevano due letture opposte di V$_{out}$.
+Quindi abbiamo immerso la bacchetta nel campo generato dalle bobine, ponendola lungo l'asse delle stesse, dove due dispositivi a raggiera con un'apertura centrale collegati a ciascuna bobina la mantenevano in equilibrio, ed abbiamo misurato la posizione dell'estremo della bacchetta a partire da una delle due aperture. In \tab{tabella1} sono riportati i dati, compreso il campo magnetico corrispondente a ciascuna misura di posizione; queste ultime vanno sottratte a metà della distanza tra le bobine, trovata come differenza tra misura di posizione con la sonda ad un'apertura e misura con la sonda all'altra apertura. Viene inoltre riportato il valore del campo magnetico diretto lungo l'asse delle bobine per ciascuna misura di posizione, dato da B$_z = \frac{V_{out}}{AQ}$, dove Q$=0.0050 \pm 0.0001$ V/G è un fattore di calibrazione indicato sul datasheet.
 \begin{table}[h]
 	\centering
 	\begin{tabular}{*{4}{S[table-figures-exponent = 2]} }
-		{$h$[cm]} &{$\Delta h$[cm]} & {m} \\
+		{$B$[G]} &{$\Delta B$[G]} & {$r$[cm]} \\
 		\midrule
 		6.4 & 0.5 &  0 \\ 
 		9.7 & 0.5 &  1 \\ 
@@ -36,22 +33,7 @@ Utilizzando il metro si è potuto misurare la distanza tra il punto medio, utili
 		33.5 & 0.5 & 20 \\ 
 
 	\end{tabular}
-	\caption{$h$ e $\Delta h $ sono rispettivamente misura ed errore dell'altezza dei vari ordini di diffrazione numerati con $m$. }
+	\caption{ }
 	\label{t:tabella1}
 \end{table}
-
-Essendo l'angolo di diffrazione il complementare dell'angolo di cui è nota la tangente tan$\theta$ = h/D, si ha la relazione, essendo $\theta_i$ l'angolo di incidenza rispetto alla normale, d il passo reticolare e $\lambda$ la lunghezza d'onda:
-\begin{equation}
-cos\theta = sen\theta_i - m \frac{\lambda}{d}
-\label{legge_diffrazione}
-\end{equation}
-Noto quindi $cos\theta = \frac {1}{\sqrt{1+tan\theta ^2}}$, abbiamo svolto un fit lineare del coseno in funzione dell'ordine di diffrazione, mantenendo come parametri $a = -\frac{\lambda}{d}$ e $b = sen\theta_i$ e considerando come errore solo l'errore sul coseno, ottenuto dalla propagazione degli errori su h e su D. I risultati ottenuti sono i seguenti:
-\begin{itemize}
-\item $a = -0.000626 \pm 0.000008$
-\item $b = 0.99952 \pm 0.00006$, quindi angolo di incidenza, come atteso, molto vicino a $\pi$/2
-\item $cov = -0.62$ come valore di covarianza normalizzata
-\item $\chi^2 = 0.07$ con 19 gradi di libertà.
-\end{itemize}
-Il valore del $\chi^2$ fa pensare ad una possibile sovrastima dell'errore; del resto in esso sono state inserite parti sistematiche, in particolare quelle dovute alla dimensione del segnale non riflesso nè rifratto. Noto d, si è ottenuta una lunghezza d'onda $\lambda = 626 \pm 8$ nm, pienamente compatibile con il valore atteso di 632.8 nm. Riportiamo infine in \fig{figura_2} il grafico di $cos\theta (m)$, dove è mostrato anche l'andamento dei residui.
-
 

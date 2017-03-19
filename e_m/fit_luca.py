@@ -52,9 +52,11 @@ def e_m(calib,i):
     dx=dxd/alfa   
     dy=dyd/alfa
     g=54.9/64.9 ##correzione proiettiva
-    
+    dg=g*1/100
     x=x*g      
     y=y*g  
+    dx=pylab.sqrt( (x*dg)**2 + (dx*g)**2 )      
+    dy=pylab.sqrt( (y*dg)**2 + (dy*g)**2 )    
     
     
     pylab.figure(i)

@@ -34,6 +34,10 @@ def calibrazione(datafile):
     a_fit=popt
     da_fit=py.sqrt(pcov.diagonal())
     
+    popt, pcov=curve_fit(f1,y,x,py.array([400.]),sigma=py.sqrt(dx**2+(a_fit*dy)**2),absolute_sigma=True)
+    a_fit=popt
+    da_fit=py.sqrt(pcov.diagonal())
+    
     popt, pcov=curve_fit(f1,y,z,py.array([400.]),sigma=dy,absolute_sigma=True)
     b_fit=popt
     db_fit=py.sqrt(pcov.diagonal())

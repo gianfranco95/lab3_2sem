@@ -13,6 +13,7 @@ from fit_luca import e_m
 data='fotobis.txt'
 #dati da escludere
 escludere=pylab.array([5,36,11,40,37,29,28,27,26,12])
+# escludere=pylab.array([])
 
 foto=pylab.loadtxt(os.path.join(folder,'Dati',data)).T
 
@@ -26,37 +27,17 @@ arr_em=pylab.zeros(len(foto[0])-len(escludere))
 arr_dem=pylab.zeros(len(foto[0])-len(escludere))
 
 V_out=pylab.zeros(len(foto[0])-len(escludere))
-W=pylab.zeros(len(foto[0])-len(escludere))
-s=0
-i=0
-while(s<len(foto[0])):
-    if(numpy.all(s!= escludere)):
-        V_out[i]=foto[1][s]
-        W[i]=V_out[i]
-        i=i+1
-    s=s+1
-    
-W.sort()
 
-ordine=pylab.zeros(len(foto[0])-len(escludere))
-i=0
-while(i<len(W)):
-    j=int(0)
-    while(j<len(W)):
-        if(W[i]==V_out[j]):
-            ordine[i]= int(j)
-        j=j+1
-    i=i+1
 ##
 p=0
 for t in range(0,len(foto[0])):
     if(esclusione[t]!=1):
-        Val,dVal=e_m('calibrazione26_luca.txt',int(ordine[p]))
+        Val,dVal=e_m('calibrazione26_luca.txt',t)
         arr_em[p]=Val
         arr_dem[p]=dVal
         pylab.figure(99)
-        pylab.plot(W[p],Val,'o',linestyle='')
-        pylab.errorbar(W[p],Val,dVal,linestyle='')
+        pylab.plot(foto[1][t],Val,'o',linestyle='')
+        pylab.errorbar(foto[1][t],Val,dVal,linestyle='')
         pylab.show()
         print('e_m=%f +- %f'%(Val,dVal))
         p=p+1

@@ -36,6 +36,8 @@ for t in range(0,len(foto[0])):
         arr_em[p]=Val
         arr_dem[p]=dVal
         pylab.figure(99)
+        pylab.ylabel('e/m [10^{11} C/Kg]')
+        pylab.xlabel('V_{acc} [V]')
         pylab.plot(foto[1][t],Val,'o',linestyle='')
         pylab.errorbar(foto[1][t],Val,dVal,linestyle='')
         pylab.show()
@@ -51,5 +53,7 @@ print(arr_dem)
 print('e_m=%f+-%f'%(em,dem))
 bins=numpy.linspace(min(arr_em),max(arr_em),20)
 pylab.figure(100)
+pylab.xlabel('e/m [10^{11} C/Kg]')
+pylab.ylabel('occorrenze')
 pylab.hist(arr_em,bins)
 pylab.show()

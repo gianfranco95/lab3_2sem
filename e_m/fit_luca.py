@@ -240,7 +240,7 @@ def e_m(calib,i):
     pylab.plot(Vacc,u,'o')
     pylab.errorbar(Vacc,u,yerr=du,xerr=dVacc,linestyle='')
     pylab.xlabel('Vacc [V]')
-    pylab.ylabel('$(RB)^2$ [$10^{-5}$ cm T]')
+    pylab.ylabel('$(RB)^2$ [$10^{-5}$ cm^{2} T^{2}]')
     
     
     out_file=open("file_tex.txt","a")

@@ -70,13 +70,14 @@ def mappatura(datafile,i):
     pylab.title('Mappatura campo magnetico')
     pylab.ylabel('Bz [T]')
     pylab.subplot(211)
-    pylab.errorbar(rm,BT,dBT,drm,marker='o',color='black',linestyle='')
+    pylab.errorbar(r,B,dB,dr,marker='o',color='black',linestyle='')
     x=pylab.linspace(min(rm)*3/2,max(rm)*3/2,1000)
-    pylab.plot(x,f(x,r0,A0,d0),'')
+    pylab.plot(100*x,(10**4)*f(x,r0,A0,d0),'')
     pylab.subplot(212)
-    pylab.xlabel('r[m]')
+    pylab.xlabel('r[cm]')
+    pylab.ylabel('B[G]')
     pylab.ylabel('Scarto normalizzato')
-    pylab.errorbar(rm,(BT-f(rm,r0,A0,d0))/dBT, marker = 'o',color = 'black',linestyle='')
+    pylab.errorbar(r,(B-(10**4)*f(rm,r0,A0,d0))/dB, marker = 'o',color = 'black',linestyle='')
     pylab.show()
     
     
@@ -122,5 +123,6 @@ dd=1/math.sqrt(sum(1/(dD**2)))
 
 print('distanza = %f +- %f'%(d,dd))
 print('raggio = %f +- %f'%(r,dr))
+print('chiq medio= %f'%(sum(chi)/len(chi)))
 
 

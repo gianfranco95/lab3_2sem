@@ -1,0 +1,14 @@
+\section{Scopo e strumenti}
+Lo scopo di questa esperienza è di osservare il funionamento della porta logica not per diversi segnali in ingresso e studiare anche il suo comportamento in regime non ideale.\\
+Gli strumenti a disposizione includono:
+\begin{itemize}
+\item{Integrato IC SN74LS04}
+\item{IC SN74LS244 octal buffer/driver}
+\item{arduino nano}
+\item{trimmer da 2K$\Omega$, 10K$\Omega$, 100K$\Omega$}
+\end{itemize}
+Nella prima parte è stato analizzata la porta logica in condizioni statiche, nella seconda invece in condizioni dinamiche.\\
+
+\section{Caratteristiche statiche}
+E' stato montato il circuito in \fig{circuito1}, composto dal trimmer da 2$k\Omega$ ed una delle porte not contenute nell'integrato SN74LS04.\\
+ Agendo sul trimmer "R1" è stato possibile far variare il potenziale in ingresso alla porta Not e ne è stata osservata l'uscita. Il potenziale di alimentazione era $V_{cc}$=4.29 $\pm$ 0.03 V, mentre il potenziale in ingresso alla porta  variava tra $V_{IN,min}=$?? e $V_{IN,max}$=???. Al variare del potenziale in ingresso è stato realizzato un grafico di $V_{OUT}$ in funzione di $V_{IN}$: \fig{out_in}. Dal grafico si può dare una stima dei potenziali in ingresso che corrispondono al massimo valore per cui il segnale è interpretato logicamente come "0" ($V_{IL}$) e il minimo per cui è interpretato come "1" $V_{IH}$. Si è considerato come $V_{IL}$ il potenziale massimo per cui l'uscita si attesta sul suo valore massimo, prima di iniziare a calare linarmente in funzione dell'ingresso. Invece come $V_{IL}$ il valore di potenziale per cui la decrescita dell'uscita si arresta, ovvero il minimo valore per cui l'uscita è a potenziale basso.\\

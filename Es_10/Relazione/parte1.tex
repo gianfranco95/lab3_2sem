@@ -10,25 +10,36 @@ Gli strumenti a disposizione includono:
 Nella prima parte è stato analizzata la porta logica in condizioni statiche, nella seconda invece in condizioni dinamiche.\\
 
 \section{Caratteristiche statiche}
-E' stato montato il circuito in \fig{circuito1}, composto dalla resistenza $R_{2}=100 7pm 1 /Omega$; trimmer da 1.98$\pm 0.02 k\Omega$ ed una delle porte not contenute nell'integrato SN74LS04.\\
- Agendo sul trimmer "R1" è stato possibile far variare il potenziale in ingresso alla porta Not e ne è stata osservata l'uscita. Il potenziale di alimentazione era $V_{cc}$=4.29 $\pm$ 0.03 V, mentre il potenziale in ingresso alla porta  variava tra $V_{IN,min}=0.0 \pm 0.1$ mV e $V_{IN,max}=4.30 \pm 0.03$ V. Al variare del potenziale in ingresso è stato realizzato un grafico di $V_{OUT}$ in funzione di $V_{IN}$: \fig{out_in}. Dal grafico si può dare una stima dei potenziali in ingresso che corrispondono al massimo valore per cui il segnale è interpretato logicamente come "0" ($V_{IL}$) e il minimo per cui è interpretato come "1" ($V_{IH}$). Si è considerato come $V_{IL}$ il potenziale massimo per cui l'uscita si attesta sul suo valore massimo, prima di iniziare a calare in funzione dell'ingresso. Invece come $V_{IH}$ il valore di potenziale per cui la decrescita dell'uscita si arresta, ovvero il minimo valore per cui l'uscita è a potenziale basso. I valori stimati sono, come è possibile dedurre dal frafico \fig{out_in}  $V_{IL}=??$ e $V_{IH}$=??. 
- E' stato possibile stimare queste due grandezze anche dall'osservazione delle tensioni tramite l'oscilloscopio, variando gradualmente il rapporto di partizione del trimmer. Nelle zone di transizione il potenziale in ingresso  non viene riconosciuto come segnale logico e il segnale in uscita si stabilizza su un valore intermedio compreso tra i valori alto e basso. I valori di  $V_{IL}$ e $V_{IH}$ stimati sono in accordo con le informazioni riportate sul datasheet (\ref(t:statica))  \\
+E' stato montato il circuito in \fig{circuito1}, composto dalla resistenza $R_{2}=100 \pm 1 /Omega$; trimmer da 1.98$\pm 0.02 k\Omega$ ed una delle porte not contenute nell'integrato SN74LS04.\\
+ Agendo sul trimmer "R1" è stato possibile far variare il potenziale in ingresso alla porta Not e ne è stata osservata l'uscita. Il potenziale di alimentazione era $V_{cc}$=4.29 $\pm$ 0.03 V, mentre il potenziale in ingresso alla porta  variava tra $V_{IN,min}=0.0 \pm 0.1$ mV e $V_{IN,max}=4.30 \pm 0.03$ V. Al variare del potenziale in ingresso è stato realizzato un grafico di $V_{OUT}$ in funzione di $V_{IN}$: \fig{out_in}. Dal grafico si può dare una stima dei potenziali in ingresso che corrispondono al massimo valore per cui il segnale è interpretato logicamente come "0" ($V_{IL}$) e il minimo per cui è interpretato come "1" ($V_{IH}$). Si è considerato come $V_{IL}$ il potenziale massimo per cui l'uscita si attesta sul suo valore massimo, prima di iniziare a calare in funzione dell'ingresso. Invece come $V_{IH}$ il valore di potenziale per cui la decrescita dell'uscita si arresta, ovvero il minimo valore per cui l'uscita è a potenziale basso. I valori stimati sono, come è possibile dedurre dal grafico \fig{out_in}  $V_{IL}=??$ e $V_{IH}$=??. 
+ E' stato possibile stimare queste due grandezze anche dall'osservazione delle tensioni tramite l'oscilloscopio, variando gradualmente il rapporto di partizione del trimmer. Nelle zone di transizione il potenziale in ingresso  non viene riconosciuto come segnale logico e il segnale in uscita si stabilizza su un valore intermedio compreso tra i valori alto e basso. I valori di  $V_{IL}$ e $V_{IH}$ stimati sono rispettivamente maggiori e minori di quelli riportati sul datasheet (\ref(t:statica)); probabilmente il nostro integrato ha una funzionalità migliore di quello di riferimento. \\
+Come misure di potenziale di uscita $V_{OH}$ e $V_{OL}$ abbiamo considerato rispettivamente il valore massimo ed il valore minimo del segnale in uscita, che si presentava circa costante lontano dalla zona di transizione. Essi sono rispettivamente maggiore e minore del valore tipico indicato sul datasheet.\\
+Le correnti di ingresso $I_{IH}$ e $I_{IL}$ sono le correnti corrispondenti alle tensioni $V_{IH}$ e $V_{IL}$; abbiamo in realtà realizzato, agendo ancora sul trimmer, un grafico della corrente in funzione del potenziale di ingresso, riportato in \fig{lout_in}, dove i potenziali sono misurati all'oscilloscopio con errori dati da calibrazione e risoluzione dei cursori. L'andamento è compreso tra un valore di corrente massima di $I_{max}\approx 0.26$ mA e un valore minimo leggermente negativo. %verso corrente, fanout
+Per misurare $i_{OL}$ ed $I_{OH}$ abbiamo montato il circuito mostrato in \fig{circuito2}, dove $R_2$ è quella già utilizzata ed il trimmer ha resistenza massima $R = 102.2 \pm 0.8$ k$\Omega$ ed operato come segue:
+\begin{itemize}
+\item per misurare $I_{OL}$ abbiamo collegato a $V_{cc}$ tanto il potenziale di ingresso quanto il potenziale misurato al punto A. 
+Se la resistenza tra uscita ed A è massima l'uscita si mantiene bassa. Diminuendo questa resistenza la corrente che fluisce attraverso la porta tende ad aumentare; in prossimità del valore massimo $I_{OL}$ per evitare l'eccessivo passaggio di corrente l'uscita $V_{OUT}$ aumenta.\\
+ Abbiamo agito sul trimmer fino a che l'uscita, visualizzata all'oscilloscopio, non cambiava stato passando al livello alto; essendovi una notevole ambiguità sulla posizione limite del trimmer per cui l'uscita si manteneva bassa, abbiamo proceduto in due modi: dapprima misurando la corrente di uscita per la posizione oltre la quale $V_{out}$ saltava quasi istantaneamente al livello superiore, quindi misurando $I_{OL}$ in corrispondenza di $V_OUT$=$V_{OL}$. Nel primo caso abbiamo ottenuto $I_{OL} = 824 \pm 12$ $\mu$A per una tensione $V_{OUT}=150 \pm 6$ mV, mentre per il secondo i risultati sono riportati in tabella.
+\item per misurare $I_{OH}$ abbiamo invece collegato i potenziali in ingresso e in A a terra. In tal caso se la resistenza è massima ho un potenziale alto in uscita ed analogamente alla situazione precedente, diminuendo la resistenza  V_{out} tende a diminuire a causa dell'eccessiva richiesta di corrente. \\
+Variando il trimmer, abbiamo ricercato, come in precedenza la corrente $I_{OH}$ è stata valutata in due modi: il primo osservando la posizione del trimmer per cui il potenziale in uscita restava alto subito prima di calare entrando così in regime non definito, ottenendo così $5.5\pm 2 \mu A$. L'errore enorme è dovuto al fatto che il passaggio al regime non ideale era non ben evidente.
+\end{itemize}
+In \tab{tabella} sono riportate le grandezze misurate.
 \begin{table}[h]
 	\centering
 	\begin{tabular}{*{4}{S[table-figures-exponent = 2]} }
-		{} & {Valore misurato} & {Incertezza} & {absolute maximum ratings} \\
+		{} & {Valore misurato} & {Incertezza} & {condizioni di lavoro raccomandate (dal datasheet)} \\
 		\midrule
-    $V_{IH}$ & 1.5 V & 0.1 V\\
-    $V_{IL}$ & 1.0 V & 0.1 V\\
-    $V_{OH}$ & 4.1 V & 0.1 V\\
-    $V_{OL}$ & 114 mV & 4 mV\\
-    $I_{IH}$ & 158 $\mu$A &  2$\mu$\\
-    $I_{IL}$ & 195 $\mu$A& 3 $\mu$A
-    $I_{OH}$ & 37 $\mu$A& 1 $\mu$A&
-    $I_{OL}$ & 
+    $V_{IH}$ & 1.5V & 0.1 V & 2 V (min)\\
+    $V_{IL}$ & 1.0 V & 0.1 V & 0.8 V (max) \\
+    $V_{OH}$ & 4.1 V & 0.1 V & 2.4(3.4) V (min-typ)\\
+    $V_{OL}$ & 114 mV & 4 mV & 200(400) mV (typ-max)\\
+    $I_{IH}$ & 158 \muA &  2 $\mu$A & 40 \mu$A (max)\\
+    $I_{IL}$ & 195 \muA& 3 \muA & 1600 \muA (max)\\
+    $I_{OH}$ & 37 \muA& 1 \muA & 400 \muA (max)\\
+    $I_{OL}$ & 147 \muA& 4 \muA & 16 mA (max)\\
 	
   
  	\end{tabular}
-	\caption{ Le misure di potenziale sono state effettuate tramite oscilloscopio. Quelle di corrente di ingresso tramite amperometro digitale (multimetro) posto tra il trimmer e l'ingresso della porta. Le correnti di uscita invece indirettamente misurando la tensione ai capi della resistenza $R_{2}$. Gli errori per i potenziali in ingresso sono sensibilmente maggiori delle risoluzione degli strumenti utilizzati, in quanto non era definita nettamente la transizione tra due regimi di lavoro. In uscita invece sono dovuti alla risoluzione degli strumenti come somma in quadratura di errore di calibrazione e e incertezza di lettura}
-	\label{t:tabella2}
+	\caption{ Le misure di potenziale sono state effettuate tramite oscilloscopio. Quelle di corrente di ingresso tramite amperometro digitale (multimetro) posto tra il trimmer e l'ingresso della porta. Le correnti di uscita invece indirettamente misurando la tensione ai capi della resistenza $R_{2}$. Gli errori per i potenziali in ingresso sono sensibilmente maggiori delle risoluzione degli strumenti utilizzati, in quanto non era definita nettamente la transizione tra due regimi di lavoro. Per i potenziali in uscita invece sono dovuti alla risoluzione degli strumenti come somma in quadratura di errore di calibrazione e e incertezza di lettura}
+	\label{t:tabella}
 \end{table}

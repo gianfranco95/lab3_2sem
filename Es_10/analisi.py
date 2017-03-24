@@ -17,3 +17,14 @@ pylab.xlabel('$V_{in}$ [V]')
 pylab.ylabel('$V_{out}$ [V]')
 pylab.show()
 
+x1,dx1,y1=pylab.loadtxt(os.path.join(folder,'Dati','correnteingresso.txt')).T
+x1=x1/1000
+dx1=dx1/1000
+dy1=(10**3)*mme(y1*10**(-3),'ampere','lab3',sqerr=False)
+pylab.figure(2)
+pylab.plot(x1,y1,'.',linestyle='')
+pylab.errorbar(x1,y1,yerr=dy1,xerr=dx1,linestyle='')
+pylab.xlabel('$V_{in}$ [V]')
+pylab.ylabel('$I_{in}$ [mA]')
+pylab.show()
+

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.3.30)  24 MAR 2017 17:46
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.3.30)  24 MAR 2017 18:46
 entering extended mode
 **Caratteristiche_porte_logiche.tex
 
@@ -1289,47 +1289,47 @@ LaTeX Warning: Reference `f:circuito2' on page 1 undefined on input line 18.
 [1
 
 {C:/Users/Luca/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-Overfull \hbox (8.16104pt too wide) detected at line 29
+Overfull \hbox (8.16104pt too wide) detected at line 32
 \T1/cmr/m/n/10.95 V 
  []
 
 
-Overfull \hbox (8.16104pt too wide) detected at line 29
+Overfull \hbox (8.16104pt too wide) detected at line 32
 \T1/cmr/m/n/10.95 V 
  []
 
 
-Overfull \hbox (34.77626pt too wide) detected at line 29
+Overfull \hbox (34.77626pt too wide) detected at line 32
 \T1/cmr/m/n/10.95 V(min) 
  []
 
 
-Overfull \hbox (8.16104pt too wide) detected at line 30
+Overfull \hbox (8.16104pt too wide) detected at line 33
 \T1/cmr/m/n/10.95 V 
  []
 
 
-Overfull \hbox (8.16104pt too wide) detected at line 30
+Overfull \hbox (8.16104pt too wide) detected at line 33
 \T1/cmr/m/n/10.95 V 
  []
 
 
-Overfull \hbox (36.89188pt too wide) detected at line 30
+Overfull \hbox (36.89188pt too wide) detected at line 33
 \T1/cmr/m/n/10.95 V(max) 
  []
 
 
-Overfull \hbox (8.16104pt too wide) detected at line 31
+Overfull \hbox (8.16104pt too wide) detected at line 34
 \T1/cmr/m/n/10.95 V 
  []
 
 
-Overfull \hbox (8.16104pt too wide) detected at line 31
+Overfull \hbox (8.16104pt too wide) detected at line 34
 \T1/cmr/m/n/10.95 V 
  []
 
 
-Overfull \hbox (54.13411pt too wide) detected at line 31
+Overfull \hbox (54.13411pt too wide) detected at line 34
 \T1/cmr/m/n/10.95 V(min-typ) 
  []
 
@@ -1345,7 +1345,7 @@ Overfull \hbox (54.13411pt too wide) detected at line 31
 ! For immediate help type H <return>.
 !...............................................  
                                                   
-l.31 ...$ & 4.1 V & 0.1 V & 2.4(3.4) V (min-typ)\\
+l.34 ...$ & 4.1 V & 0.1 V & 2.4(3.4) V (min-typ)\\
                                                   
 |'''''''''''''''''''''''''''''''''''''''''''''''
 | The uncertainty part of a number may only contain digits or symbols.
@@ -1363,7 +1363,7 @@ l.31 ...$ & 4.1 V & 0.1 V & 2.4(3.4) V (min-typ)\\
 ! For immediate help type H <return>.
 !...............................................  
                                                   
-l.31 ...$ & 4.1 V & 0.1 V & 2.4(3.4) V (min-typ)\\
+l.34 ...$ & 4.1 V & 0.1 V & 2.4(3.4) V (min-typ)\\
                                                   
 |'''''''''''''''''''''''''''''''''''''''''''''''
 | The inputgiven as a number does not make logical sense. This happens,
@@ -1371,160 +1371,92 @@ l.31 ...$ & 4.1 V & 0.1 V & 2.4(3.4) V (min-typ)\\
 |...............................................
 
 
-Overfull \hbox (16.32506pt too wide) detected at line 32
+Overfull \hbox (16.32506pt too wide) detected at line 35
 \T1/cmr/m/n/10.95 mV 
  []
 
 
-Overfull \hbox (16.32506pt too wide) detected at line 32
+Overfull \hbox (16.32506pt too wide) detected at line 35
 \T1/cmr/m/n/10.95 mV 
  []
 
 
-Overfull \hbox (64.41374pt too wide) detected at line 32
+Overfull \hbox (64.41374pt too wide) detected at line 35
 \T1/cmr/m/n/10.95 mV(typ-max) 
  []
 
-! Undefined control sequence.
-\l__siunitx_table_collect_post_tl ->\muA 
-                                         
-l.33     $I_{IH}$ & 158 \muA &
-                                2 $\mu$A & 40 \mu$A (max)\\
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
+
+Overfull \hbox (14.81042pt too wide) detected at line 36
+$\OML/cmm/m/it/10.95 A$ 
+ []
 
 
-Overfull \hbox (14.75896pt too wide) detected at line 33
+Overfull \hbox (14.75896pt too wide) detected at line 36
 $\OML/cmm/m/it/10.95 $\T1/cmr/m/n/10.95 A 
  []
 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.33 ... & 158 \muA &  2 $\mu$A & 40 \mu$A (max)\\
-                                                  
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
 
-
-Overfull \hbox (43.48979pt too wide) detected at line 33
+Overfull \hbox (43.48979pt too wide) detected at line 36
 $\OML/cmm/m/it/10.95 $\T1/cmr/m/n/10.95 A(max) 
  []
 
-! Undefined control sequence.
-\l__siunitx_table_collect_post_tl ->\muA 
-                                         
-l.34     $I_{IL}$ & 195 \muA&
-                              3 \muA & 1600 \muA (max)\\
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
 
-! Undefined control sequence.
-\l__siunitx_table_collect_post_tl ->\muA 
-                                         
-l.34     $I_{IL}$ & 195 \muA& 3 \muA &
-                                       1600 \muA (max)\\
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-\l__siunitx_table_collect_post_tl ->\muA 
-                                         (max)
-l.34 ...L}$ & 195 \muA& 3 \muA & 1600 \muA (max)\\
-                                                  
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-Overfull \hbox (28.73083pt too wide) detected at line 34
-\T1/cmr/m/n/10.95 (max) 
+Overfull \hbox (14.81042pt too wide) detected at line 37
+$\OML/cmm/m/it/10.95 A$ 
  []
 
 
-Overfull \hbox (5.475pt too wide) detected at line 34
+Overfull \hbox (14.81042pt too wide) detected at line 37
+$\OML/cmm/m/it/10.95 A$ 
+ []
+
+
+Overfull \hbox (43.54126pt too wide) detected at line 37
+$\OML/cmm/m/it/10.95 A$\T1/cmr/m/n/10.95 (max) 
+ []
+
+
+Overfull \hbox (5.475pt too wide) detected at line 37
  
  []
 
-! Undefined control sequence.
-\l__siunitx_table_collect_post_tl ->\muA 
-                                         
-l.35     $I_{OH}$ & 37 \muA&
-                             1 \muA & 400 \muA (max)\\
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
 
-! Undefined control sequence.
-\l__siunitx_table_collect_post_tl ->\muA 
-                                         
-l.35     $I_{OH}$ & 37 \muA& 1 \muA &
-                                      400 \muA (max)\\
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-\l__siunitx_table_collect_post_tl ->\muA 
-                                         (max)
-l.35 ...{OH}$ & 37 \muA& 1 \muA & 400 \muA (max)\\
-                                                  
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-Overfull \hbox (28.73083pt too wide) detected at line 35
-\T1/cmr/m/n/10.95 (max) 
+Overfull \hbox (14.81042pt too wide) detected at line 38
+$\OML/cmm/m/it/10.95 A$ 
  []
 
-! Undefined control sequence.
-\l__siunitx_table_collect_post_tl ->\muA 
-                                         
-l.36     $I_{OL}$ & 147 \muA&
-                              4 \muA & 16 mA (max)\\
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
 
-! Undefined control sequence.
-\l__siunitx_table_collect_post_tl ->\muA 
-                                         
-l.36     $I_{OL}$ & 147 \muA& 4 \muA &
-                                       16 mA (max)\\
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
+Overfull \hbox (14.81042pt too wide) detected at line 38
+$\OML/cmm/m/it/10.95 A$ 
+ []
 
 
-Overfull \hbox (45.96259pt too wide) detected at line 36
+Overfull \hbox (43.54126pt too wide) detected at line 38
+$\OML/cmm/m/it/10.95 A$\T1/cmr/m/n/10.95 (max) 
+ []
+
+
+Overfull \hbox (14.81042pt too wide) detected at line 39
+$\OML/cmm/m/it/10.95 A$ 
+ []
+
+
+Overfull \hbox (14.81042pt too wide) detected at line 39
+$\OML/cmm/m/it/10.95 A$ 
+ []
+
+
+Overfull \hbox (45.96259pt too wide) detected at line 39
 \T1/cmr/m/n/10.95 mA(max) 
  []
 
 )
+Underfull \hbox (badness 10000) in paragraph at lines 26--140
+
+ []
+
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 141.
- [2]
+[2]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 141.
 
 ("C:\Users\Luca\Documents\Laboratorio3\Secondo semestre\Es_10\Relazione\Caratte
@@ -1541,10 +1473,10 @@ LaTeX Warning: There were undefined references.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 141.
  ) 
 Here is how much of TeX's memory you used:
- 21454 strings out of 493921
- 393971 string characters out of 3147285
- 584181 words of memory out of 3000000
- 24404 multiletter control sequences out of 15000+200000
+ 21453 strings out of 493921
+ 393968 string characters out of 3147285
+ 585181 words of memory out of 3000000
+ 24403 multiletter control sequences out of 15000+200000
  16792 words of font info for 54 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  45i,15n,49p,10504b,754s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1560,9 +1492,9 @@ nts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1
 /public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/a
 msfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
 /cmsy10.pfb>
-Output written on Caratteristiche_porte_logiche.pdf (2 pages, 103754 bytes).
+Output written on Caratteristiche_porte_logiche.pdf (2 pages, 106813 bytes).
 PDF statistics:
- 196 PDF objects out of 1000 (max. 8388607)
+ 200 PDF objects out of 1000 (max. 8388607)
  6 named destinations out of 1000 (max. 500000)
  17 words of extra memory for PDF output out of 10000 (max. 10000000)
 

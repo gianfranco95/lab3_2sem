@@ -1,0 +1,36 @@
+\section{Scopo e strumenti}
+Questa esperienza è suddivisa in due parti ben distinte tra loro.\\
+Nella prima sono stati costruiti e verificati alcuni semplici circuiti logici, facendo uso di due identici circuiti integrati SN7400 Quad-NAND 
+Gate e di ArduinoNano, quest'ultimo inserito in un circuito che lo renda utilizzabile come generatore di onde quadre sfasate di \pi tra loro. Gli integrati e Arduino sono alimentati con un alimentatore (tensione massima 5 V)\\
+Nella seconda parte sono stati costruiti un multivibratore monostabile, mostrato in \fig{monostabile}, ed un multivibratore astabile, mostrato in \fig{astabile}, utilizzando NAND. Le componenti utilizzate sono C1 = 100 nF, C2 = 100 nF, C$_3 = 11.03 \pm $ nF, R$_1 = 472 \pm 4$ $\Omega$, R$_2 = 985 \pm 8$ $\Omega$, R$_3 = 993 \pm 8$ $\Ohm$ ed un diodo 1N4148. Dopo aver esaminato le caratteristiche dei circuiti separati, abbiamo collegato i circuiti in serie.\\ %i condensatori
+Per misurare le componenti è stato utilizzato il tester digitale, per osservare i segnali l'oscilloscopio. Necessario anche un generatore di funzioni per il monostabile.
+
+\section{Circuiti logici}
+Abbiamo utilizzato le uscite sfasate di Arduino Y1 e Y2 come tensioni di ingresso, mandandole ai due ingressi di uno dei 4 NAND di uno dei due integrati. Gli ingressi sono mostrati in \fig{ingressi}. Abbiamo allora osservato l'uscita, mostrata in \fig{NAND}, e costruito la tabella di verità in \tab{NAND}, dove per 0 si è indicato uno stato basso e per 1 uno stato alto. La tabella risulta compatibile con quanto atteso.
+\begin{table}[h]
+	\centering
+	\begin{tabular}{*{4}{S[table-figures-exponent = 2]} }
+		{Y1} & {Y2} & {OUT} \\
+		\midrule
+           0 & 0 & 1\\
+           1 & 0 & 1\\
+           1 & 1 & 0\\
+           0 & 1 & 1\\
+ 	\end{tabular}
+	\caption{ Tabella di verità osservata per il NAND}
+	\label{t:NAND}
+\end{table}
+Abbiamo costruito un AND mandando l'uscita del primo NAND ad un ingresso di un NAND non ancora utilizzato (l'altro ingresso può essere lasciato flottante, perchè in tal modo è come avere un segnale sempre alto; allora facendo un AND con l'altro segnale ottengo in risultato l'altro segnale stesso ed il NAND si comporta così da NOT). In tal modo nego il NAND, ottenendo così un AND. L'uscita è mostrata in \fig{AND}, la tabella di verità in \tab{AND}.
+\begin{table}[h]
+	\centering
+	\begin{tabular}{*{4}{S[table-figures-exponent = 2]} }
+		{Y1} & {Y2} & {OUT} \\
+		\midrule
+           0 & 0 & 0\\
+           1 & 0 & 0\\
+           1 & 1 & 1\\
+           0 & 1 & 0\\
+ 	\end{tabular}
+	\caption{ Tabella di verità osservata per l'AND}
+	\label{t:AND}
+\end{table}

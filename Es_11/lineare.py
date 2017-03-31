@@ -41,6 +41,7 @@ pylab.show()
 print('PERIODO-RESISTENZA')
 R,t,dt=pylab.loadtxt(os.path.join(folder,'Dati','Periodo_resistenza.txt')).T
 dR = pylab.sqrt((0.8*R/100)**2+1)
+dt = dt/2
 pylab.figure(2)
 pylab.subplot(211)
 pylab.title('Periodo')

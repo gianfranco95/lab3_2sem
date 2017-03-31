@@ -2,7 +2,7 @@
 Questa esperienza è suddivisa in due parti ben distinte tra loro.\\
 Nella prima sono stati costruiti e verificati alcuni semplici circuiti logici, facendo uso di due identici circuiti integrati SN7400 Quad-NAND 
 Gate e di ArduinoNano, quest'ultimo inserito in un circuito che lo renda utilizzabile come generatore di onde quadre sfasate di $\pi$ tra loro. Gli integrati e Arduino sono alimentati con un alimentatore (tensione massima 5 V)\\
-Nella seconda parte sono stati costruiti un multivibratore monostabile, mostrato in \fig{monostabile}, ed un multivibratore astabile, mostrato in \fig{astabile}, utilizzando NAND. Le componenti utilizzate sono C$_1 = 99 \pm 4$ nF, C$_2 = 99 \pm 4$ nF, C$_3 = 11.0 \pm 0.4 $ nF, R$_1 = 472 \pm 4$ $\Omega$, R$_2 = 985 \pm 8$ $\Omega$, R$_3 = 993 \pm 8$ $\Omega$ ed un diodo 1N4148. Dopo aver esaminato le caratteristiche dei circuiti separati, abbiamo collegato i circuiti in serie.\\ %i condensatori
+Nella seconda parte sono stati costruiti un multivibratore monostabile, mostrato in \fig{monostabile}, ed un multivibratore astabile, mostrato in \fig{astabile}, utilizzando NAND. Le componenti utilizzate sono C$_1 = 99 \pm 4$ nF, C$_2 = 99 \pm 4$ nF, C$_3 = 11.0 \pm 0.4 $ nF, R$_1 = 472 \pm 4$ $\Omega$, R$_2 = 985 \pm 8$ $\Omega$, R$_3 = 993 \pm 8$ $\Omega$ ed un diodo 1N4148. Dopo aver esaminato le caratteristiche dei circuiti separati, abbiamo collegato i circuiti in serie.\\ 
 Per misurare le componenti è stato utilizzato il tester digitale, per osservare i segnali l'oscilloscopio. Necessario anche un generatore di funzioni per il monostabile.
 
 \section{Circuiti logici}
@@ -100,3 +100,23 @@ Abbiamo infine misurato il tempo di durata del segnale alto in uscita variando l
 	\label{t:Durata_impulso}
 \end{table}
 Abbiamo svolto un fit lineare a due parametri, considerando sia gli errori sulle x che quelli sulle y, del periodo in funzione della resistenza ed abbiamo ottenuto $m = 114 \pm 2$ $\mu$s/$\Omega$, $q = -14 \pm 1$ $\mu$s, $cov = -0.97$, $\chi^2 = 6$ con 4 gradi di libertà, con probabilità dello 0.18\% di ottenerlo maggiore. L'andamento lineare, come evidenziato anche dall'andamento non sistematico dei residui (\fig{impulso}), sembra così compatibile con i dati.
+
+
+%tabella astabile
+\begin{table}[h]
+	\centering
+	\begin{tabular}{*{4}{S[table-figures-exponent = 2]} }
+		{R [$\Omega$]} & T [$\mu $s]} & {$\Delta$T [$\mu $s]} \\
+		\midrule
+           456 & 94.4 & 0.4\\
+           560 & 114 & 1\\
+           675 & 135 & 1\\
+           985 & 189 & 1\\
+           1173 & 222 & 1\\
+           1507 & 284 & 1\\
+ 	\end{tabular}
+	\caption{ Periodo T in uscita in funzione della resistenza R, con errore di lettura (errori sulle resistenze dovuti al tester digitale)}
+	\label{t:periodo}
+\end{table}
+ $m=180 \pm 6$ $\mu$s/$\Omega$ ; $q=13 \pm 2$ $\mu$s;$cov = -0.94$ $\chi^{2}$/ndof=0.8/4.
+

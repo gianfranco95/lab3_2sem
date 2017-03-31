@@ -78,4 +78,25 @@ Si può infine costruire un circuito sommatore, ad un bit e due uscite, prendend
 \end{table}
 
 \section{Multivibratore monostabile}
-Dopo aver costruito il circuito richiesto facendo uso delle componenti indicate in \fig{monostabile} e di uno dei due integrati, abbiamo inserito un circuito derivatore in ingresso in modo da avere un segnale di ingresso che fosse riconosciuto come alto per un tempo più breve rispetto a quello ottenuto senza derivatore. Infatti, procedendo diversamente, risultava impossibile avere un impulso di ingresso IN-M più breve dell'uscita OUT-M ottemperando in contemporanea alle condizioni richieste (frequenza del segnale inviato dal generatore di funzioni di circa 5 kHz, duty cycle del \%) e la durata dell'impulso di uscita dipendeva da quella dell'ingresso. Con il derivatore abbiamo invece potuto ottenere un ingresso con parte alta della durata di $\Delta t = 80 \pm 10$ $\mu$s e periodo di $T = 1200 \pm 10$ $\mu$s, da cui la frequenza $f = 833 \pm 7$ Hz e il duty cycle 
+Dopo aver costruito il circuito richiesto facendo uso delle componenti indicate in \fig{monostabile} e di uno dei due integrati, abbiamo inserito un circuito derivatore in ingresso, con componenti R$_3$ e C$_3$, in modo da avere un segnale di ingresso che fosse riconosciuto come alto per un tempo più breve rispetto a quello ottenuto senza derivatore. Infatti, procedendo diversamente, risultava impossibile avere un impulso di ingresso IN-M più breve dell'uscita OUT-M ottemperando in contemporanea alle condizioni richieste (frequenza del segnale inviato dal generatore di funzioni di circa 5 kHz, duty cycle del \%, durata dell'impulso in uscita indipendente dall'ingresso) e l'uscita dipendeva dall'ingresso. Con il derivatore abbiamo invece potuto ottenere un segnale che obbediva alle condizioni richieste, con un impulso dell'ordine di R$_3 $C$_3 = 10.9 \pm 0.4$ $\mu$s ed un periodo dell'ordine dei 200 $\mu$s.\\
+Il minimo dell'ingresso si collocava a V$_{min} = 0 \pm 40$ mV ed il massimo a V$_{max} = 5.0 \pm 0.2$ V, con errori di lettura e calibrazione. In \fig{monouscita} sono mostrati i segnali in IN-M ed OUT-M, mentre in \fig{c-uscita} il segnale in VC. abbiamo anche verificato che l'uscita del NAND3 fosse il negato di quella del NAND4.\\ 
+Abbiamo ricercato il valore di VC per cui la tensione in uscita del NAND-3 commutava, passando da 0 a 1. Esso corrisponde a VC$ = 1.56 \pm 0.06$ V. Raggiunta questa soglia, in VC è interrotto un ciclo di scarica; il segnale diviene negativo e ricomincia un ciclo di carica.\\
+Se la pendenza dell'esponenziale che descrive il processo di scarica cambia la soglia così trovata di VC verrà raggiunta ad un tempo diverso e di conseguenza la durata dell'impulso in uscita, che dipende dal tempo impiegato da VC a raggiungere la tensione di soglia, varierà. In particolare, se il tempo caratteristico aumenta, ovvero aumenta R$_1$C$_1$, aumenta anche la durata dell'impulso in uscita e viceversa.\\
+Abbiamo inoltre osservato il comportamento del circuito in assenza di diodo; l'unica differenza è una piccola variazione del minimo, negativo, di VC. Il diodo ha infatti la funzione di impedire che vengano raggiunte tensioni molto negative.\\
+Abbiamo infine misurato il tempo di durata del segnale alto in uscita variando la resistenza R1; le misure sono riportate in \tab{Durata_impulso}.
+\begin{table}[h]
+	\centering
+	\begin{tabular}{*{4}{S[table-figures-exponent = 2]} }
+		{R [$\Omega$]} & {t [$\mu $s]} & {$\Delta$t [$\mu $s]} \\
+		\midrule
+           456 & 38.4 & 0.4\\
+           472 & 44 & 2\\
+           560 & 49.2 & 0.4\\
+           675 & 62 & 1\\
+           985 & 99 & 1\\
+           1173 & 122 & 1\\
+ 	\end{tabular}
+	\caption{ Durata dell'impulso t in uscita in funzione della resistenza R, con errore di lettura (errori sulla resistenza dovuti al tester digitale)}
+	\label{t:Durata_impulso}
+\end{table}
+Abbiamo svolto un fit lineare a due parametri, considerando sia gli errori sulle x che quelli sulle y, del periodo in funzione della resistenza ed abbiamo ottenuto $m = 114 \pm 2$ $\mu$s/$\Omega$, $q = -14 \pm 1$ $\mu$s, $cov = -0.97$, $\chi^2 = 6$ con 4 gradi di libertà, con probabilità dello 0.18\% di ottenerlo maggiore. L'andamento lineare, come evidenziato anche dall'andamento non sistematico dei residui (\fig{impulso}), sembra così compatibile con i dati.

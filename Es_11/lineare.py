@@ -49,7 +49,7 @@ pylab.ylabel('$t$ [$\mu$s]')
 def f(x,a,b):
     return a*x+b
 dT = ((0.179498*dR)**2+dt**2)
-popt, pcov=curve_fit(f,R,t,pylab.array([400.,0.]),sigma=dt,absolute_sigma=True)
+popt, pcov=curve_fit(f,R,t,pylab.array([400.,0.]),sigma=dT,absolute_sigma=True)
 m_fit,q_fit=popt
 dm_fit,dq_fit=pylab.sqrt(pcov.diagonal())
 mq_cov=pcov[0,1]

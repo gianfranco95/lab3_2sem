@@ -86,7 +86,7 @@ Abbiamo inoltre osservato il comportamento del circuito in assenza di diodo; l'u
 Abbiamo infine misurato il tempo di durata del segnale alto in uscita variando la resistenza R1; le misure sono riportate in \tab{Durata_impulso}.
 \begin{table}[h]
 	\centering
-	\begin{tabular}{*{4}{S[table-figures-exponent = 2]} }
+	\begin{tabular}{ccc}
 		{R [$\Omega$]} & {t [$\mu $s]} & {$\Delta$t [$\mu $s]} \\
 		\midrule
            456 & 38.4 & 0.4\\
@@ -102,21 +102,21 @@ Abbiamo infine misurato il tempo di durata del segnale alto in uscita variando l
 Abbiamo svolto un fit lineare a due parametri, considerando sia gli errori sulle x che quelli sulle y, del periodo in funzione della resistenza ed abbiamo ottenuto $m = 114 \pm 2$ $\mu$s/$\Omega$, $q = -14 \pm 1$ $\mu$s, $cov = -0.97$, $\chi^2 = 6$ con 4 gradi di libertà, con probabilità dello 0.18\% di ottenerlo maggiore. L'andamento lineare, come evidenziato anche dall'andamento non sistematico dei residui (\fig{impulso}), sembra così compatibile con i dati.
 
 
-%tabella astabile
+%tabella generatore onde quadre
+
 \begin{table}[h]
 	\centering
 	\begin{tabular}{*{4}{S[table-figures-exponent = 2]} }
-		{R [$\Omega$]} & T [$\mu $s]} & {$\Delta$T [$\mu $s]} \\
+		{R$_1$ [$\Omega$]} & dR$_1$ [$\Omega$]} & R$_2$ [$\Omega$]} & dR$_2$ [$\Omega$]} & {t [$\mu $s]} & {$\Delta$t [$\mu $s]} & T [$\mu $s]} & {$\Delta$T [$\mu $s]} \\
 		\midrule
-           456 & 94.4 & 0.4\\
-           560 & 114 & 1\\
-           675 & 135 & 1\\
-           985 & 189 & 1\\
-           1173 & 222 & 1\\
-           1507 & 284 & 1\\
+           385 & ?? & 456 & ?? & 31 & 1 & 95 & 1\\
+           456 & ?? & 560 & ?? & 35.6 & 0.4 & 113 & 1\\
+           456 & ?? & 985 & ?? & 37.6 & 0.4 & 191 & 1\\
+           675 & ?? & 985 & ?? & 58.8 & 0.4 & 189 & 1 \\
+           985 & ?? & 456 & ?? & 67.2 & 0.4 & 94 & 1\\
+           985 & ?? & 1173 & ?? & 91 & 1 & 223 & 1\\
  	\end{tabular}
-	\caption{ Periodo T in uscita in funzione della resistenza R, con errore di lettura (errori sulle resistenze dovuti al tester digitale)}
-	\label{t:periodo}
+	\caption{}
+	\label{t:onde_quadre}
 \end{table}
- $m=180 \pm 6$ $\mu$s/$\Omega$ ; $q=13 \pm 2$ $\mu$s;$cov = -0.94$ $\chi^{2}$/ndof=0.8/4.
 

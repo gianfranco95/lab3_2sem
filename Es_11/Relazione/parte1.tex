@@ -1,8 +1,8 @@
 \section{Scopo e strumenti}
 Questa esperienza è suddivisa in due parti ben distinte tra loro.\\
 Nella prima sono stati costruiti e verificati alcuni semplici circuiti logici, facendo uso di due identici circuiti integrati SN7400 Quad-NAND 
-Gate e di ArduinoNano, quest'ultimo inserito in un circuito che lo renda utilizzabile come generatore di onde quadre sfasate di \pi tra loro. Gli integrati e Arduino sono alimentati con un alimentatore (tensione massima 5 V)\\
-Nella seconda parte sono stati costruiti un multivibratore monostabile, mostrato in \fig{monostabile}, ed un multivibratore astabile, mostrato in \fig{astabile}, utilizzando NAND. Le componenti utilizzate sono C1 = 100 nF, C2 = 100 nF, C$_3 = 11.03 \pm $ nF, R$_1 = 472 \pm 4$ $\Omega$, R$_2 = 985 \pm 8$ $\Omega$, R$_3 = 993 \pm 8$ $\Ohm$ ed un diodo 1N4148. Dopo aver esaminato le caratteristiche dei circuiti separati, abbiamo collegato i circuiti in serie.\\ %i condensatori
+Gate e di ArduinoNano, quest'ultimo inserito in un circuito che lo renda utilizzabile come generatore di onde quadre sfasate di $\pi$ tra loro. Gli integrati e Arduino sono alimentati con un alimentatore (tensione massima 5 V)\\
+Nella seconda parte sono stati costruiti un multivibratore monostabile, mostrato in \fig{monostabile}, ed un multivibratore astabile, mostrato in \fig{astabile}, utilizzando NAND. Le componenti utilizzate sono C$_1 = 99 \pm 4$ nF, C$_2 = 99 \pm 4$ nF, C$_3 = 11.0 \pm 0.4 $ nF, R$_1 = 472 \pm 4$ $\Omega$, R$_2 = 985 \pm 8$ $\Omega$, R$_3 = 993 \pm 8$ $\Omega$ ed un diodo 1N4148. Dopo aver esaminato le caratteristiche dei circuiti separati, abbiamo collegato i circuiti in serie.\\ %i condensatori
 Per misurare le componenti è stato utilizzato il tester digitale, per osservare i segnali l'oscilloscopio. Necessario anche un generatore di funzioni per il monostabile.
 
 \section{Circuiti logici}
@@ -34,3 +34,48 @@ Abbiamo costruito un AND mandando l'uscita del primo NAND ad un ingresso di un N
 	\caption{ Tabella di verità osservata per l'AND}
 	\label{t:AND}
 \end{table}
+Ulteriore circuito esaminato è l'OR, costruito negando entrambi i segnali di ingresso con due NAND diversi, secondo il procedimento sopra descritto, e mandando le due uscite ai due ingressi di un altro NAND, di cui viene osservata l'uscita. In \fig{OR} ed in \tab{OR} sono mostrati segnale di uscita e tabella di verità.
+\begin{table}[h]
+	\centering
+	\begin{tabular}{*{4}{S[table-figures-exponent = 2]} }
+		{Y1} & {Y2} & {OUT} \\
+		\midrule
+           0 & 0 & 0\\
+           1 & 0 & 1\\
+           1 & 1 & 1\\
+           0 & 1 & 1\\
+ 	\end{tabular}
+	\caption{ Tabella di verità osservata per l'OR}
+	\label{t:OR}
+\end{table}
+Lo XOR, che dà 1 in uscita se le entrate sono diverse, 0 se sono uguali, è stato ottenuto seguendo lo schema mostrato in XORcircuito; in \fig{XOR} è mostrato il segnale di uscita, in \tab{XOR} la tabella di verità.
+\begin{table}[h]
+	\centering
+	\begin{tabular}{*{4}{S[table-figures-exponent = 2]} }
+		{Y1} & {Y2} & {OUT} \\
+		\midrule
+           0 & 0 & 0\\
+           1 & 0 & 1\\
+           1 & 1 & 0\\
+           0 & 1 & 1\\
+ 	\end{tabular}
+	\caption{ Tabella di verità osservata per lo XOR}
+	\label{t:XOR}
+\end{table}
+Si può infine costruire un circuito sommatore, ad un bit e due uscite, prendendo l'uscita $\Sigma$ (somma) all'uscita dello XOR e l'uscita R all'uscita del NAND, inserito nel circuito dello XOR, che riceve in ingresso Y1 e Y2, dopo aver negato il segnale con un ulteriore NAND (per questo circuito servono entrambi gli integrati), ovvero costruendo un AND. Tabella e segnale in \tab{Sommatore} e \fig{Sommatore}.
+\begin{table}[h]
+	\centering
+	\begin{tabular}{*{4}{S[table-figures-exponent = 2]} }
+		{Y1} & {Y2} & {$\Sigma$} & {R} \\
+		\midrule
+           0 & 0 & 0 & 0\\
+           1 & 0 & 1 & 0\\
+           1 & 1 & 0 & 1\\
+           0 & 1 & 1 & 0\\
+ 	\end{tabular}
+	\caption{ Tabella di verità osservata per il sommatore}
+	\label{t:Sommatore}
+\end{table}
+
+\section{Multivibratore monostabile}
+Dopo aver costruito il circuito richiesto facendo uso delle componenti indicate in \fig{monostabile} e di uno dei due integrati, abbiamo inserito un circuito derivatore in ingresso in modo da avere un segnale di ingresso che fosse riconosciuto come alto per un tempo più breve rispetto a quello ottenuto senza derivatore. Infatti, procedendo diversamente, risultava impossibile avere un impulso di ingresso IN-M più breve dell'uscita OUT-M ottemperando in contemporanea alle condizioni richieste (frequenza del segnale inviato dal generatore di funzioni di circa 5 kHz, duty cycle del \%) e la durata dell'impulso di uscita dipendeva da quella dell'ingresso. Con il derivatore abbiamo invece potuto ottenere un ingresso con parte alta della durata di $\Delta t = 80 \pm 10$ $\mu$s e periodo di $T = 1200 \pm 10$ $\mu$s, da cui la frequenza $f = 833 \pm 7$ Hz e il duty cycle 

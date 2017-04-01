@@ -1,12 +1,14 @@
 \section{Scopo e strumenti}
 Questa esperienza è suddivisa in due parti ben distinte tra loro.\\
 Nella prima sono stati costruiti e verificati alcuni semplici circuiti logici, facendo uso di due identici circuiti integrati SN7400 Quad-NAND 
-Gate e di ArduinoNano, quest'ultimo inserito in un circuito che lo renda utilizzabile come generatore di onde quadre sfasate di $\pi$ tra loro. Gli integrati e Arduino sono alimentati con un alimentatore (tensione massima 5 V)\\
-Nella seconda parte sono stati costruiti un multivibratore monostabile, mostrato in \fig{monostabile}, ed un multivibratore astabile, mostrato in \fig{astabile}, utilizzando NAND. Le componenti utilizzate sono C$_1 = 99 \pm 4$ nF, C$_2 = 99 \pm 4$ nF, C$_3 = 11.0 \pm 0.4 $ nF, R$_1 = 472 \pm 4$ $\Omega$, R$_2 = 985 \pm 8$ $\Omega$, R$_3 = 993 \pm 8$ $\Omega$ ed un diodo 1N4148. Dopo aver esaminato le caratteristiche dei circuiti separati, abbiamo collegato i circuiti in serie.\\ 
+Gate e di ArduinoNano, quest'ultimo inserito in un circuito che lo renda utilizzabile come generatore di onde quadre sfasate di $\pi$/2 tra loro. Gli integrati e Arduino sono alimentati con un alimentatore (tensione massima 5 V)\\
+Nella seconda parte sono stati costruiti un multivibratore monostabile, mostrato in \fig{monostabile}, ed un multivibratore astabile, mostrato in \fig{astabile}, utilizzando porte NAND.\\ 
+Le componenti utilizzate sono C$_1 = 99 \pm 4$ nF, C$_2 = 99 \pm 4$ nF, C$_3 = 11.0 \pm 0.4 $ nF, R$_1 = 472 \pm 4$ $\Omega$, R$_2 = 985 \pm 8$ $\Omega$, R$_3 = 993 \pm 8$ $\Omega$ ed un diodo 1N4148. Dopo aver esaminato le caratteristiche dei circuiti separati, abbiamo collegato i circuiti in serie.\\ 
 Per misurare le componenti è stato utilizzato il tester digitale, per osservare i segnali l'oscilloscopio. Necessario anche un generatore di funzioni per il monostabile.
 
 \section{Circuiti logici}
-Abbiamo utilizzato le uscite sfasate di Arduino Y1 e Y2 come tensioni di ingresso, mandandole ai due ingressi di uno dei 4 NAND di uno dei due integrati. Gli ingressi sono mostrati in \fig{ingressi}. Abbiamo allora osservato l'uscita, mostrata in \fig{NAND}, e costruito la tabella di verità in \tab{NAND}, dove per 0 si è indicato uno stato basso e per 1 uno stato alto. La tabella risulta compatibile con quanto atteso.
+Abbiamo utilizzato le uscite sfasate di Arduino Y1 e Y2 come tensioni di ingresso, mandandole ai due ingressi di uno dei 4 NAND di uno dei due integrati. Gli ingressi sono mostrati in \fig{ingressi}. Abbiamo allora osservato l'uscita, mostrata in \fig{NAND}, e costruito la tabella di verità in \tab{NAND}, dove per 0 si è indicato uno stato basso e per 1 uno stato alto. La tabella risulta compatibile con quanto atteso.\\
+
 \begin{table}[h]
 	\centering
 	\begin{tabular}{*{4}{S[table-figures-exponent = 2]} }
@@ -17,10 +19,12 @@ Abbiamo utilizzato le uscite sfasate di Arduino Y1 e Y2 come tensioni di ingress
            1 & 1 & 0\\
            0 & 1 & 1\\
  	\end{tabular}
-	\caption{ Tabella di verità osservata per il NAND}
+	\caption{ Tabella di verità osservata per il NAND in \fig{NAND} }
 	\label{t:NAND}
 \end{table}
-Abbiamo costruito un AND mandando l'uscita del primo NAND ad un ingresso di un NAND non ancora utilizzato (l'altro ingresso può essere lasciato flottante, perchè in tal modo è come avere un segnale sempre alto; allora facendo un AND con l'altro segnale ottengo in risultato l'altro segnale stesso ed il NAND si comporta così da NOT). In tal modo nego il NAND, ottenendo così un AND. L'uscita è mostrata in \fig{AND}, la tabella di verità in \tab{AND}.
+
+Abbiamo costruito un AND mandando l'uscita del primo NAND ad un ingresso di un NAND non ancora utilizzato (l'altro ingresso può essere lasciato flottante, perchè in tal modo è come avere un segnale sempre alto; allora facendo un AND del segnale in ingresso con quello flottante ottengo in risultato lo stesso ingresso ed il NAND si comporta così da NOT). In tal modo nego il NAND, ottenendo così un AND. L'uscita è mostrata in \fig{AND}, la tabella di verità in \tab{AND}.\\
+
 \begin{table}[h]
 	\centering
 	\begin{tabular}{*{4}{S[table-figures-exponent = 2]} }
@@ -31,10 +35,12 @@ Abbiamo costruito un AND mandando l'uscita del primo NAND ad un ingresso di un N
            1 & 1 & 1\\
            0 & 1 & 0\\
  	\end{tabular}
-	\caption{ Tabella di verità osservata per l'AND}
+	\caption{ Tabella di verità osservata per l'AND (\fig{AND})}
 	\label{t:AND}
 \end{table}
-Ulteriore circuito esaminato è l'OR, costruito negando entrambi i segnali di ingresso con due NAND diversi, secondo il procedimento sopra descritto, e mandando le due uscite ai due ingressi di un altro NAND, di cui viene osservata l'uscita. In \fig{OR} ed in \tab{OR} sono mostrati segnale di uscita e tabella di verità.
+
+Ulteriore circuito esaminato è l'OR, costruito negando entrambi i segnali di ingresso con due NAND diversi, secondo il procedimento sopra descritto, e mandando le due uscite ai due ingressi di un altro NAND, di cui viene osservata l'uscita. In \fig{OR} ed in \tab{OR} sono mostrati segnale di uscita e tabella di verità.\\
+
 \begin{table}[h]
 	\centering
 	\begin{tabular}{*{4}{S[table-figures-exponent = 2]} }
@@ -45,10 +51,12 @@ Ulteriore circuito esaminato è l'OR, costruito negando entrambi i segnali di in
            1 & 1 & 1\\
            0 & 1 & 1\\
  	\end{tabular}
-	\caption{ Tabella di verità osservata per l'OR}
+	\caption{ Tabella di verità osservata per l'OR (\fig{OR} )}
 	\label{t:OR}
 \end{table}
-Lo XOR, che dà 1 in uscita se le entrate sono diverse, 0 se sono uguali, è stato ottenuto seguendo lo schema mostrato in \fig{xor_circuito}; in \fig{XOR} è mostrato il segnale di uscita, in \tab{XOR} la tabella di verità.
+
+Lo XOR, che dà 1 in uscita se le entrate sono diverse, 0 se sono uguali, è stato ottenuto seguendo lo schema mostrato in \fig{xor_circuito}; in \fig{XOR} è mostrato il segnale di uscita, in \tab{XOR} la tabella di verità.\\
+
 \begin{table}[h]
 	\centering
 	\begin{tabular}{*{4}{S[table-figures-exponent = 2]} }
@@ -59,10 +67,11 @@ Lo XOR, che dà 1 in uscita se le entrate sono diverse, 0 se sono uguali, è sta
            1 & 1 & 0\\
            0 & 1 & 1\\
  	\end{tabular}
-	\caption{ Tabella di verità osservata per lo XOR}
+	\caption{ Tabella di verità osservata per lo XOR (\fig{XOR} )}
 	\label{t:XOR}
 \end{table}
-Si può infine costruire un circuito sommatore, ad un bit e due uscite, prendendo l'uscita $\Sigma$ (somma) all'uscita dello XOR e l'uscita R all'uscita del NAND, inserito nel circuito dello XOR, che riceve in ingresso Y1 e Y2, dopo aver negato il segnale con un ulteriore NAND (per questo circuito servono entrambi gli integrati), ovvero costruendo un AND. Tabella e segnale in \tab{Sommatore} e \fig{Sommatore}.
+
+Si può infine costruire un circuito sommatore, ad un bit e due uscite ($\Sigma$ ed R). L'uscita $\Sigma$ (somma) è quella dello XOR. L'uscita R si ottiene negando (con la procedura usata anche per gli ltri circuiti) l'uscita della porta NAND che, nel circuito XOR, riceve in ingresso Y1 e Y2. L'uscita R equivale ad un AND. Per questo circuito servono entrambi gli integrati. Tabella e segnale in \tab{Sommatore} e \fig{Sommatore}.\\
 \begin{table}[h]
 	\centering
 	\begin{tabular}{*{4}{S[table-figures-exponent = 2]} }
@@ -73,16 +82,18 @@ Si può infine costruire un circuito sommatore, ad un bit e due uscite, prendend
            1 & 1 & 0 & 1\\
            0 & 1 & 1 & 0\\
  	\end{tabular}
-	\caption{ Tabella di verità osservata per il sommatore}
+	\caption{ Tabella di verità osservata per il sommatore \fig{Sommatore}}
 	\label{t:Sommatore}
 \end{table}
 
 \section{Multivibratore monostabile}
-Dopo aver costruito il circuito richiesto facendo uso delle componenti indicate in \fig{monostabile} e di uno dei due integrati, abbiamo inserito un circuito derivatore in ingresso, con componenti R$_3$ e C$_3$, in modo da avere un segnale di ingresso che fosse riconosciuto come alto per un tempo più breve rispetto a quello ottenuto senza derivatore. Infatti, procedendo diversamente, risultava impossibile avere un impulso di ingresso IN-M più breve dell'uscita OUT-M ottemperando in contemporanea alle condizioni richieste (frequenza del segnale inviato dal generatore di funzioni di circa 5 kHz, duty cycle del \%, durata dell'impulso in uscita indipendente dall'ingresso) e l'uscita dipendeva dall'ingresso. Con il derivatore abbiamo invece potuto ottenere un segnale che obbediva alle condizioni richieste, con un impulso dell'ordine di R$_3 $C$_3 = 10.9 \pm 0.4$ $\mu$s ed un periodo dell'ordine dei 200 $\mu$s.\\
+Abbiamo costruito il circuito richiesto facendo uso delle componenti indicate in \fig{monostabile} utilizzando uno dei due integrati. Abbiamo inserito un circuito derivatore in ingresso, con componenti R$_3$ e C$_3$, in modo da avere un segnale di ingresso che fosse riconosciuto come alto per un tempo più breve rispetto a quello ottenuto senza derivatore. Infatti, procedendo diversamente, risultava impossibile avere un impulso di ingresso IN-M più breve dell'uscita OUT-M ottemperando in contemporanea alle condizioni richieste (frequenza del segnale inviato dal generatore di funzioni di circa 5 kHz, duty cycle del 5\%). Con il derivatore abbiamo invece potuto ottenere un segnale che obbediva alle condizioni richieste, con un impulso dell'ordine di R$_3 $C$_3 = 10.9 \pm 0.4$ $\mu$s ed un periodo dell'ordine dei 200 $\mu$s.\\
 Il minimo dell'ingresso si collocava a V$_{min} = 0 \pm 40$ mV ed il massimo a V$_{max} = 5.0 \pm 0.2$ V, con errori di lettura e calibrazione. In \fig{monostabile_out_nand4} sono mostrati i segnali in IN-M ed OUT-M, mentre in \fig{monostabile_Vc} il segnale in VC. Abbiamo anche verificato che l'uscita del NAND3 fosse il negato di quella del NAND4.\\ 
-Abbiamo ricercato il valore di VC per cui la tensione in uscita del NAND-3 commutava, passando da 0 a 1. Esso corrisponde a VC$ = 1.56 \pm 0.06$ V. Raggiunta questa soglia, in VC è interrotto un ciclo di scarica; il segnale diviene negativo e ricomincia un ciclo di carica.\\
+Abbiamo ricercato il valore di VC per cui la tensione in uscita del NAND-3 commutava, passando da 0 a 1. Esso corrisponde a VC$ = 1.56 \pm 0.06$ V. Raggiunta questa soglia, in VC è interrotto un ciclo di carica; il segnale diviene negativo e ricomincia un ciclo di scarica.\\
+Il segnale in ingresso può essere quindi interpretato come un trigger: nel momento in cui da basso passa ad alto, l'uscita del NAND2 assume valore 1, in uscita OUT-M si ha un valore alto ed ha inizio la carica del condensatore. Quando VC raggiunge la soglia la NAND3 commuta, di conseguenza l'uscita diventa nulla e l'uscita della NAND2 diviene bassa determinando una scarica del condensatore.\\
 Se la pendenza dell'esponenziale che descrive il processo di scarica cambia, la soglia così trovata di VC verrà raggiunta ad un tempo diverso e di conseguenza la durata dell'impulso in uscita, che dipende dal tempo impiegato da VC a raggiungere la tensione di soglia, varierà. In particolare, se il tempo caratteristico aumenta, ovvero aumenta R$_1$C$_1$, aumenta anche la durata dell'impulso in uscita e viceversa.\\
 Abbiamo inoltre osservato il comportamento del circuito in assenza di diodo; l'unica differenza è una piccola variazione del minimo, negativo, di VC. Il diodo ha infatti la funzione di impedire che vengano raggiunte tensioni molto negative.\\
+Abbiamo verificato che la durata dell'impulso in uscita non dipende dal segnale in ingresso.
 Abbiamo infine misurato il tempo di durata del segnale alto in uscita variando la resistenza R1; le misure sono riportate in \tab{Durata_impulso}.
 \begin{table}[h]
 	\centering

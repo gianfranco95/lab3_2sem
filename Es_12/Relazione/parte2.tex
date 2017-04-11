@@ -1,0 +1,26 @@
+\section{divisore di frequenza}
+E' stato realizzato il circuito in \fig{contatore}, composto da 4 flip-flop jk (contenuti nell'integrato 74LS93). Tutti i flip flop hanno all'ingresso il segnale in uscita dalla porta NAND1 e l'uscita di ognuno funge da clock per il flip-flop successivo.
+Per visualizzare i valori delle uscite dei flip-flop nel tempo, è stata collegata ciascuna uscita alla terra tramite un diodo led (per osservare tramite l'accensione il passaggio di corrente ) e una resistenza $\sim 330 \Omega$ (per limitare la corrente). Perchè il circuito funzionasse è stato necesssario porre almeno uno dei due ingressi R0 e R1 del NAND1 a massa.\\
+E' stato inviato, tramite arduino, un segnale di clock di frequenza $\sim 1 Hz$( periodo di (980 $\pm$ 10) ms, con errore ????????????attribuito). Si è osservato che le uscite Q dei flip flop assumono valori corrispondenti ai numeri da 0 a 15 in maniera ordinata e crescente. Nel circuito (in \fig{contatore} ) le uscite sono ordinate in modo tale che l'uscita del FF1 rappresenti la cifra più significativa, mentre  quella del FF4 quella meno significativa.\\
+Sempre con arduino è stato inviato un segnale di frequenza più elevata $\sim$ 50 kHz (periodo di 19.8 $\pm$ 0.2 $\mu$s ?????errore ). Sono state visualizzate le uscite all'oscilloscopio. E' stato osservato così che la frequenza dell'uscita del primo FF1 è il doppio di quella del clock(\fig{Qa_vs_clock}), mentre per il flip-flop successivi ciascuna uscita ha una frequenza doppia di quella precedente(\fig{Qb_vs_clock}; \fig{Qc_vs_clock}; \fig{Qd_vs_clock}).\\
+E' stato misurato per ciascuna uscita il ritardo del segnale rispetto a quello di clock. La misura è stata effettuata valutando l'intervallo temporale che intercorreva tra gli istanti in cui i due segnali raggiungevano la metà del loro valore massimo, in corrispondenza del loro fronte di salita.\\
+
+\begin{table}[h]
+	\centering
+	\begin{tabular}{ccc }
+		
+		 & Ritardo [ns]& errore\\
+		 \midrule 
+		  $Q_{A}$ & 14.4 & 0.4 \\
+		  $Q_{B}$ & 26 & 1 \\
+		  $Q_{C}$ & 38 & 1 \\
+          $Q_{D}$ & 50 & 1 \\
+ 	\end{tabular}
+	\caption{ Ritardi dei segnali in uscita }
+	\label{t:Ritardi}
+\end{table}
+Dai dati si può osservare che ciascun flip flop determina un ritardo di $\sim$ 12 ns rispetto al suo ingresso.\\
+Infine si è modificato il circuito in modo tale che le uscite si azzerassero una volta raggiunto il numero 10. E' stato realizzato un reset asincrono, cioè che non era azionato dal clock, ma che agiva in base agli output dei flip flop. Sono state quindi prelevate le uscite Q1 e Q3 ed inviate all'ingresso di una porta and.L'uscita di quest'ultima è stata inviata su uno dei reset R0 o R1, lasciando l'altro flottante. In questo modo non appena veniva raggiundo il 10 Q1 e Q3 assumevano il valore alto portando alta l'uscita dell'AND (che in tutti gli altri casi è bassa), resettando così il contatore.\\
+La porta AND è stat realizzata con due NAND dell'integrato SN74LS00: i due ingressi sono stati inviati agli ingressi del primo NAND e la sua uscita all'ingresso del secondo nand, lasciando l'altra flottante. L'uscita del secondo NAND rappresenta l'uscita dell'AND.
+
+

@@ -1,6 +1,6 @@
 \section{Generatore di sequenza pseudo casuali}
-E' stato utilizzato il circuito della sezione precedente ed è stata apportata una modifica, inserendo uno XOR appartenente all'integrato SN74LS86: \fig{gen_pseudocasuali}. All'ingresso dello xor sono state inviate le uscite del terzo e del quarto D-latch, e la sua uscita è stata inviata alll'ingresso del primo flip flop.\\
-E' stata dunque osservata la sequenza dei valori in uscita nel tempo, tramite l'osservazione dei diodi led inviando un clock a bassa frequenza $\sim$ 1 Hz. La successione osservata è riportata in \tab{sequenza}
+E' stato utilizzato il circuito della sezione precedente ed Ã¨ stata apportata una modifica, inserendo uno XOR appartenente all'integrato SN74LS86: \fig{gen_pseudocasuali}. All'ingresso dello xor sono state inviate le uscite del terzo e del quarto D-latch, e la sua uscita Ã¨ stata inviata alll'ingresso del primo flip flop.\\
+E' stata dunque osservata la sequenza dei valori in uscita nel tempo, tramite l'osservazione dei diodi led inviando un clock a bassa frequenza $\sim$ 1 Hz. La successione osservata Ã¨ riportata in \tab{sequenza}
 
 \begin{table}[h]
 	\centering
@@ -27,9 +27,9 @@ E' stata dunque osservata la sequenza dei valori in uscita nel tempo, tramite l'
 	\caption{ Sequenza pseudocasuale osservata }
 	\label{t:sequenza}
 \end{table} 
-La successione ha periodo 15 ed è completa.\\
+La successione ha periodo 15 ed Ã¨ completa.\\
 Sono state generate altre frequenze pseudo-casuali. E' sono state prelevati gli ingressi dello XOR non dalle uscite 3 e 4 ma da quelle 1 e 4. Anche i questo caso si osserva una sequenza completa.\\
-Infine è stato realizzato un tap usando una porta nand i cui ingressi sono stati presi da Q3 e Q4. Anche in questo caso si osserva una sequenza completa, anche se non può essere considerata pseudocasuale in quanto ad ogni colpo di clock cambia stato una sola uscita e ciò avviene ordinatamente dalla porta Q1 a quella Q4.
+Infine Ã¨ stato realizzato un tap usando una porta nand i cui ingressi sono stati presi da Q3 e Q4. Anche in questo caso si osserva una sequenza completa, anche se non puÃ² essere considerata pseudocasuale in quanto ad ogni colpo di clock cambia stato una sola uscita e ciÃ² avviene ordinatamente dalla porta Q1 a quella Q4.
 
 \section{Conclusioni}
-E' stato osservato il comportamento dei flip flop. Nella prima parte è stato analizzato il comportamento interno del flip flop d-latch. In seguito sono stati utilizzati flip flop d-latch e jk per realizzare circuiti più complessi. In tutti i casi è stato oosservato un comportamento che risulta in accordo con quanto atteso.  
+E' stato osservato il comportamento dei flip flop. Nella prima parte Ã¨ stato analizzato il comportamento interno del flip flop d-latch. In seguito sono stati utilizzati flip flop d-latch e jk per realizzare circuiti piÃ¹ complessi. In tutti i casi Ã¨ stato oosservato un comportamento che risulta in accordo con quanto atteso.  

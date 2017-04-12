@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6100 64-bit) (preloaded format=pdflatex 2016.12.29)  12 APR 2017 11:33
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6100 64-bit) (preloaded format=pdflatex 2016.12.29)  12 APR 2017 12:07
 entering extended mode
 **./Flip_flop_contatori.tex
 (Flip_flop_contatori.tex
@@ -1350,24 +1350,16 @@ Underfull \hbox (badness 10000) in paragraph at lines 2--7
 
 [1
 
-{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}]) (parte3.tex
-
-LaTeX Warning: Reference `f:shif_register' on page 2 undefined on input line 2.
-
-
-) (parte4.tex
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[2]) (immagini.tex
-<../Figs-Tabs/D_latch.png, id=73, 322.20375pt x 158.84344pt>
+{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}]) (parte3.tex)
+(parte4.tex [2]) (immagini.tex
+<../Figs-Tabs/D_latch.png, id=75, 322.20375pt x 158.84344pt>
 File: ../Figs-Tabs/D_latch.png Graphic file (type png)
 
 <use ../Figs-Tabs/D_latch.png>
 Package pdftex.def Info: ../Figs-Tabs/D_latch.png used on input line 5.
 (pdftex.def)             Requested size: 128.87921pt x 63.53624pt.
 
-<../Figs-Tabs/Q.png, id=74, 301.125pt x 225.84375pt>
+<../Figs-Tabs/Q.png, id=76, 301.125pt x 225.84375pt>
 File: ../Figs-Tabs/Q.png Graphic file (type png)
  <use ../Figs-Tabs/Q.png>
 Package pdftex.def Info: ../Figs-Tabs/Q.png used on input line 12.
@@ -1376,7 +1368,7 @@ Package pdftex.def Info: ../Figs-Tabs/Q.png used on input line 12.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<../Figs-Tabs/Qbar.png, id=76, 301.125pt x 225.84375pt>
+<../Figs-Tabs/Qbar.png, id=78, 301.125pt x 225.84375pt>
 File: ../Figs-Tabs/Qbar.png Graphic file (type png)
 
 <use ../Figs-Tabs/Qbar.png>
@@ -1386,7 +1378,7 @@ Package pdftex.def Info: ../Figs-Tabs/Qbar.png used on input line 19.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<../Figs-Tabs/Qbar_enable_basso.png, id=77, 301.125pt x 225.84375pt>
+<../Figs-Tabs/Qbar_enable_basso.png, id=79, 301.125pt x 225.84375pt>
 File: ../Figs-Tabs/Qbar_enable_basso.png Graphic file (type png)
 
 <use ../Figs-Tabs/Qbar_enable_basso.png>
@@ -1397,7 +1389,7 @@ Package pdftex.def Info: ../Figs-Tabs/Qbar_enable_basso.png used on input line
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<../Figs-Tabs/divisore_freq.png, id=78, 484.81125pt x 222.07968pt>
+<../Figs-Tabs/divisore_freq.png, id=80, 484.81125pt x 222.07968pt>
 File: ../Figs-Tabs/divisore_freq.png Graphic file (type png)
 
 <use ../Figs-Tabs/divisore_freq.png>
@@ -1407,7 +1399,7 @@ Package pdftex.def Info: ../Figs-Tabs/divisore_freq.png used on input line 33.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<../Figs-Tabs/Qa_vs_clock.png, id=79, 301.125pt x 225.84375pt>
+<../Figs-Tabs/Qa_vs_clock.png, id=81, 301.125pt x 225.84375pt>
 File: ../Figs-Tabs/Qa_vs_clock.png Graphic file (type png)
 
 <use ../Figs-Tabs/Qa_vs_clock.png>
@@ -1417,7 +1409,7 @@ Package pdftex.def Info: ../Figs-Tabs/Qa_vs_clock.png used on input line 40.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<../Figs-Tabs/Qb_vs_clock.png, id=80, 301.125pt x 225.84375pt>
+<../Figs-Tabs/Qb_vs_clock.png, id=82, 301.125pt x 225.84375pt>
 File: ../Figs-Tabs/Qb_vs_clock.png Graphic file (type png)
 
 <use ../Figs-Tabs/Qb_vs_clock.png>
@@ -1427,7 +1419,7 @@ Package pdftex.def Info: ../Figs-Tabs/Qb_vs_clock.png used on input line 47.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<../Figs-Tabs/Qc_vs_clock.png, id=81, 301.125pt x 225.84375pt>
+<../Figs-Tabs/Qc_vs_clock.png, id=83, 301.125pt x 225.84375pt>
 File: ../Figs-Tabs/Qc_vs_clock.png Graphic file (type png)
 
 <use ../Figs-Tabs/Qc_vs_clock.png>
@@ -1437,7 +1429,7 @@ Package pdftex.def Info: ../Figs-Tabs/Qc_vs_clock.png used on input line 54.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<../Figs-Tabs/Qd_vs_clock.png, id=82, 301.125pt x 225.84375pt>
+<../Figs-Tabs/Qd_vs_clock.png, id=84, 301.125pt x 225.84375pt>
 File: ../Figs-Tabs/Qd_vs_clock.png Graphic file (type png)
 
 <use ../Figs-Tabs/Qd_vs_clock.png>
@@ -1447,7 +1439,7 @@ Package pdftex.def Info: ../Figs-Tabs/Qd_vs_clock.png used on input line 61.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<../Figs-Tabs/shift_register.png, id=83, 254.45062pt x 301.8778pt>
+<../Figs-Tabs/shift_register.png, id=85, 254.45062pt x 301.8778pt>
 File: ../Figs-Tabs/shift_register.png Graphic file (type png)
 
 <use ../Figs-Tabs/shift_register.png>
@@ -1458,7 +1450,7 @@ Package pdftex.def Info: ../Figs-Tabs/shift_register.png used on input line 68.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<../Figs-Tabs/gen_pseudocasuali.png, id=84, 280.79906pt x 343.2825pt>
+<../Figs-Tabs/gen_pseudocasuali.png, id=86, 280.79906pt x 343.2825pt>
 File: ../Figs-Tabs/gen_pseudocasuali.png Graphic file (type png)
 
 <use ../Figs-Tabs/gen_pseudocasuali.png>
@@ -1469,45 +1461,52 @@ Package pdftex.def Info: ../Figs-Tabs/gen_pseudocasuali.png used on input line
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
+<../Figs-Tabs/lineare_ritardi.pdf, id=87, 462.52798pt x 344.0052pt>
+File: ../Figs-Tabs/lineare_ritardi.pdf Graphic file (type pdf)
+
+<use ../Figs-Tabs/lineare_ritardi.pdf>
+Package pdftex.def Info: ../Figs-Tabs/lineare_ritardi.pdf used on input line 83
+.
+(pdftex.def)             Requested size: 277.51892pt x 206.40471pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
 )
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 143.
  [3 <../Figs-Tabs/D_latch.png>] [4 <../Figs-Tabs/Q.png> <../Figs-Tabs/Qbar.png>
  <../Figs-Tabs/Qbar_enable_basso.png> <../Figs-Tabs/divisore_freq.png> <../Figs
 -Tabs/Qa_vs_clock.png> <../Figs-Tabs/Qb_vs_clock.png>] [5 <../Figs-Tabs/Qc_vs_c
 lock.png> <../Figs-Tabs/Qd_vs_clock.png> <../Figs-Tabs/shift_register.png> <../
-Figs-Tabs/gen_pseudocasuali.png>]
+Figs-Tabs/gen_pseudocasuali.png>] [6 <../Figs-Tabs/lineare_ritardi.pdf>]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 143.
- (Flip_flop_contatori.aux)
+
+(Flip_flop_contatori.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 143.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 143.
 Package rerunfilecheck Info: File `Flip_flop_contatori.out' has not changed.
-(rerunfilecheck)             Checksum: 155E84487273E1B1BF496DD035FEF138;405.
-
-
-LaTeX Warning: There were undefined references.
-
+(rerunfilecheck)             Checksum: 110ADD07E50E6F547C17787FCCE67758;405.
  ) 
 Here is how much of TeX's memory you used:
- 25465 strings out of 493333
- 468000 string characters out of 3139181
- 691308 words of memory out of 3000000
- 28623 multiletter control sequences out of 15000+200000
- 16451 words of font info for 53 fonts, out of 3000000 for 9000
+ 25470 strings out of 493333
+ 468158 string characters out of 3139181
+ 690308 words of memory out of 3000000
+ 28626 multiletter control sequences out of 15000+200000
+ 15668 words of font info for 52 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  44i,11n,49p,10411b,737s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\gianfraco\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi
-600\ecbx1095.pk> <C:\Users\gianfraco\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\j
-knappen\ec\dpi600\ecrm1095.pk> <C:\Users\gianfraco\AppData\Local\MiKTeX\2.9\fon
-ts\pk\ljfour\jknappen\ec\dpi600\ecbx1440.pk> <C:\Users\gianfraco\AppData\Local\
-MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1200.pk> <C:\Users\gianfraco\
-AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1728.pk><C:/Pro
-gram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Fil
-es/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX
- 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts
-/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on Flip_flop_contatori.pdf (5 pages, 298609 bytes).
+600\ecrm1095.pk> <C:\Users\gianfraco\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\j
+knappen\ec\dpi600\ecbx1440.pk> <C:\Users\gianfraco\AppData\Local\MiKTeX\2.9\fon
+ts\pk\ljfour\jknappen\ec\dpi600\ecrm1200.pk> <C:\Users\gianfraco\AppData\Local\
+MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1728.pk><C:/Program Files/MiK
+TeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9/
+fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/typ
+e1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/
+amsfonts/cm/cmsy10.pfb>
+Output written on Flip_flop_contatori.pdf (6 pages, 310020 bytes).
 PDF statistics:
- 292 PDF objects out of 1000 (max. 8388607)
- 26 named destinations out of 1000 (max. 500000)
- 112 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 327 PDF objects out of 1000 (max. 8388607)
+ 28 named destinations out of 1000 (max. 500000)
+ 117 words of extra memory for PDF output out of 10000 (max. 10000000)
 

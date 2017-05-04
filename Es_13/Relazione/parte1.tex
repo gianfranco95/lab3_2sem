@@ -28,5 +28,8 @@ Dopo aver verificato il funzionamento del circuito a bassa frequenza, ci siamo p
 \end{itemize}
 
 \section{Semaforo completo}
+Abbiamo realizzato il circuito mostrato in \fig{circuito}, facendo uso di 4 AND, 2 OR e 3 NAND per costruire la logica. L'implementazione è stata effettuata, come in precedenza, con una macchina di Mealy, mentre il semaforo risulta attivo ad ENABLE basso. In \tab{Tab-ver} è mostrata la tabella di verità. L'ENABLE è stato collegato a terra attraverso la resistenza R$_1$.\\ %tabella
+Ad ENABLE alto si ha il semaforo lampeggiante, dove abbiamo i tre led spenti per lo stato 10 e solo il giallo acceso per lo stato 11. Dal momento che 11 va in 10 e viceversa, rimango sempre all'interno di questi due stati; anche se inizialmente mi trovavo in 01 o in 00 (stati proibiti, con uscite arbitrarie) arrivo in questi due stati.\\
+Abbiamo verificato il funzionamento del circuito con frequenza di clock di 1 Hz, rilevando all'oscilloscopio, con frequenza di 10 Hz, la forma d'onda dell'uscita corrispondente al giallo, ad ENABLE alto (semaforo DISABILITATO), a confronto con la forma d'onda del clock (\fig{lampeggiante}).
 
 

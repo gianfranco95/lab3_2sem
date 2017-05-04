@@ -1,0 +1,32 @@
+\section{Scopo e strumentazione}
+L'esperienza ha come obiettivo la realizzazione di un semaforo utilizzando il concetto di macchina a stati finiti. Abbiamo utilizzato il segnale TTL in uscita dalla boccola PULSE del generatore di funzioni come clock, con un duty cycle del 50\% e una tensione compresa tra 0 e 5 V. Per implementare la logica necessaria abbiamo impiegato un integrato 7400 costituito da 4 porte NAND, un integrato 7408 formato da 4 AND e un integrato 7432 contenente 4 porte OR. Due Flip-Flop di tipo D (integrato 7474) completano l'apparato strumentale, insieme a 4 resistenze di valori R$_1 = 320 \pm 3$ $\Omega$, R$_2 = 329 \pm 3$ $\Omega$, R$_3 = 321 \pm 3$ $\Omega$, R$_4 = 325 \pm 3$ $\Omega$, misurati con il tester digitale, e a tre led rispettivamente verde, giallo e rosso. Per realizzare l'ENABLE che distingua tra i due stati ABILITATO/DISABILITATO del semaforo è stato utilizzato anche uno switch a 4 bit. Si è infine fatto uso dell'oscilloscopio per osservare le forme d'onda.
+
+
+\section{Semaforo nello stato abilitato}
+Nello stato abilitato il semaforo il semaforo passa dallo stato in cui è acceso il solo led verde a quello in cui sono accesi i led verde e giallo e quindi a quello in cui è acceso il solo led rosso, per poi ritornare nello stato iniziale; un diagramma di transizione è mostrato in \fig{diagramma}.\\
+Abbiamo utilizzato una logica a 2 bit definendo come 00 lo stato in cui è acceso il solo led verde, 01 quello in cui sono accesi i led verde e giallo, 10 quello in cui è acceso il solo led rosso. In \tab{Tabella-verità} è mostrata la tabella di verità del circuito.\\
+\begin{table}[h]
+	\centering
+	\begin{tabular}{*{7}{S[table-figures-exponent = 2]}}
+		{${b_0}^{n}$} & {${b_1}^{n}$} & {${b_0}^{n+1}$} & {${b_1}^{n+1}$} & {VERDE} & {GIALLO} & {ROSSO} \\
+		\midrule
+           0 & 0 & 0 & 1 & 1 & 0 & 0\\
+           0 & 1 & 1 & 0 & 1 & 1 & 0\\
+           1 & 0 & 0 & 0 & 0 & 0 & 1\\
+           1 & 1 & 1 & 0 & 0 & 1 & 0\\
+ 	\end{tabular}
+	\caption{ Tabella di verità osservata per il semaforo nello stato abilitato}
+	\label{t:Tabella-verità}
+\end{table}
+Per ottenere ${b_1}^{n+1}$ abbiamo utilizzato un AND avente come ingressi i negati di ${b_0}^{n}$ e ${b_1}^{n}$, ottenuti in corrispondenza delle uscite Qnegato dei flip-flop (uno corrispondente al bit $b_0$, l'altro al bit $b_1$), mentre agli ingressi D vanno lo stesso ${b_1}^{n+1}$ e ${b_0}^{n+1}$, quest'ultimo pari, come evidente dalla tabella di verità, a ${b_1}^{n}$ (ottenuto all'uscita Q del flip-flop corrispondente al bit $b_1$). I due flip-flop hanno lo stesso segnale di clock, posto ad una frequenza di circa 1 Hz. L'uscita VERDE è stata ottenuta negando ${b_0}^{n}$, quindi corrisponde a Qnegato del flip-flop per $b_0$. L'uscita GIALLO corrisponde a Q del flip-flop per $b_1$, mentre l'uscita ROSSO può essere considerata il negato (realizzato con un NAND che mantiene un ingresso flottante) dell'OR di VERDE e GIALLO. Le tre uscite VERDE, GIALLO e ROSSO vengono mandate rispettivamente alle resistenze R$_2$, R$_3$ e R$_4$, poste in serie ai rispettivi led. Lo schema circuitale è mostrato in \fig{Semaforo-abilitato}.\\
+L'ultima riga della tabella di verità può assumere, all'infuori degli ingressi ${b_0}^{n}$ e ${b_1}^{n}$ e tenuto conto del fatto che l'ingresso 11 non può tornare in sè stesso, dal momento che non corrisponde ad alcuno stato, valori arbitrari. I valori scelti sono tesi a semplificare la logica.\\ Infine, abbiamo collegato alla tensione di alimentazione, di poco inferiore a 5 V, gli ingressi di preset e clear dei flip-flop onde evitare fenomeni spuri.\\
+Dopo aver verificato il funzionamento del circuito a bassa frequenza, ci siamo posti ad una frequenza di circa 10 Hz osservando all'oscilloscopio le forme d'onda corrispondenti:
+\begin{itemize}
+\item al segnale di clock confrontato con il segnale passante dal led verde; si può osservare che il periodo del secondo è il triplo del primo e che il duty cycle è pari a 2/3.
+\item al segnale di clock confrontato con il segnale passante dal led giallo; anche in tal caso il periodo del secondo è il triplo del primo, ma il duty cycle è pari a 1/3
+\item al segnale passante dal GIALLO confrontato con quello passante dal ROSSO; i due segnali hanno uguale periodo e duty cycle di 1/3, ma presentano uno sfasamento tale che quando il GIALLO scende il ROSSO, precedentemente basso, sale.
+\end{itemize}
+
+\section{Semaforo completo}
+
+

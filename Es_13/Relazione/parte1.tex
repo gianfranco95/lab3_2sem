@@ -19,7 +19,7 @@ Abbiamo utilizzato una logica a 2 bit definendo come 00 lo stato in cui è acces
 	\label{t:Tabella-verità}
 \end{table}
 Per ottenere ${b_0}^{n+1}$ abbiamo utilizzato un AND avente come ingressi i negati di ${b_0}^{n}$ e ${b_1}^{n}$, ottenuti in corrispondenza delle uscite $\bar  Q$ dei flip-flop (uno corrispondente al bit $b_0$, l'altro al bit $b_1$), mentre agli ingressi D vanno lo stesso ${b_0}^{n+1}$ e ${b_1}^{n+1}$, quest'ultimo pari, come evidente dalla tabella di verità, a ${b_0}^{n}$ (ottenuto all'uscita Q del flip-flop corrispondente al bit $b_0$). I due flip-flop hanno lo stesso segnale di clock, posto ad una frequenza di circa 1 Hz. L'uscita VERDE è stata ottenuta negando ${b_1}^{n}$, quindi corrisponde a $\bar Q$ del flip-flop per $b_1$. L'uscita GIALLO corrisponde a Q del flip-flop per $b_0$, mentre l'uscita ROSSO può essere considerata l'AND di GIALLO negato (quindi ${\bar{b_0}^{n}}$) e VERDE negato (quindi ${b_1}^{n}$). Le tre uscite VERDE, GIALLO e ROSSO vengono mandate rispettivamente alle resistenze R$_2$, R$_3$ e R$_4$, poste in serie ai rispettivi led. Lo schema circuitale è mostrato in \fig{semaforo_abilitato}.\\
-L'ultima riga della tabella di verità può assumere, all'infuori degli ingressi ${b_0}^{n}$ e ${b_1}^{n}$ e tenuto conto del fatto che l'ingresso 11 non può tornare in sè stesso (infatti non corrisponde ad alcuno stato), valori arbitrari. Tuttavia noi abbiamo posto per VERDE, GIALLO e ROSSO rispettivamente 0,1,0. I valori scelti sono tesi a semplificare la logica.\\ Infine, abbiamo collegato alla tensione di alimentazione, di poco inferiore a 5 V, gli ingressi di preset e clear dei flip-flop onde evitare fenomeni spuri. Le funzioni combinatorie utilizzate sono quelle mostrate, ponendo EN=0, nelle equazioni mostrate nella sezione successiva.\\
+L'ultima riga della tabella di verità può determinare valori arbitrari in uscita ai LED in quanto l'ingresso 11 non rientra nei tre stati che si ripetono ciclicamnete (infatti non corrisponde ad alcuno stato). Tuttavia noi abbiamo posto per VERDE, GIALLO e ROSSO rispettivamente 0,1,0. I valori scelti sono tesi a semplificare la logica.\\ Infine, abbiamo collegato alla tensione di alimentazione, di poco inferiore a 5 V, gli ingressi di preset e clear dei flip-flop onde evitare fenomeni spuri. Le funzioni combinatorie utilizzate sono quelle mostrate, ponendo EN=0, nelle equazioni mostrate nella sezione successiva.\\
 Dopo aver verificato il funzionamento del circuito a bassa frequenza, ci siamo posti ad una frequenza di circa 10 Hz osservando all'oscilloscopio le forme d'onda corrispondenti:
 \begin{itemize}
 \item al segnale di clock confrontato con il segnale passante dal led verde; si può osservare che il periodo del secondo è il triplo del primo e che il duty cycle è pari a 2/3 (\fig{verde}).
@@ -28,7 +28,7 @@ Dopo aver verificato il funzionamento del circuito a bassa frequenza, ci siamo p
 \end{itemize}
 
 \section{Semaforo completo}
-Abbiamo realizzato il circuito mostrato in \fig{circuito_completo}, facendo uso di 4 AND, 2 OR e 3 NAND per costruire la logica (in \fig{diagramma} è mostrato il diagramma di transizione). L'implementazione è stata effettuata, come in precedenza, con una macchina di Mealy, mentre il semaforo risulta abilitato ad ENABLE basso. In \tab{tabella_verità} è mostrata la tabella di verità. L'ENABLE è stato realizzato come mostrato in \fig{enable}, dove la resistenza impiegata è R$_1$.\\
+Abbiamo realizzato il circuito mostrato in \fig{circuito_completo}, facendo uso di 4 AND, 2 OR e 3 NAND per costruire la logica (in \fig{diagramma} è mostrato il diagramma di transizione). L'implementazione è stata effettuata con una macchina di Mealy, mentre il semaforo risulta abilitato ad ENABLE basso. In \tab{tabella_verità} è mostrata la tabella di verità. L'ENABLE è stato realizzato come mostrato in \fig{enable}, dove la resistenza impiegata R$_1$ ha la funzione di limitare un eccessivo passaggio di corrente tra il potenziale Vcc e la massa.\\
 \begin{table}[h]
 	\centering
 	\begin{tabular}{cccccccc}		
@@ -46,9 +46,9 @@ Abbiamo realizzato il circuito mostrato in \fig{circuito_completo}, facendo uso 
 	\caption{ Tabella di verità del semaforo; ai don't care, che compaiono per gli stati proibiti, abbiamo assegnato valori che fossero in accordo con le espressioni delle funzioni logiche }
 	\label{t:tabella_verità}
 \end{table}
-Ad ENABLE alto si ha il semaforo lampeggiante, dove abbiamo i tre led spenti per lo stato 10 e solo il giallo acceso per lo stato 11. Dal momento che 11 va in 10 e viceversa, rimango sempre all'interno di questi due stati; anche se inizialmente mi trovavo in 01 o in 00 (stati proibiti, con uscite arbitrarie) arrivo in questi due stati.\\
-Abbiamo verificato il funzionamento del circuito con frequenza di clock di 1 Hz, rilevando all'oscilloscopio, con frequenza di 10 Hz, la forma d'onda dell'uscita corrispondente al giallo, ad ENABLE alto (semaforo DISABILITATO), a confronto con la forma d'onda del clock (\fig{lampeggiante}).\\
-Le funzioni logiche implementate, che verificano la tabella di verità, sono:
+Ad ENABLE alto si ha il semaforo lampeggiante, dove abbiamo i tre led spenti per lo stato 10 e solo il giallo acceso per lo stato 11. Dal momento che 11 va in 10 e viceversa,il circuito oscilla tra questi due stati; anche se inizialmente lo stato è 01 o in 00 (stati proibiti, con uscite ai LED arbitrarie) si giunge in questi due stati.\\
+Abbiamo verificato il funzionamento del circuito con frequenza di clock di 1 Hz, rilevando all'oscilloscopio, con frequenza di 10 Hz, la forma d'onda dell'uscita corrispondente al giallo, ad ENABLE alto (semaforo DISABILITATO), a confronto con la forma d'onda del clock (\fig{lampeggiante}). Si può notare che il segnale all'ingresso del LED giallo ha periodo doppio del clock e  duty cycle del 50 \%\\
+Le funzioni logiche che verificano la tabella di verità, opportunamente semplificate ed implementate nel circuito, sono:
 \begin{equation}
 {b_0}^{n+1} = ({\bar{b_0}}^{n} {b_1}^{n}) EN + ({\bar{b_0}}^{n} {\bar{b_1}}^{n})
 \label{e:eq1}
@@ -69,5 +69,5 @@ VERDE = {\bar{b_1}}^{n}
 ROSSO = ({b_1}^{n} {\bar{b_0}}^{n}) \bar{EN}
 \label{e:eq5}
 \end{equation}
-
+Si può notare che si tratta di una macchina di Mealy in quanto gli output, in particolare ROSSO, sono funzione sia dello statao che dell'input di Enable.
 

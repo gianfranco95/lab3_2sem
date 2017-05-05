@@ -18,7 +18,7 @@ Sono stati utilizzati cinque stati corrispondenti a quali dei tre led risultano 
 	\caption{ Stati di ARDUINO }
 	\label{t:stati_arduino}
 \end{table}
-La logica della macchina a stati finiti implementata via software si trova nella \tab{semaforo_arduino}. Per ciascuna transizione tra stati diversi è stabilito un tempo di transizione che può essere eventualmente modificato. 
+La logica della macchina a stati finiti implementata via software si trova nella \tab{semaforo_arduino}. Per ciascuna transizione tra stati diversi è stabilito un tempo di transizione che può essere eventualmente modificato indipendentemente per ciascuna transizione. 
 \begin{table}[h]
 	\centering
 	\begin{tabular}{ccc}		
@@ -42,3 +42,5 @@ La logica della macchina a stati finiti implementata via software si trova nella
 
 La macchina qui realizzata è del tipo Moore in quanto, i valori dei tre output (D9, D10, D11) all'ingresso dei LED sono determinati solamente dallo stato della macchina e non da altri input.\\
 
+\section{Conclusioni}
+E' stato realizzato un semaforo dapprima funzionante solo in modalità abilitata. In seguito è stato implementato un sistema he permettesse di decidere la modalità abilitata o disabilitata tramite l'azione di un interruttore. In entrambi i casi si è cercato il modo più efficiente e con meno porte logiche e bit di realizzare il semaforo.

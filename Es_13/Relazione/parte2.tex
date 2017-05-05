@@ -1,8 +1,8 @@
 \section{Macchina a stati finiti con arduino}
 E' stato realizzato lo stesso semaforo tramite arduino.
 Sono state stabilite come porte di output le porte D9, D10, D11 che sono state poste all'ingresso dei diodi rispettivamente verde, giallo e rosso. Le uscite sono state prelevate non direttamente da arduino ma dal buffer 74LS244 ad esso connesso. Inoltre in serie ai diodi sono state lasciate le resistenze di limitazione della corrente, utilizzate anche in precedenza.\\
-E' stato stabilita come input-pullup la porta D8, che può assumere in ingresso i due valori di 0V e 5 V, ottenuti collegando la porta allo stesso enable del circuito precedente in \fig{enable}. I valore di potenziale  0V e 5V sono interpretati come stati LOW e HIGH da arduinio.\\ 
-Sono stati utilizzati cinque stati corrispondenti a quali del tre led risultano accesi. A ciascuno stato è assegnata una variabile intera: \tab{stati_arduino}.
+E' stato stabilita come input-pullup la porta D8, che è stata collegata tramite l'interruttore a massa. Le condizioni di interruttore in cortocircuito oppure aperto sono interpretate come stati LOW e HIGH da arduinio.\\ 
+Sono stati utilizzati cinque stati corrispondenti a quali dei tre led risultano accesi. A ciascuno stato è assegnata una variabile intera: \tab{stati_arduino}.
 \begin{table}[h]
 	\centering
 	\begin{tabular}{cc}		

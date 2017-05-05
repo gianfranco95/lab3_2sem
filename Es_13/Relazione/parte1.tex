@@ -28,7 +28,24 @@ Dopo aver verificato il funzionamento del circuito a bassa frequenza, ci siamo p
 \end{itemize}
 
 \section{Semaforo completo}
-Abbiamo realizzato il circuito mostrato in \fig{circuito_completo}, facendo uso di 4 AND, 2 OR e 3 NAND per costruire la logica (in \fig{diagramma} è mostrato il diagramma di transizione). L'implementazione è stata effettuata, come in precedenza, con una macchina di Mealy, mentre il semaforo risulta attivo ad ENABLE basso. In \tab{Tab-ver} è mostrata la tabella di verità. L'ENABLE è stato realizzato come mostrato in \fig{enable}, dove la resistenza impiegata è R$_1$.\\ %tabella
+Abbiamo realizzato il circuito mostrato in \fig{circuito_completo}, facendo uso di 4 AND, 2 OR e 3 NAND per costruire la logica (in \fig{diagramma} è mostrato il diagramma di transizione). L'implementazione è stata effettuata, come in precedenza, con una macchina di Mealy, mentre il semaforo risulta attivo ad ENABLE basso. In \tab{tabella_verità} è mostrata la tabella di verità. L'ENABLE è stato realizzato come mostrato in \fig{enable}, dove la resistenza impiegata è R$_1$.\\
+\begin{table}[h]
+	\centering
+	\begin{tabular}{cccccccc}		
+		 EN& $b_{1}^{n}$& $b_{0}^{n}$& $b_{1}^{n+1}$& $b_{0}^{n+1}$ &V & G& R\\
+		 \midrule 
+		  0 & 0 & 0 & 0 & 1 & 1 & 0 & 0 \\
+		  0 & 0 & 1 & 1 & 0 & 1 & 1 & 0 \\
+		  0 & 1 & 0 & 0 & 0 & 0 & 0 & 1 \\
+          0 & 1 & 1 & 1 & 0 & x & x & x \\
+		  1 & 0 & 0 & 0 & 1 & x & x & x \\
+		  1 & 0 & 1 & 1 & 0 & x & x & x \\
+		  1 & 1 & 0 & 1 & 1 & 0 & 0 & 0 \\
+          1 & 1 & 1 & 1 & 0 & 0 & 1 & 0 \\          
+ 	\end{tabular}
+	\caption{ Tabella di verità del semaforo }
+	\label{t:tabella_verità}
+\end{table}
 Ad ENABLE alto si ha il semaforo lampeggiante, dove abbiamo i tre led spenti per lo stato 10 e solo il giallo acceso per lo stato 11. Dal momento che 11 va in 10 e viceversa, rimango sempre all'interno di questi due stati; anche se inizialmente mi trovavo in 01 o in 00 (stati proibiti, con uscite arbitrarie) arrivo in questi due stati.\\
 Abbiamo verificato il funzionamento del circuito con frequenza di clock di 1 Hz, rilevando all'oscilloscopio, con frequenza di 10 Hz, la forma d'onda dell'uscita corrispondente al giallo, ad ENABLE alto (semaforo DISABILITATO), a confronto con la forma d'onda del clock (\fig{lampeggiante}).\\
 Le funzioni logiche implementate, che verificano la tabella di verità, sono:
@@ -49,7 +66,7 @@ VERDE = {\bar{b_1}}^{n}
 \label{e:eq4}
 \end{equation}
 \begin{equation}
-ROSSO = \bar{({b_1}^{n} {\bar{b_0}}^{n}) \bar{EN}}
+ROSSO = ({b_1}^{n} {\bar{b_0}}^{n}) \bar{EN}
 \label{e:eq5}
 \end{equation}
 

@@ -18,7 +18,7 @@ Sono stati utilizzati cinque stati corrispondenti a quali del tre led risultano 
 	\caption{ Stati di ARDUINO }
 	\label{t:stati_arduino}
 \end{table}
-La logica della macchina a stati finiti implementata via software si trova nella \tab{semaforo_arduino}.
+La logica della macchina a stati finiti implementata via software si trova nella \tab{semaforo_arduino}. Per ciascuna transizione tra stati diversi è stabilito un tempo di transizione che può essere eventualmente modificato. 
 \begin{table}[h]
 	\centering
 	\begin{tabular}{ccc}		
@@ -40,5 +40,5 @@ La logica della macchina a stati finiti implementata via software si trova nella
 	\label{t:semaforo_arduino}
 \end{table}
 
-La macchina qui realizzata è del tipo Moore (????????)
+La macchina qui realizzata è del tipo Moore in quanto, i valori dei tre output (D9, D10, D11) all'ingresso dei LED sono determinati solamente dallo stato della macchina e non da altri input.\\
 

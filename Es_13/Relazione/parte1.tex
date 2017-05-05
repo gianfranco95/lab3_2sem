@@ -3,7 +3,7 @@ L'esperienza ha come obiettivo la realizzazione di un semaforo utilizzando il co
 
 
 \section{Semaforo nello stato abilitato}
-Nello stato abilitato il semaforo passa dallo stato in cui è acceso il solo led verde a quello in cui sono accesi i led verde e giallo e quindi a quello in cui è acceso il solo led rosso, per poi ritornare nello stato iniziale; un diagramma di transizione è mostrato in \fig{diagramma}, con ENABLE 0.\\
+Nello stato abilitato il semaforo passa dallo stato in cui è acceso il solo led verde a quello in cui sono accesi i led verde e giallo e quindi a quello in cui è acceso il solo led rosso, per poi ritornare nello stato iniziale; un diagramma di transizione è mostrato in \fig{diagramma}, considerando soltanto ENABLE 0.\\
 Abbiamo utilizzato una logica a 2 bit definendo come 00 lo stato in cui è acceso il solo led verde, 01 quello in cui sono accesi i led verde e giallo, 10 quello in cui è acceso il solo led rosso. In \tab{Tabella-verità} è mostrata la tabella di verità del circuito.\\
 \begin{table}[h]
 	\centering
@@ -19,7 +19,7 @@ Abbiamo utilizzato una logica a 2 bit definendo come 00 lo stato in cui è acces
 	\label{t:Tabella-verità}
 \end{table}
 Per ottenere ${b_0}^{n+1}$ abbiamo utilizzato un AND avente come ingressi i negati di ${b_0}^{n}$ e ${b_1}^{n}$, ottenuti in corrispondenza delle uscite $\bar  Q$ dei flip-flop (uno corrispondente al bit $b_0$, l'altro al bit $b_1$), mentre agli ingressi D vanno lo stesso ${b_0}^{n+1}$ e ${b_1}^{n+1}$, quest'ultimo pari, come evidente dalla tabella di verità, a ${b_0}^{n}$ (ottenuto all'uscita Q del flip-flop corrispondente al bit $b_0$). I due flip-flop hanno lo stesso segnale di clock, posto ad una frequenza di circa 1 Hz. L'uscita VERDE è stata ottenuta negando ${b_1}^{n}$, quindi corrisponde a $\bar Q$ del flip-flop per $b_1$. L'uscita GIALLO corrisponde a Q del flip-flop per $b_0$, mentre l'uscita ROSSO può essere considerata l'AND di GIALLO negato (quindi ${\bar{b_0}^{n}}$) e VERDE negato (quindi ${b_1}^{n}$). Le tre uscite VERDE, GIALLO e ROSSO vengono mandate rispettivamente alle resistenze R$_2$, R$_3$ e R$_4$, poste in serie ai rispettivi led. Lo schema circuitale è mostrato in \fig{semaforo_abilitato}.\\
-L'ultima riga della tabella di verità può assumere, all'infuori degli ingressi ${b_0}^{n}$ e ${b_1}^{n}$ e tenuto conto del fatto che l'ingresso 11 non può tornare in sè stesso, dal momento che non corrisponde ad alcuno stato, valori arbitrari. Tuttavia noi abbiamo posto per VERDE, GIALLO e ROSSO rispettivamente 0,1,0. I valori scelti sono tesi a semplificare la logica.\\ Infine, abbiamo collegato alla tensione di alimentazione, di poco inferiore a 5 V, gli ingressi di preset e clear dei flip-flop onde evitare fenomeni spuri. Le funzioni combinatorie utilizzate sono quelle mostrate, ponendo EN=0, nelle equazioni mostrate nella sezione successiva.\\
+L'ultima riga della tabella di verità può assumere, all'infuori degli ingressi ${b_0}^{n}$ e ${b_1}^{n}$ e tenuto conto del fatto che l'ingresso 11 non può tornare in sè stesso (infatti non corrisponde ad alcuno stato), valori arbitrari. Tuttavia noi abbiamo posto per VERDE, GIALLO e ROSSO rispettivamente 0,1,0. I valori scelti sono tesi a semplificare la logica.\\ Infine, abbiamo collegato alla tensione di alimentazione, di poco inferiore a 5 V, gli ingressi di preset e clear dei flip-flop onde evitare fenomeni spuri. Le funzioni combinatorie utilizzate sono quelle mostrate, ponendo EN=0, nelle equazioni mostrate nella sezione successiva.\\
 Dopo aver verificato il funzionamento del circuito a bassa frequenza, ci siamo posti ad una frequenza di circa 10 Hz osservando all'oscilloscopio le forme d'onda corrispondenti:
 \begin{itemize}
 \item al segnale di clock confrontato con il segnale passante dal led verde; si può osservare che il periodo del secondo è il triplo del primo e che il duty cycle è pari a 2/3 (\fig{verde}).
@@ -28,7 +28,7 @@ Dopo aver verificato il funzionamento del circuito a bassa frequenza, ci siamo p
 \end{itemize}
 
 \section{Semaforo completo}
-Abbiamo realizzato il circuito mostrato in \fig{circuito_completo}, facendo uso di 4 AND, 2 OR e 3 NAND per costruire la logica (in \fig{diagramma} è mostrato il diagramma di transizione). L'implementazione è stata effettuata, come in precedenza, con una macchina di Mealy, mentre il semaforo risulta attivo ad ENABLE basso. In \tab{tabella_verità} è mostrata la tabella di verità. L'ENABLE è stato realizzato come mostrato in \fig{enable}, dove la resistenza impiegata è R$_1$.\\
+Abbiamo realizzato il circuito mostrato in \fig{circuito_completo}, facendo uso di 4 AND, 2 OR e 3 NAND per costruire la logica (in \fig{diagramma} è mostrato il diagramma di transizione). L'implementazione è stata effettuata, come in precedenza, con una macchina di Mealy, mentre il semaforo risulta abilitato ad ENABLE basso. In \tab{tabella_verità} è mostrata la tabella di verità. L'ENABLE è stato realizzato come mostrato in \fig{enable}, dove la resistenza impiegata è R$_1$.\\
 \begin{table}[h]
 	\centering
 	\begin{tabular}{cccccccc}		

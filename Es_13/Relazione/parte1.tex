@@ -3,33 +3,54 @@ L'esperienza ha come obiettivo la realizzazione di un semaforo utilizzando il co
 
 
 \section{Semaforo nello stato abilitato}
-Nello stato abilitato il semaforo il semaforo passa dallo stato in cui è acceso il solo led verde a quello in cui sono accesi i led verde e giallo e quindi a quello in cui è acceso il solo led rosso, per poi ritornare nello stato iniziale; un diagramma di transizione è mostrato in \fig{diagramma}.\\
+Nello stato abilitato il semaforo passa dallo stato in cui è acceso il solo led verde a quello in cui sono accesi i led verde e giallo e quindi a quello in cui è acceso il solo led rosso, per poi ritornare nello stato iniziale; un diagramma di transizione è mostrato in \fig{diagramma}, con ENABLE 0.\\
 Abbiamo utilizzato una logica a 2 bit definendo come 00 lo stato in cui è acceso il solo led verde, 01 quello in cui sono accesi i led verde e giallo, 10 quello in cui è acceso il solo led rosso. In \tab{Tabella-verità} è mostrata la tabella di verità del circuito.\\
 \begin{table}[h]
 	\centering
 	\begin{tabular}{*{7}{S[table-figures-exponent = 2]}}
-		{${b_0}^{n}$} & {${b_1}^{n}$} & {${b_0}^{n+1}$} & {${b_1}^{n+1}$} & {VERDE} & {GIALLO} & {ROSSO} \\
+		{${b_1}^{n}$} & {${b_0}^{n}$} & {${b_1}^{n+1}$} & {${b_0}^{n+1}$} & {VERDE} & {GIALLO} & {ROSSO} \\
 		\midrule
            0 & 0 & 0 & 1 & 1 & 0 & 0\\
            0 & 1 & 1 & 0 & 1 & 1 & 0\\
            1 & 0 & 0 & 0 & 0 & 0 & 1\\
-           1 & 1 & 1 & 0 & 0 & 1 & 0\\
+           1 & 1 & 1 & 0 & X & X & X\\
  	\end{tabular}
 	\caption{ Tabella di verità osservata per il semaforo nello stato abilitato}
 	\label{t:Tabella-verità}
 \end{table}
-Per ottenere ${b_1}^{n+1}$ abbiamo utilizzato un AND avente come ingressi i negati di ${b_0}^{n}$ e ${b_1}^{n}$, ottenuti in corrispondenza delle uscite Qnegato dei flip-flop (uno corrispondente al bit $b_0$, l'altro al bit $b_1$), mentre agli ingressi D vanno lo stesso ${b_1}^{n+1}$ e ${b_0}^{n+1}$, quest'ultimo pari, come evidente dalla tabella di verità, a ${b_1}^{n}$ (ottenuto all'uscita Q del flip-flop corrispondente al bit $b_1$). I due flip-flop hanno lo stesso segnale di clock, posto ad una frequenza di circa 1 Hz. L'uscita VERDE è stata ottenuta negando ${b_0}^{n}$, quindi corrisponde a Qnegato del flip-flop per $b_0$. L'uscita GIALLO corrisponde a Q del flip-flop per $b_1$, mentre l'uscita ROSSO può essere considerata il negato (realizzato con un NAND che mantiene un ingresso flottante) dell'OR di VERDE e GIALLO. Le tre uscite VERDE, GIALLO e ROSSO vengono mandate rispettivamente alle resistenze R$_2$, R$_3$ e R$_4$, poste in serie ai rispettivi led. Lo schema circuitale è mostrato in \fig{Semaforo-abilitato}.\\
-L'ultima riga della tabella di verità può assumere, all'infuori degli ingressi ${b_0}^{n}$ e ${b_1}^{n}$ e tenuto conto del fatto che l'ingresso 11 non può tornare in sè stesso, dal momento che non corrisponde ad alcuno stato, valori arbitrari. I valori scelti sono tesi a semplificare la logica.\\ Infine, abbiamo collegato alla tensione di alimentazione, di poco inferiore a 5 V, gli ingressi di preset e clear dei flip-flop onde evitare fenomeni spuri.\\
+Per ottenere ${b_0}^{n+1}$ abbiamo utilizzato un AND avente come ingressi i negati di ${b_0}^{n}$ e ${b_1}^{n}$, ottenuti in corrispondenza delle uscite $\bar  Q$ dei flip-flop (uno corrispondente al bit $b_0$, l'altro al bit $b_1$), mentre agli ingressi D vanno lo stesso ${b_0}^{n+1}$ e ${b_1}^{n+1}$, quest'ultimo pari, come evidente dalla tabella di verità, a ${b_0}^{n}$ (ottenuto all'uscita Q del flip-flop corrispondente al bit $b_0$). I due flip-flop hanno lo stesso segnale di clock, posto ad una frequenza di circa 1 Hz. L'uscita VERDE è stata ottenuta negando ${b_1}^{n}$, quindi corrisponde a $\bar Q$ del flip-flop per $b_1$. L'uscita GIALLO corrisponde a Q del flip-flop per $b_0$, mentre l'uscita ROSSO può essere considerata l'AND di GIALLO negato (quindi ${\bar{b_0}^{n}}$) e VERDE negato (quindi ${b_1}^{n}$). Le tre uscite VERDE, GIALLO e ROSSO vengono mandate rispettivamente alle resistenze R$_2$, R$_3$ e R$_4$, poste in serie ai rispettivi led. Lo schema circuitale è mostrato in \fig{semaforo_abilitato}.\\
+L'ultima riga della tabella di verità può assumere, all'infuori degli ingressi ${b_0}^{n}$ e ${b_1}^{n}$ e tenuto conto del fatto che l'ingresso 11 non può tornare in sè stesso, dal momento che non corrisponde ad alcuno stato, valori arbitrari. Tuttavia noi abbiamo posto per VERDE, GIALLO e ROSSO rispettivamente 0,1,0. I valori scelti sono tesi a semplificare la logica.\\ Infine, abbiamo collegato alla tensione di alimentazione, di poco inferiore a 5 V, gli ingressi di preset e clear dei flip-flop onde evitare fenomeni spuri. Le funzioni combinatorie utilizzate sono quelle mostrate, ponendo EN=0, nelle equazioni mostrate nella sezione successiva.\\
 Dopo aver verificato il funzionamento del circuito a bassa frequenza, ci siamo posti ad una frequenza di circa 10 Hz osservando all'oscilloscopio le forme d'onda corrispondenti:
 \begin{itemize}
-\item al segnale di clock confrontato con il segnale passante dal led verde; si può osservare che il periodo del secondo è il triplo del primo e che il duty cycle è pari a 2/3.
-\item al segnale di clock confrontato con il segnale passante dal led giallo; anche in tal caso il periodo del secondo è il triplo del primo, ma il duty cycle è pari a 1/3
-\item al segnale passante dal GIALLO confrontato con quello passante dal ROSSO; i due segnali hanno uguale periodo e duty cycle di 1/3, ma presentano uno sfasamento tale che quando il GIALLO scende il ROSSO, precedentemente basso, sale.
+\item al segnale di clock confrontato con il segnale passante dal led verde; si può osservare che il periodo del secondo è il triplo del primo e che il duty cycle è pari a 2/3 (\fig{verde}).
+\item al segnale di clock confrontato con il segnale passante dal led giallo; anche in tal caso il periodo del secondo è il triplo del primo, ma il duty cycle è pari a 1/3 (\fig{giallo}).
+\item al segnale passante dal GIALLO confrontato con quello passante dal ROSSO; i due segnali hanno uguale periodo e duty cycle di 1/3, ma presentano uno sfasamento tale che quando il GIALLO scende il ROSSO, precedentemente basso, sale (\fig{rosso}).
 \end{itemize}
 
 \section{Semaforo completo}
-Abbiamo realizzato il circuito mostrato in \fig{circuito}, facendo uso di 4 AND, 2 OR e 3 NAND per costruire la logica. L'implementazione è stata effettuata, come in precedenza, con una macchina di Mealy, mentre il semaforo risulta attivo ad ENABLE basso. In \tab{Tab-ver} è mostrata la tabella di verità. L'ENABLE è stato collegato a terra attraverso la resistenza R$_1$.\\ %tabella
+Abbiamo realizzato il circuito mostrato in \fig{circuito_completo}, facendo uso di 4 AND, 2 OR e 3 NAND per costruire la logica (in \fig{diagramma} è mostrato il diagramma di transizione). L'implementazione è stata effettuata, come in precedenza, con una macchina di Mealy, mentre il semaforo risulta attivo ad ENABLE basso. In \tab{Tab-ver} è mostrata la tabella di verità. L'ENABLE è stato realizzato come mostrato in \fig{enable}, dove la resistenza impiegata è R$_1$.\\ %tabella
 Ad ENABLE alto si ha il semaforo lampeggiante, dove abbiamo i tre led spenti per lo stato 10 e solo il giallo acceso per lo stato 11. Dal momento che 11 va in 10 e viceversa, rimango sempre all'interno di questi due stati; anche se inizialmente mi trovavo in 01 o in 00 (stati proibiti, con uscite arbitrarie) arrivo in questi due stati.\\
-Abbiamo verificato il funzionamento del circuito con frequenza di clock di 1 Hz, rilevando all'oscilloscopio, con frequenza di 10 Hz, la forma d'onda dell'uscita corrispondente al giallo, ad ENABLE alto (semaforo DISABILITATO), a confronto con la forma d'onda del clock (\fig{lampeggiante}).
+Abbiamo verificato il funzionamento del circuito con frequenza di clock di 1 Hz, rilevando all'oscilloscopio, con frequenza di 10 Hz, la forma d'onda dell'uscita corrispondente al giallo, ad ENABLE alto (semaforo DISABILITATO), a confronto con la forma d'onda del clock (\fig{lampeggiante}).\\
+Le funzioni logiche implementate, che verificano la tabella di verità, sono:
+\begin{equation}
+{b_0}^{n+1} = ({\bar{b_0}}^{n} {b_1}^{n}) EN + ({\bar{b_0}}^{n} {\bar{b_1}}^{n})
+\label{e:eq1}
+\end{equation}
+\begin{equation}
+{b_1}^{n+1} = ({\bar{b_0}}^{n} {b_1}^{n}) EN + {b_0}^{n}
+\label{e:eq2}
+\end{equation}
+\begin{equation}
+GIALLO = {b_0}^{n}
+\label{e:eq3}
+\end{equation}
+\begin{equation}
+VERDE = {\bar{b_1}}^{n}
+\label{e:eq4}
+\end{equation}
+\begin{equation}
+ROSSO = \bar{({b_1}^{n} {\bar{b_0}}^{n}) \bar{EN}}
+\label{e:eq5}
+\end{equation}
 
 

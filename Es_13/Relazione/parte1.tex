@@ -13,7 +13,7 @@ Abbiamo utilizzato una logica a 2 bit definendo come 00 lo stato in cui è acces
            0 & 0 & 0 & 1 & 1 & 0 & 0\\
            0 & 1 & 1 & 0 & 1 & 1 & 0\\
            1 & 0 & 0 & 0 & 0 & 0 & 1\\
-           1 & 1 & 1 & 0 & X & X & X\\
+           1 & 1 & 1 & 0 & x & x & x\\
  	\end{tabular}
 	\caption{ Tabella di verità osservata per il semaforo nello stato abilitato}
 	\label{t:Tabella-verità}
@@ -43,7 +43,7 @@ Abbiamo realizzato il circuito mostrato in \fig{circuito_completo}, facendo uso 
 		  1 & 1 & 0 & 1 & 1 & 0 & 0 & 0 \\
           1 & 1 & 1 & 1 & 0 & 0 & 1 & 0 \\          
  	\end{tabular}
-	\caption{ Tabella di verità del semaforo }
+	\caption{ Tabella di verità del semaforo; ai don't care, che compaiono per gli stati proibiti, abbiamo assegnato valori che fossero in accordo con le espressioni delle funzioni logiche }
 	\label{t:tabella_verità}
 \end{table}
 Ad ENABLE alto si ha il semaforo lampeggiante, dove abbiamo i tre led spenti per lo stato 10 e solo il giallo acceso per lo stato 11. Dal momento che 11 va in 10 e viceversa, rimango sempre all'interno di questi due stati; anche se inizialmente mi trovavo in 01 o in 00 (stati proibiti, con uscite arbitrarie) arrivo in questi due stati.\\

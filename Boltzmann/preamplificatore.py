@@ -42,6 +42,7 @@ dx2=pylab.zeros(m2-n2+1)
 y2=pylab.zeros(m2-n2+1)
 dy2=pylab.zeros(m2-n2+1)
 
+
 for i in range(0,len(x1)):
     y1[i]=Abode[n1+i]
     dy1[i]=dAbode[n1+i]
@@ -53,6 +54,7 @@ for i in range(0,len(x2)):
     dy2[i]=dAbode[n2+i]
     x2[i]=fbode[n2+i]
     dx2[i]=dfbode[n2+i]
+    
 
 
 popt,pcov=curve_fit(f,x1,y1,sigma=dy1)
@@ -60,7 +62,7 @@ m1,q1=popt
 dm1,dq1=pylab.sqrt(pcov.diagonal())
 smq1 =pcov[0,1]
 
-w=pylab.linspace(min(x1*2/3),max(x1*4/3),10)
+w=pylab.linspace(min(x1*2/3),4.048,10)
 pylab.plot(w,f(w,m1,q1))
 
 popt,pcov=curve_fit(f,x2,y2,sigma=dy2)
@@ -68,12 +70,14 @@ m2,q2=popt
 dm2,dq2=pylab.sqrt(pcov.diagonal())
 smq2 = pcov[0,1]
 
-w=pylab.linspace(min(x2*7/8),max(x2*4/3),10)
+w=pylab.linspace(4.048,max(x2*4/3),10)
 pylab.plot(w,f(w,m2,q2))
 pylab.title('Risposta del preamplificatore')
 pylab.show()
 print('m1=%f+-%f dB/decade  q1=%f+-%f dB   normcov=%f'%(m1,dm1,q1,dq1,smq1/(dm1*dq1)))
 print('m2=%f+-%fdB/decade  q2=%f+-%f  dB  normcov=%f'%(m2,dm2,q2,dq2,smq2/(dq2*dm2)))
+chisq1 = (((f(x1,m1,q1)-y1)/dy1)**2).sum()
+chisq2 = (((f(x2,m2,q2)-y2)/dy2)**2).sum()
 
 sm1 =dm1
 sq1 =dq1

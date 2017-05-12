@@ -1,0 +1,9 @@
+#Vin semiampiezza mV Vout continua mV
+#R1=0.987 MOmega R2=0.994 kOmega
+#6.4301 kHz# T=310 mus +-	8mus
+11.8	4	132	12
+21.6	4.8	236	16	
+40.8	5.6	464	20
+82	8	920	40
+164	6	1760	40	
+272	6	2120	100	

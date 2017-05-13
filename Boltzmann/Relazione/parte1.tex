@@ -1,10 +1,10 @@
 \section{Scopo e strumentazione}
 L'esperienza ha l'obiettivo di svolgere una misura empirica della costante di Boltzmann a partire dalla misura del rumore termico di un circuito, costituito da un pre-amplificatore, un filtro passa-banda, un post-amplificatore ed un convertitore RMS disposti in serie.\\
 I diversi componenti del circuito sono stati montati separatamente e per ciascuno di essi è stato verificato il funzionamento, mandando un segnale sinusoidale in ingresso. Oltre a numerose resistenze e condensatori le cui impedenze sono specificate nel seguito, abbiamo impiegato gli integrati INA114, AD708 (2), AD736. Abbiamo inoltre collegato tra loro le linee di massa onde minimizzare differenze di tensione tra le stesse.\\
-Per evitare di danneggiare i componenti si è realizzato un circuito di filtraggio, mostrato in \fig{filtraggio}, dove abbiamo impiegato R$_1 = 995 \pm 8$ $\Omega$ e R$_2 = 997 \pm 8$ $\Omega$. Le tensioni in uscita sono state utilizzate come tensioni di alimentazione per gli integrati.
+Per minimizzare il rumore si è realizzato un circuito di filtraggio, mostrato in \fig{filtraggio}, dove abbiamo impiegato R$_1 = 995 \pm 8$ $\Omega$ e R$_2 = 997 \pm 8$ $\Omega$. Le tensioni in uscita sono state utilizzate come tensioni di alimentazione per gli integrati.
 
 \section{Pre-amplificatore}
-Abbiamo realizzato il ciruito mostrato in \fig{Pre-amp}, utilizzando come componenti R$_1 = 977 \pm 8$ $\Omega$, R$_2 = 4.62 \pm 0.04$ k$\Omega$, R$_3 = 68.8 \pm 0.6$ k$\Omega$. Abbiamo quindi mandato in ingresso un segnale sinusoidale ottenuto dal generatore di funzioni, osservando ingresso ed uscita ai due canali dell'oscilloscopio. In \tab{pre-amp} sono mostrate le misure realizzate variando la frequenza, dove l'errore è dato dalla parte di lettura.\\
+Abbiamo realizzato il ciruito mostrato in \fig{Pre-amp}, utilizzando come componenti R$_1 = 977 \pm 8$ $\Omega$, R$_2 = 4.62 \pm 0.04$ k$\Omega$, R$_3 = 68.8 \pm 0.6$ k$\Omega$. Abbiamo quindi mandato in ingresso un segnale sinusoidale ottenuto dal generatore di funzioni, osservando ingresso ed uscita ai due canali dell'oscilloscopio. Il segnale mostra un offset, che per la misura corrispondente al primo rigo della tabella vale V$_{in} = 1.2 \pm 0.5$ mV, V$_{out} = 0.7 \pm 0.1$ V.\\ In \tab{pre-amp} sono mostrate le misure realizzate variando la frequenza, dove l'errore è dato dalla parte di lettura.\\
 \begin{table}[h]
 	\centering
 	\begin{tabular}{cccccccc}		
@@ -32,6 +32,35 @@ Dall'intersezione delle due rette e propagando opportunamente gli errori è poss
 
 \section{Passa-banda e post-amplificatore}
 Abbiamo realizzato il circuito mostrato in \fig{passabanda}, utilizzando i componenti, misurati con il tester digitale, R$_1 = 2.66 \pm 0.02$ k$\Omega$, R$_2 = 119 \pm 3$ $\Omega$, R$_3 = 68.8 \pm 0.6$ k$\Omega$, C$_1 = 9.9 \pm 0.4$ nF, C$_2 = 10.4 \pm 0.4$ nF. Abbiamo inoltre realizzato il circuito mostrato in \fig{post-amp}, dove abbiamo impiegato R$_1 = 973 \pm 8$ $\Omega$, R$_2 = 33.1 \pm 0.3$ k$\Omega$, R$_3 = 3.85 \pm 0.03$ k$\Omega$. L'uscita del primo circuito è stata poi mandata all'ingresso del secondo, ed abbiamo misurato così la risposta in frequenza del circuito complessivo, rilevando per diversi valori di frequenza tensione in ingresso e tensione in uscita.\\
+In \tab{passabanda} sono mostrati i dati misurati all'oscilloscopio, con errori dati dalla parte di lettura. T è il periodo.
+\begin{table}[h]
+	\centering
+	\begin{tabular}{cccccc}		
+		{T [ms]} & {dT[ms]} & {V$_{in}$ [mV]} & {dV$_{in}$ [mV]} & {V$_{out}$ [mV]} & {dV$_{out}$ [mV]} \\
+		 \midrule
+	0.065 & 0.001& 7.4 & 0.7 &78 & 1 \\ 	
+	0.099 & 0.001& 7.5 & 0.5 &188 & 2 \\ 
+	0.080 & 0.001& 7.7 & 0.8 &121 & 1 \\ 
+	0.182 & 0.001& 8.0 & 0.5 &588 & 2 \\ 
+	0.148 & 0.001& 7.7 & 0.8 &1040 & 5 \\ 
+	0.118 & 0.001 &7.5 & 0.6 &344 & 2 \\ 
+	0.158 & 0.001 &7.5 & 0.8& 1280 & 5 \\ 
+	0.152 & 0.001 &7.4 & 0.7 &1270 & 5 \\ 
+	0.200 & 0.001 &7.5 & 0.7 &266 & 2 \\ 
+	0.300 & 0.002 &7.2 & 0.7 &142 & 2 \\ 
+	0.392 & 0.002 &7.5 & 0.6 &101 & 2 \\ 
+	0.528 & 0.002 &7.4 & 0.7 &66 & 1 \\ 
+	0.150 & 0.001 &14.6 & 1.1 &2220 & 15 \\ 
+	0.176 & 0.001 &14.8 & 0.8 &1350 & 10 \\ 
+	0.492 & 0.002 &14.8 & 1.2 &144 & 2 \\ 
+	0.246 & 0.001 &14.8 & 1.2 &412.0 & 0.2 \\ 
+	0.192 & 0.001 &15.0 & 1.2 &880 & 4 \\ 
+	1.80 & 0.01 &27 & 1& 66 & 1 \\ 
+	20.6 & 0.1 &190 & 1& 42 & 2 \\ 
+ 	\end{tabular}
+	\caption{Misure effettuate tra l'ingresso del passabanda e l'uscita del post-amplificatore. }
+	\label{t:passabanda}
+\end{table}
 In \fig{passabanda_fit} è mostrato il grafico dell'amplificazione in funzione della frequenza (plot di Bode). Abbiamo realizzato un fit con la funzione di trasferimento \ref{e:passabanda}, ottenendo:
 \begin{itemize}
 \item $f_0=\frac{\omega_i}{2\pi}= 6.392 \pm 0.053$ [kHz]

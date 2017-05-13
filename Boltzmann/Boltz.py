@@ -47,7 +47,7 @@ cov_V0_Rt=cov_V0_Rt*1000
 Apre=776
 dApre=11
 Apost=169.95
-dApost=Apost/100
+dApost=22
 
 A0=Apre*Apost
 dA0=pylab.sqrt( (dApre/Apre)**2 + (dApost/Apost)**2)*A0

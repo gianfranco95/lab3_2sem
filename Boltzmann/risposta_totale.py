@@ -30,7 +30,7 @@ pylab.errorbar(fbode,Abode,dAbode,dfbode,color = 'black',linestyle = '')
 # pylab.xscale('log')
 # pylab.yscale('log')
 pylab.xlabel('frequenza [log(Hz)]')
-pylab.ylabel('Amplificazione [dB]')
+pylab.ylabel('$V_{rms}/V_{in}$ [dB]')
 
 from scipy.optimize import curve_fit
 

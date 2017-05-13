@@ -38,9 +38,12 @@ V_{rms} = V_{0n} \sqrt{1+\frac{R}{R_T} + \frac{R^2}{R_n}}
 \label{e:tot}
 \end{equation}
 Nota, dal prodotto delle amplificazioni tra pre-amplificatore e l'insieme di passa-banda e post-amplificatore, l'amplificazione totale A$_{tot} = ?? \pm ??$, nota la larghezza di banda $\Delta f$ precedentemente misurata e nota la temperatura T$ = 302 \pm 3$ K misurata con il tester, a partire da \ref{e:B} è possibile determinare la costante di Boltzmann k$_B = 1.4 \pm 0.4$ e-23 J/K, in accordo con il valore atteso k$_{B,att} = 1.3806488 \pm 0.0000013$ e-23 J/K.
-\subsection{Risposta in frequenza del circuito complessivo}
+begin{equation}
+V_{rms} = V_{0n} \sqrt{1+\frac{R}{R_T} + \frac{R^2}{R_n}}
+\label{e:tot}
+\end{equation}
 
-Il segnale mostra un offset, che per la misura corrispondente al primo rigo della tabella vale V$_{in} = 1.2 \pm 0.5$ mV, V$_{out} = 0.7 \pm 0.1$ V.\\ %inserire in preamp
+\subsection{Risposta in frequenza del circuito complessivo}
 Sostituita la resistenza in ingresso, al fine di ridurre l'ampiezza del segnale in ingresso, ovvero di evitare saturazione in uscita, con un partitore di tensione avente una resistenza a massa R$_2 = 994 \pm 8$ k$\Omega$ e una all'ingresso R$_1 = 987 \pm 8$ k$\Omega$, abbiamo misurato la risposta in frequenza del circuito completo. In \tab{frequenza} sono mostrati i potenziali in uscita in funzione della frequenza, misurati all'oscilloscopio, ad un'ampiezza di ingresso costante V$_{in} = 19 \pm 5$ mV.\\
 \begin{table}[h]
 	\centering
@@ -68,11 +71,31 @@ Sostituita la resistenza in ingresso, al fine di ridurre l'ampiezza del segnale 
 	\caption{V$_{rms}$ in uscita in funzione della frequenza in ingresso.}
 	\label{t:frequenza}
 \end{table}
-In \fig{frequenza} è mostrato il plot di Bode. Un fit, eseguito con la funzione di trasferimento mostrata in \ref{e:funzione}, a 3 parametri, dà come risultati f$_0 =$  \\
-%\begin{equation}
-%\frac{2 \pi A_0 f}{\sqrt{f_2 + {2 \pi f-f_i}^^2} \sqrt{f_2 + {2 \pi f-f_i}^^2}}
-%\label{e:funzione}
-%\end{equation}
+In \fig{frequenza} è mostrato il plot di Bode. Un fit, eseguito con la funzione di trasferimento mostrata in \ref{e:passabanda}, a 3 parametri $\omega_i$, $\omega_r^2$, A dà come risultati:
+\begin{itemize}
+\item $f_0=\frac{\omega_i}{2\pi}= 6.33 \pm 0.02$ [kHz], in accordo con il valore ottenuto dalla risposta in frequenza del passa-banda $f_0 = 6.392 \pm 0.053$ [kHz].
+\item A= $528 \pm 12$[MHz]
+\item $\Delta \omega =-2\omega_r=  5.7 \pm 0.3$ [kHz], in accordo con $\Delta \omega = 6.1 \pm 0.6$ [kHz] ottenuto per l'insieme passa-banda e post-amplificatore.
+\item $cov1 = -0.30$, $cov2 = 0.76$, $cov3 = -0.12$ (covarianze rispettivamente tra $\omega_r^2$ e $\omega_i$, $\omega_r^2$ e A, A e $\omega_i$).
+\item $\chi^2/dof = 10.7/14$.
+\end{itemize}
+L'amplificazione in corrispondenza della frequenza di taglio è A$_0 = 92700 \pm 6300$, in accordo con il valore dato dal prodotto da amplificazione del pre-amplificatore e amplificazione per il post-amplificatore A$_0 = 92700 \pm 6300$
+
+\subsection{Risposta in ampiezza del circuito complessivo}
+\begin{table}[h]
+	\centering
+	\begin{tabular}{cccc}		
+		 {V$_{in}$ [mV]} & {$dV_{in}$ [mV]} & {V$_{out}$ [mV]} & {$dV_{out}$ [mV]} \\
+		 \midrule
+                       11.8 & 4 & 132 & 12 \\
+                       21.6 & 5 & 236 & 16 \\
+                       40.8 & 6 & 464 & 20 \\
+                       82 & 8 & 920 &40 \\
+                       164 & 6 & 1760 & 40 \\
+ 	\end{tabular}
+	\caption{Tensioni di uscita per vari valori della tensione di ingresso}
+	\label{t:risposta_ampiezza}
+\end{table}
 
 
 

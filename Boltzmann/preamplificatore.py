@@ -74,10 +74,13 @@ w=pylab.linspace(4.048,max(x2*4/3),10)
 pylab.plot(w,f(w,m2,q2))
 pylab.title('Risposta del preamplificatore')
 pylab.show()
-print('m1=%f+-%f dB/decade  q1=%f+-%f dB   normcov=%f'%(m1,dm1,q1,dq1,smq1/(dm1*dq1)))
-print('m2=%f+-%fdB/decade  q2=%f+-%f  dB  normcov=%f'%(m2,dm2,q2,dq2,smq2/(dq2*dm2)))
 chisq1 = (((f(x1,m1,q1)-y1)/dy1)**2).sum()
 chisq2 = (((f(x2,m2,q2)-y2)/dy2)**2).sum()
+ndof1=len(x1)-2
+ndof2=len(x2)-2
+print('m1=%f+-%f dB/decade   q1=%f+-%f dB    normcov=%f   chisq/ndof=%f/%i'%(m1,dm1,q1,dq1,smq1/(dm1*dq1),chisq1,ndof1))
+print('m2=%f+-%f dB/decade   q2=%f+-%f  dB   normcov=%f   chisq/ndof=%f/%i'%(m2,dm2,q2,dq2,smq2/(dq2*dm2),chisq2,ndof2))
+
 
 sm1 =dm1
 sq1 =dq1
@@ -92,4 +95,8 @@ x=(q2-q1)/(m1-m2)
 
 ft=10**x
 dft=(10**x)*sx*math.log(10)
+
+Ampl=10**(q1/20)
+dAmpl=pylab.log(10)*Ampl*dq1/20
 print('ft=%f+-%f Hz'%(ft,dft))
+print('Amplificazione=%f+-%f'%(Ampl,dAmpl))

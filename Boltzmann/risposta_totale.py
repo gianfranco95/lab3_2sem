@@ -84,7 +84,7 @@ m2,q2=popt
 dm2,dq2=pylab.sqrt(pcov.diagonal())
 smq2 =pcov[0,1]
 
-popt,pcov=curve_fit(f2,Vin2,Vout2,sigma=dVout2)
+popt,pcov=curve_fit(f2,Vin2,Vout2,sigma=pylab.sqrt((dVout2**2) + (m2*dVin2)**2))
 m2,q2=popt
 dm2,dq2=pylab.sqrt(pcov.diagonal())
 smq2 =pcov[0,1]
@@ -99,6 +99,6 @@ pylab.xlabel('$V_{in}$ [$\mu$V]')
 pylab.ylabel('$V_{out}$ [V]')
 pylab.show()
 
-chisq2 = (((f2(Vin2,m2,q2)-Vout2)/dVout2)**2).sum()
+chisq2 = (((f2(Vin2,m2,q2)-Vout2)/pylab.sqrt((dVout2**2) + (m2*dVin2)**2))**2).sum()
 ndof2=len(Vin2)-2
 print('m2=%f+-%f   q2=%f+-%f  mV   normcov=%f   chisq/ndof=%f/%i'%(m2,dm2,q2,dq2,smq2/(dq2*dm2),chisq2,ndof2))

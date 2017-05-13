@@ -10,6 +10,8 @@ import scipy.special
 T,dT,Vin,dVin,Vout,dVout=pylab.loadtxt(os.path.join(folder,'Dati','preamp.txt')).T
 Vout = Vout*1000
 dVout = dVout*1000
+dVin=dVin/2
+dVout=dVout/2
 A = Vout/Vin
 dA = pylab.sqrt(((dVout/Vout)**2+(dVin/Vin)**2))*A
 f=1000/T
@@ -70,7 +72,7 @@ m2,q2=popt
 dm2,dq2=pylab.sqrt(pcov.diagonal())
 smq2 = pcov[0,1]
 
-w=pylab.linspace(4.048,max(x2*4/3),10)
+w=pylab.linspace(4.048,max(x2*15/14),10)
 pylab.plot(w,f(w,m2,q2))
 pylab.title('Risposta del preamplificatore')
 pylab.show()

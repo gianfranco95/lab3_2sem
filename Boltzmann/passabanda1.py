@@ -8,7 +8,9 @@ import scipy
 import scipy.special
 T,dT,Vin,dVin,Vout,dVout=pylab.loadtxt(os.path.join(folder,'Dati','passabanda.txt')).T
 Vout = Vout*1000
-dVout = dVout*1000
+dVout = dVout*1000*0.5
+dVin=dVin*0.5
+dT=dT*0.5
 A = Vout/Vin
 dA = numpy.sqrt(((dVout/Vout)**2+(dVin/Vin)**2))*A
 f=1000/T
@@ -57,4 +59,10 @@ print('EnB= %f +- %f [Hz]'%(ENB,dENB))
 print('f0= %f +- %f [Hz]'%(fi_fit/(2*math.pi),dfi_fit/(2*math.pi)))
 print('centrobanda= %f +-%f'%(G,dG))
 
+
+##tabella in latex
+i=0
+while i<len(T):
+    print('%.3f & %.3f & %.1f & %.1f & %1.f & %1.f \\\ '%(T[i],dT[i],Vin[i],dVin[i],Vout[i],dVout[i]))
+    i=i+1
 

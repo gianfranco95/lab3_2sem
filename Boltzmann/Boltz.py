@@ -16,6 +16,7 @@ dR=mme(R,'ohm','lab3')
 dR=dR
 V=V/1000
 dV=dV/1000
+dV=dV/2
 # dV=mme(V,'volt','lab3')
 R=R/1000
 dR=dR/1000

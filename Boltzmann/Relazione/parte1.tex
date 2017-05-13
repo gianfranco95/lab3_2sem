@@ -32,7 +32,7 @@ Dall'intersezione delle due rette e propagando opportunamente gli errori è poss
 
 \section{Passa-banda e post-amplificatore}
 Abbiamo realizzato il circuito mostrato in \fig{passabanda}, utilizzando i componenti, misurati con il tester digitale, R$_1 = 2.66 \pm 0.02$ k$\Omega$, R$_2 = 119 \pm 3$ $\Omega$, R$_3 = 68.8 \pm 0.6$ k$\Omega$, C$_1 = 9.9 \pm 0.4$ nF, C$_2 = 10.4 \pm 0.4$ nF. Abbiamo inoltre realizzato il circuito mostrato in \fig{post-amp}, dove abbiamo impiegato R$_1 = 973 \pm 8$ $\Omega$, R$_2 = 33.1 \pm 0.3$ k$\Omega$, R$_3 = 3.85 \pm 0.03$ k$\Omega$. L'uscita del primo circuito è stata poi mandata all'ingresso del secondo, ed abbiamo misurato così la risposta in frequenza del circuito complessivo, rilevando per diversi valori di frequenza tensione in ingresso e tensione in uscita.\\
-In \fig{passabanda} è mostrato il grafico dell'amplificazione in funzione della frequenza (plot di Bode). Abbiamo realizzato un fit con la funzione di trasferimento \ref{passabanda}, ottenendo:
+In \fig{passabanda_fit} è mostrato il grafico dell'amplificazione in funzione della frequenza (plot di Bode). Abbiamo realizzato un fit con la funzione di trasferimento \ref{e:passabanda}, ottenendo:
 \begin{itemize}
 \item $f_0=\frac{\omega_i}{2\pi}= 6.392 \pm 0.053$ [kHz]
 \item A= $1.04 \pm 0.04$[MHz]
@@ -44,4 +44,4 @@ In \fig{passabanda} è mostrato il grafico dell'amplificazione in funzione della
 \label{e:passabanda}
 \end{equation}
 
-L'amplificazione attesa a centro banda è pari a A$_{att} = \frac{R_{3pb}}{2R_{1pb}} (1+\frac{R_{2pa}}{R_{1pa}}) = 308 \pm 5 = 49.8 \pm 0.1$ [dB]. I pedici pb e pa si riferiscono rispettivamente al passa-banda ed al post-amplificatore.
+L'amplificazione attesa a centro banda è pari a A$_{att} = \frac{R_{3pb}}{2R_{1pb}} (1+\frac{R_{2pa}}{R_{1pa}}) = 308 \pm 5 = 49.8 \pm 0.1$ [dB]. I pedici pb e pa si riferiscono rispettivamente al passa-banda ed al post-amplificatore. Tale valore è incompatibile con quello ottenuto dal fit pari a $169 \pm 21$.

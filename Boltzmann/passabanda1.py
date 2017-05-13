@@ -27,7 +27,7 @@ from scipy.optimize import curve_fit
 
 def G(x,f2,fi,A):
     return A*(2*math.pi*x)/(pylab.sqrt(f2+((2*math.pi*x) -fi)**2)*pylab.sqrt(f2+((2*math.pi*x)+fi)**2))
-popt,pcov=curve_fit(G,f,A,p0=[2000,6400,-1],sigma=dA,)
+popt,pcov=curve_fit(G,f,A,p0=[2000,6400,296],sigma=dA,)
 f2_fit,fi_fit,A_fit=popt
 df2_fit,dfi_fit,dA_fit=pylab.sqrt(pcov.diagonal())
 w=pylab.logspace(pylab.log10(min(f)),pylab.log10(max(f)),100)

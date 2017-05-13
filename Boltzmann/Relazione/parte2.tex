@@ -1,3 +1,43 @@
 \section{Convertitore RMS}
 In \fig{Convertitore} è mostrato il terzo componente del circuito, che include condensatori di capacità C$_1 = 107 \pm 4$ nF, C$_2 = 9.2 \pm 0.4$ $\mu$F, C$_3 = 490 \pm 20$ nF. Abbiamo misurato ancora una volta l'ingresso e l'uscita, quest'ultima non più oscillante ma continua, per una frequenza fissata pari a $f = 1.85 \pm 0.03$ kHz, ottenendo V$_{in} = 2.10 \pm 0.07$ V (ampiezza picco-picco) e V$_{out} = 740 \pm 20$ mV, compatibile con il valore atteso di V$_{out,att} =\frac{V_{in}}{2\sqrt{2}} = 742 \pm 14$ mV. Aumentando la frequenza V$_{out}$ tende ad aumentare, rimanendo tuttavia entro l'incertezza, fino a circa 36 kHz, dopodichè cala. A frequenze basse, parimenti, V$_{out}$ cala. C'è quindi un range di frequenze per cui il convertitore funziona in modo ottimale.\\
 Negli errori per le misure di tensione abbiamo considerato anche la parte di calibrazione, diversamente da quanto abbiamo fatto per i fit, dove l'errore, essendo di natura stocastica, non include la parte sistematica dovuta alla calibrazione.
+
+\section{Circuito completo}
+Abbiamo collegato in serie i circuiti precedentemente realizzati, nell'ordine pre-amplificatore, passa-banda, post-amplificatore, convertitore RMS, mandando ogni volta l'uscita del precedente all'ingresso del successivo. Il valore di V$_{rms}$ è stato poi misurato con il multimetro digitale, mentre l'ingresso del pre-amplificatore è stato collegato a terra tramite una resistenza di valore variabile. Abbiamo così misurato V$_{rms}$ in funzione della resistenza; i valori ottenuti sono mostrati in \tab{resistenze}. L'errore sulle misure di tensione è dovuto alla fluttuazione delle misure e non all'errore sistematico del multimetro, molto minore.\\
+\begin{table}[h]
+	\centering
+	\begin{tabular}{cccccccc}		
+		 {R [k$\Omega$]}& {dR [k$\Omega$]}& {V$_{out}$ [mV]} & {dV$_{out}$ [mV]}\\
+		 \midrule
+                       217 & 2 & 352 & 10\\
+                       147 & 1 & 270 & 10\\
+                       102.0 & 0.8 & 230 & 10\\ 
+                       56.0 & 0.5 & 173 & 5\\
+                       32.8 & 0.3 & 137 & 7\\
+                       22.0 & 0.2 & 117 & 6\\
+                       15.2 & 0.1 & 102 & 5\\
+                       9.78 & 0.08 & 90 & 4\\ 
+                       2.70 & 0.02 & 68 & 5\\
+                       1.75 & 0.01 & 66 & 3\\
+                       0.328 & 0.003 & 60 & 5\\
+                       0.118 & 0.001 & 60 & 5\\
+ 	\end{tabular}
+	\caption{V$_{rms}$ in uscita in funzione della resistenza in ingresso.}
+	\label{t:resistenze}
+\end{table}
+In \fig{resistenza} è mostrato un grafico del potenziale in funzione della resistenza. Su di esso è stato eseguito un fit numerico con la funzione attesa espressa in \e:{tot}, mantenendo come parametri V$_{0n}, R$_T$, R$_n$. Come errori sono stati considerati gli errori sulle y. I risultati ottenuti dal fit sono:
+\begin{itemize}
+\item V$_{0n} = ?? \pm ??$ mV.
+\item R$_T = ?? \pm ??$ $k\Omega$
+\item R$_n = ?? \pm ??$ ${k\Omega}^2}$.
+\item $cov1 = ??$, $cov2 = ??$, $cov3 = ??$ (sono rispettivamente le covarianze normalizzate tra V$_{0n}$ e R$_T$, V$_{0n}$ e R$_n$, R$_T$ e R$_n$).
+\item $\chi^2/dof = ??/12$.
+\end{itemize}
+\begin{equation}
+V_{rms} = V_{0n} \sqrt{1+\frac{R}{R_T} + \frac{R^2}{R_n}}
+\label{e:tot}
+\end{equation}
+Nota, dal prodotto delle amplificazioni tra pre-amplificatore e l'insieme di passa-banda e post-amplificatore, l'amplificazione totale A$_{tot} = ?? \pm ??$, nota la larghezza di banda $\Delta f$ precedentemente misurata e nota la temperatura T$ = 302 \pm 3$ K misurata con il tester, a partire da \e:{B} è possibile determinare la costante di Boltzmann k$_B = ?? \pm ??$, in accordo con il valore atteso k$_{B,att} = ?? \pm ??$.
+\subsection{Misura diretta di amplificazione e risposta in frequenza}
+
+Il segnale mostra un offset, che per la misura corrispondente al primo rigo della tabella vale V$_{in} = 1.2 \pm 0.5$ mV, V$_{out} = 0.7 \pm 0.1$ V.

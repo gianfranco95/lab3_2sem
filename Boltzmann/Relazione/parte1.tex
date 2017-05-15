@@ -8,7 +8,7 @@ Abbiamo realizzato il ciruito mostrato in \fig{Pre-amp}, utilizzando come compon
 \begin{table}[h]
 	\centering
 	\begin{tabular}{cccccccc}		
-		 {$f$ [Hz]}& {$df$ [Hz]}& {V$_{in}$ [mV]} & {dV$_{in}$ [mV]} & {V$_{out}$ [V]} & {dV$_{out}$ [V]} & {A [dB/decade]} & {dA [dB/decade]}\\
+		 {$f$ [Hz]}& {$df$ [Hz]}& {V$_{in}$ [mV]} & {dV$_{in}$ [mV]} & {V$_{out}$ [V]} & {dV$_{out}$ [V]} & {A [dB]} & {dA [dB]}\\
 		 \midrule
                        7.1 & 0.3 & 9.4 & 0.5 & 7.28 & 0.08 & 57.8 & 0.1\\
                        20.3 & 0.5 & 8.9 & 0.5 & 6.84 & 0.04 & 57.7 & 0.1\\
@@ -27,7 +27,7 @@ Abbiamo realizzato il ciruito mostrato in \fig{Pre-amp}, utilizzando come compon
 	\label{t:pre-amp}
 \end{table}
 In \fig{pre-amp} è mostrato il plot di Bode per l'amplificazione. Abbiamo realizzato un fit lineare (al modello y=mx+q), numerico, a due parametri limitatamente alla parte di sinistra, dove l'amplificazione risulta circa costante. Abbiamo ottenuto $m = -0.02 \pm 0.07$ dB/decade, compatibile con 0; $q = 57.8 \pm 0.1$ dB, pari all'amplificazione per le frequenze passanti; covarianza normalizzata = -0.9; $ \chi ^2/dof = 0.03/3$. Un fit analogo è stato svolto per la parte lineare a destra, ottenendo $m = -16.8 \pm 1.5$ dB/decade; $q = 126 \pm 7$ dB; $cov = -1.0$, $ \chi ^2/dof = 0.2/2$. I valori bassi del chi quadro indicano una prevalenza della parte sistematica nell'errore (è stato considerato solo quello sulle y).\\
-L'amplificazione attesa è pari a A$_{att} = 58 \pm 1$ [dB/decade], ottenuta a partire dal prodotto delle amplificazioni attese dei due sottocircuiti e pienamente compatibile con il valore ottenuto sperimentalmente.\\
+L'amplificazione attesa è pari a A$_{att} = 58 \pm 1$ [dB], ottenuta a partire dal prodotto delle amplificazioni attese dei due sottocircuiti e pienamente compatibile con il valore ottenuto sperimentalmente.\\
 Dall'intersezione delle due rette e propagando opportunamente gli errori considerando anche la covarianza dei due parametri di ciascuna retta è possibile ottenere il valore della frequenza di taglio $f_T = 11.2 \pm 0.8$ kHz.
 
 \section{Passa-banda e post-amplificatore}

@@ -37,14 +37,14 @@ In \fig{resistenze} è mostrato un grafico del potenziale in funzione della resi
 V_{rms} = V_{0n} \sqrt{1+\frac{R}{R_T} + \frac{R^2}{R_n}}
 \label{e:tot}
 \end{equation}
-Nota, dal prodotto delle amplificazioni tra pre-amplificatore e l'insieme di passa-banda e post-amplificatore, l'amplificazione totale A$_{tot} = 131000 \pm 16000$, nota la larghezza di banda $\Delta f$ precedentemente misurata e nota la temperatura T$ = 302 \pm 3$ K misurata con il tester, a partire da \ref{e:B} è possibile determinare la costante di Boltzmann k$_B = 2.2 \pm 0.6$ e-23 J/K, in accordo entro 2$\sigma$ con il valore atteso k$_{B,att} = 1.3806488 \pm 0.0000013$ e-23 J/K.
+Nota, dal prodotto delle amplificazioni tra pre-amplificatore e l'insieme di passa-banda e post-amplificatore, l'amplificazione totale A$_{tot} = 131000 \pm 16000$, nota la larghezza di banda $\Delta f$ precedentemente misurata e nota la temperatura T$ = 302 \pm 3$ K misurata con il tester, a partire da \ref{e:B} è possibile determinare la costante di Boltzmann k$_B = (1.4 \pm 0.4)10^{-23}$ [J/K], in accordo con il valore atteso k$_{B,att} = (1.3806488 \pm 0.0000013)10^{-23}$ [J/K].
 \begin{equation}
 k_B = \frac{V_{0n}^2}{4 T {A_{tot}^2} \Delta f R_T}
 \label{e:B}
 \end{equation}
 
 \subsection{Risposta in frequenza del circuito complessivo}
-Sostituita la resistenza in ingresso, al fine di ridurre l'ampiezza del segnale in ingresso, ovvero di evitare saturazione in uscita, con un partitore di tensione avente una resistenza a massa R$_2 = 994 \pm 8$ k$\Omega$ e una all'ingresso R$_1 = 987 \pm 8$ k$\Omega$, abbiamo misurato la risposta in frequenza del circuito completo. In \tab{frequenza} sono mostrati i potenziali in uscita in funzione della frequenza, misurati all'oscilloscopio, ad un'ampiezza di ingresso costante V$_{in} = 19 \pm 5$ mV.\\
+Sostituita la resistenza in ingresso, al fine di ridurre l'ampiezza del segnale in ingresso, ovvero di evitare saturazione in uscita, con un partitore di tensione avente una resistenza a massa R$_2 = 994 \pm 8$ $\Omega$ e una all'ingresso R$_1 = 987 \pm 8$ k$\Omega$, abbiamo misurato la risposta in frequenza del circuito completo. In \tab{frequenza} sono mostrati i potenziali in uscita in funzione della frequenza, misurati all'oscilloscopio, ad un'ampiezza di ingresso tenuta costante e pari a V$_{in} = 19 \pm 5$ mV.\\
 \begin{table}[h]
 	\centering
 	\begin{tabular}{cccccccc}		
@@ -79,10 +79,10 @@ In \fig{frequenza} è mostrato il plot di Bode. Un fit, eseguito con la funzione
 \item $cov1 = -0.30$, $cov2 = 0.76$, $cov3 = -0.12$ (covarianze rispettivamente tra $\omega_r^2$ e $\omega_i$, $\omega_r^2$ e A, A e $\omega_i$).
 \item $\chi^2/dof = 10.7/14$.
 \end{itemize}
-L'amplificazione in corrispondenza della frequenza di taglio è A$_0 = 92700 \pm 6300$, in accordo entro 3$\sigma$ con il valore dato dal prodotto di amplificazione del pre-amplificatore e amplificazione per il post-amplificatore A$_0 = 131000 \pm 16000$ e non in accordo con il valore atteso A$_0 = 245000 \pm 6000$.
+L'amplificazione in corrispondenza della frequenza di taglio è A$_0 = 131097 \pm 8909$, in pieno accordo con il valore dato dal prodotto di amplificazione del pre-amplificatore e del post-amplificatore A$_0 = 131000 \pm 16000$ e non in accordo con il valore atteso A$_0 = 245000 \pm 6000$.
 
 \subsection{Risposta in ampiezza del circuito complessivo}
-Abbiamo inoltre ricercato l'andamento di V$_{out}$(V$_{in}$) eseguendo le misure mostrate in \tab{risposta_ampiezza}. Un grafico è mostrato in \fig{risposta_ampiezza}. Un fit lineare presenta come risultati un'amplificazione $m = 10680 \pm 140$, non in accordo con il valore atteso (noto a partire dalla funzione di fit, posta alla frequenza di lavoro $f_L = 3.23 \pm 0.08$ kHz) $m_{att} = 9000 \pm 600$; un'intercetta $q = 10 \pm 9$ mV, $cov = -0.67$; $\chi^2 /dof = 0.2/3$.
+Abbiamo inoltre ricercato l'andamento di V$_{out}$(V$_{in}$) eseguendo le misure mostrate in \tab{risposta_ampiezza}. Un grafico è mostrato in \fig{risposta_ampiezza}. Un fit lineare ($V_{out}= mV_{in} + q$) presenta come risultati un'amplificazione $m = 10680 \pm 140$, non in accordo con il valore atteso (noto a partire dalla funzione di fit, posta alla frequenza di lavoro $f_L = 3.23 \pm 0.08$ kHz) $m_{att} = 9000 \pm 600$; un'intercetta $q = 10 \pm 9$ mV, $cov = -0.67$; $\chi^2 /dof = 0.2/3$.
 \begin{table}[h]
 	\centering
 	\begin{tabular}{cccc}		
@@ -99,5 +99,4 @@ Abbiamo inoltre ricercato l'andamento di V$_{out}$(V$_{in}$) eseguendo le misure
 \end{table}
 
 \section{Conclusioni}
-La presenza di numerose fonti di rumore non considerate inficia la qualità dell'esperienza; tuttavia, è evidente una leggera sovrastima della costante di Boltzmann. La sovrastima diviene significativa considerando amplificazione e larghezza di banda relative al circuito considerato nella sua interezza, poichè si ottiene  k$_B = 4.7 \pm 0.7$ e-23 J/K, che è ampiamente in disaccordo con il valore atteso. Considerando l'amplificazione attesa A$_0 = 245000 \pm 6000$ si ha però k$_B = 0.67 \pm 0.05$ e-23 J/K, molto inferiore al valore atteso.\\
-L'apparato sperimentale non consente dunque di andare oltre una semplice stima dell'ordine di grandezza della costante di Boltzmann.
+La presenza di numerose fonti di rumore non considerate non inficia in modo evidente la qualità dell'esperienza,come si può vedere dall'accordo tra la costante di Boltzmann qui misurata e quella attesa . La misura risulta essere in accordo anche con il valore ricavato dall'equazione( $\ref{e:B}$) sostituendo ad $A_{tot}$ l'amplificazione misurata con il circuito complessivo,infatti si ottiene ancora una volta k$_B = (1.4 \pm 0.4)10^{-23}$ [J/K]. Considerando l'amplificazione attesa A$_0 = 245000 \pm 6000$ si ha però k$_B = 0.67 \pm 0.05$ e-23 J/K, molto inferiore al valore atteso.\\

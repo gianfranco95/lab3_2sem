@@ -1,0 +1,28 @@
+\section{Amplificatore differenziale e mediatore}
+Abbiamo realizzato il circuito mostrato in \fig{Mediatore}, usando come componenti...\\
+Considerato il circuito nel suo complesso, abbiamo ricercato, mantenendo il deviatore nella posizione 90°, la posizione del potenziometro P2 che minimizzasse il segnale in uscita (in modulo), corrispondente ad un estremo. Spostando poi il deviatore nella posizione 0°, abbiamo misurato con il multimetro digitale la tensione in uscita, che appariva, come atteso, costante all'oscilloscopio, in funzione del numero di lastrine collocate tra il LED ed il fotodiodo (\tab{Fotodiodo}).
+\begin{table}[h]
+	\centering
+	\begin{tabular}{cc}		
+		{numero lastrine} & {V$_{out}$ [mV]}\\
+                      0 & 1023\\
+                      1 & 857\\
+                      2 & 708\\
+                      3 & 615\\
+                      4 & 510\\
+                      5 & 426\\
+                      6 & 332\\
+                      7 & 294\\
+                      8 & 252\\
+                      9 & 221\\
+                     10 & 195\\
+                     11 & 172\\
+                     12 & 154\\
+	           \midrule
+	
+ 	\end{tabular}
+	\caption{Tensione in uscita in funzione del numero di piastrine. }
+	\label{t:Fotodiodo}
+\end{table}
+Abbiamo realizzato un fit con un'esponenziale a 2 parametri (la tensione iniziale ed il coefficiente di assorbimento del mylar, a moltiplicare l'opposto del numero di lastrine ad esponente), numerico. Come errori abbiamo considerato, per ciascuna misura di tensione, gli errori di lettura e calibrazione del multimetro sommati in quadratura. In \fig{Grafico} è mostrato il grafico con la funzione di fit.\\
+Abbiamo ottenuto V$_{out,0} = 988 \pm 25$ mV, il coefficiente di assorbimento $b = 0.166 \pm 0.04$, una covarianza normalizzata $cov = 0.82$ e $\chi^2 = 842$ con 11 gradi di libertà. Il valore molto grande del $\chi^2$ può essere spiegato con la presenza di un errore ben più significativo di quelli strumentali dovuto alla variabilità della radiazione luminosa rilevata dal fotodiodo, che pure

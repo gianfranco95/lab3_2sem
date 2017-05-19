@@ -11,9 +11,11 @@ Abbiamo realizzato il circuito mostrato in \fig{Mediatore}, usando come componen
 \item $C_5=232 \pm 12[nF]$
 \item $C_6=50 \pm 2[nF]$
 \end{itemize}
-Ponendo il deviatore in posizione 0, abbiamo osservato all'oscilloscopio il segnale in posizione S9. Esso risultava sempre negativo, con un'ampiezza V$ = 1.1 \pm 0.1$ V. Dopo il mediatore (nella posizione Voltmetro) abbiamo ottenuto un segnale continuo, positivo, di ampiezza V$ = 1.12 \pm 0.05$ V.\\
-Con il deviatore nella posizione 90$^\circ$, invece, abbiamo ottenuto in S9 V$_{S9} = 1.9 \pm 0.1$ V e dopo il mediatore V$_{out} = 224 \pm 10$ mV. Il segnale risultava circa a media nulla.\\
-Considerato il circuito nel suo complesso, abbiamo ricercato, mantenendo il deviatore nella posizione 90$^\circ$, la posizione del potenziometro P2 che minimizzasse il segnale in uscita (in modulo), corrispondente ad un estremo (la stessa posizione che P2 aveva in precedenza). Variando il potenziometro, le parti positiva e negativa della forma d'onda aumentavano o diminuivano, in modo complementare, la loro estensione in un periodo.\\ Spostando poi il deviatore nella posizione 0$^\circ$, abbiamo misurato con il multimetro digitale la tensione in uscita, che appariva, come atteso, costante all'oscilloscopio, in funzione del numero di lastrine collocate tra il LED ed il fotodiodo (\tab{Fotodiodo}).\\
+Ponendo il deviatore in posizione 0, abbiamo osservato all'oscilloscopio il segnale in posizione S9. Esso risultava sempre negativo, con un'ampiezza V$ = 1.1 \pm 0.1$ V. Dopo il mediatore (nell'uscita denominata "Voltmetro") abbiamo ottenuto un segnale continuo, positivo, di ampiezza V$ = 1.12 \pm 0.05$ V.\\
+Con il deviatore nella posizione 90$^\circ$, invece, abbiamo ottenuto in S9 V$_{S9} = 1.9 \pm 0.1$ V e dopo il mediatore V$_{out} = 224 \pm 10$ mV. Il segnale risultava circa a media nulla.??Offset???\\
+Considerato il circuito nel suo complesso, abbiamo ricercato, mantenendo il deviatore nella posizione 90$^\circ$, la posizione del potenziometro P2 che minimizzasse il segnale in uscita (in modulo), corrispondente ad un estremo (la stessa posizione che P2 aveva in precedenza??Quando??). Non è stato possibile raggiungere, al variare del valore del potenziometro, un valore in uscita minore di ????. Il fatto che questo non sia stato possibile è determinato dal fatto che non è stato possibile calibrare lo sfasatore variabile con sfasamento esattamente nullo rispetto alla fase dell'onda in ingresso S1 (ed S6).
+Questo porta ad avere all'ingresso dell'amplificatore differenziale due segnali che non corrispondono ad esattamente le semionde positiva e negativa del segnale S6. Di conseguenza, anche il mediatore non avrà onde ingresso completamente positive (o negative). Questo potrà influire sulle misure che verranno effettuate.\\
+ Variando il potenziometro, le parti positiva e negativa della forma d'onda aumentavano o diminuivano, in modo complementare alle uscite S7 e S8, la loro estensione in un periodo, come atteso\\ Spostando poi il deviatore nella posizione 0$^\circ$, abbiamo misurato con il multimetro digitale la tensione in uscita, che appariva, come atteso, costante, in funzione del numero di lastrine collocate tra il LED ed il fotodiodo (\tab{Fotodiodo}).\\ E' stato verificato che, durante tutto il tempo in cui si sono svolte le misure, il valore del potenziale in uscita restituito in assenza di lastrine di mylar non variasse. 
 \begin{table}[h]
 	\centering
 	\begin{tabular}{cc}		
@@ -37,8 +39,24 @@ Considerato il circuito nel suo complesso, abbiamo ricercato, mantenendo il devi
 	\caption{Tensione in uscita in funzione del numero di piastrine. }
 	\label{t:Fotodiodo}
 \end{table}
-Abbiamo realizzato un fit con un'esponenziale a 2 parametri (la tensione iniziale ed il coefficiente di assorbimento del mylar, a moltiplicare l'opposto del numero di lastrine ad esponente), numerico. Come errori abbiamo considerato, per ciascuna misura di tensione, gli errori di lettura e calibrazione del multimetro sommati in quadratura. In \fig{Grafico} è mostrato il grafico con la funzione di fit.\\
-Abbiamo ottenuto V$_{out,0} = 988 \pm 25$ mV, il coefficiente di assorbimento $b = 0.166 \pm 0.04$, una covarianza normalizzata $cov = 0.82$ e $\chi^2 = 842$ con 11 gradi di libertà. Il valore molto grande del $\chi^2$ può essere spiegato con la presenza di un errore ben più significativo di quelli strumentali dovuto alla variabilità della radiazione luminosa rilevata dal fotodiodo, che pur venendo coperto durante le misure, era raggiunto da un fondo di luce ambiente.
+Abbiamo realizzato un fit con un esponenziale a 2 parametri numerico al modello:
+\begin{equation}
+V=V_{out,0}e^{-nb}
+\end{equation}
+dove n è il numero di piastrine inserite tra il led e il fotodiodo, e b è una costante che quantifica l'assorbimento.\\
+ Come errori abbiamo considerato, per ciascuna misura di tensione, gli errori di lettura e calibrazione del multimetro sommati in quadratura. In \fig{Grafico} è mostrato il grafico con la funzione di fit.\\
+Abbiamo ottenuto V$_{out,0} = 988 \pm 25$ mV, ila costante $b = 0.166 \pm 0.04$??l'errore non è 0.004??, una covarianza normalizzata $cov = 0.82$ e $\chi^2 = 842$ con 11 gradi di libertà. Il valore molto grande del $\chi^2$ può essere spiegato con la presenza di un errore ben più significativo di quelli strumentali dovuto alla variabilità della radiazione luminosa rilevata dal fotodiodo, che pur venendo coperto durante le misure, era raggiunto da un fondo di luce ambiente.???In realtà tutto il circuito è costruito per eliminare il rumore della luce dell'ambiente\\
+Si può ottenere un valore per la lunghezza caratteristica di assorbimento, cioè della grandezza l tale che:
+\begin{equation}
+I=I_{0}e^{-x/l}
+\end{equation}
+dove I è l'intensità della luce all'interno del materiale ad una distanza x dalla superficie esposta alla radiazione.
+Considerando che lo spessore di ciascuna lastra di Mylar ha un valore nominale di s=150 $mu$m si ha l=sb=24.9$ \pm$ 0.6 $\mu$m.
+
+
 
 \section{Conclusioni}
-
+E' stato realizzato un circuito lock-in che, sfruttando le fasi relative tra onde ha permesso di eliminare con successo i notevoli rumori presenti nell'ambiente della misura. E' stata effettuata una misura del coefficiente di assorbimento del mylar al 2\%. \\
+Il fit realizzato mostra che non c'è accordo quantitativo tra le misure e l'andamento esponenziale ipotizzato.\\
+Questa discrepanza è attribuibile innanzitutto al non perfetto funzionamento del circuito di lock-in: infatti non è stato possibile calibrare perfettamente le fasi in modo tale che venisse selezionata esattamente solo la parte positiva dell'onda. Di conseguenza il valore restituito all'uscita del mediatore non rappresenta con precisione l'intensità luminosa incidente sul fotodiodo.\\
+Inoltre, l'andamento esponenziale è atteso per un mezzo materiale che sia uniforme e continuo. Al contrario in questa esperienza sono state utilizzate più lastre sovrapposte che quidi presentavano interfacce tra di esse che in generale determinano una riflessione della luce incidente.

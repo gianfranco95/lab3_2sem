@@ -3,3 +3,29 @@ Scopo dell'esperienza è la misura della costante di assorbimento del mylar ,util
 Il circuito è stato montato a blocchi e l'ingresso del circuito completo è stato prelevato dal generatore d'onda ,corrispondente ad un onda sinusoidale di ampiezza picco-picco $5.80 \pm 0.04 [V]$ e frequenza $1.04 \pm 0.01 [kHz]$.
 Oltre a varie resistenze e condensatori il cui valore sarà indicato nel seguito, sono stati usati 4 TL081:JFET input op-amp, un TL082: JFET input dualop-amp, un SN7400:quad NAND gates, un DG441:quad CMOS analog switch, poi due NPN transistor modelli 2N1711, BC182, un led rosso ed un fotodiodo.
 Abbiamo inoltre collegato tra loro le linee di massa onde minimizzare differenze di tensione tra le stesse.
+
+\section{Amplificatore di potenza e preamplificatore}
+Abbiamo montato il circuito in \fig{pre-amp}. All'ingresso S1 è stato inviato un segnale prelevato dal generatore d'onda con frequenza e a ampiezza prima detti. Si è visto che il led rosso era acceso e si è misurata la tensione all'uscita(in \fig{amplpotenza}) dell'emettitore ottenendo un segnale sinusoidale con media $2.04 \pm 0.04 [V]$ e ampiezza picco-picco $588 \pm 4 [mV]$.\footnote{Gli errori sono stati attribuiti considerando la risoluzione dell'oscilloscopio.}//
+Si è verificato che l'uscita S6 presentasse un andamento sinusoidale a media nulla e di ampiezza picco-picco pari a $1.36 \pm 0.04 [V]$. Tale valore è stato ottenuto coprendo sia led che fotodiodo, in modo da eliminare gli effetti della luce ambientale. Successivamente è stata fatta una misura con la luce ambiente e si è notato un rumore di ampiezza circa $400 [mV]$ sovrapposto al segnale;(tale rumore non è presente quando il circuito viene coperto ed in tal caso l'errore delle tensioni è pari alla risoluzione dell'oscilloscopio) . Sono state poi inserite una serie di lastrine di mylar tra led e fotodiodo (coprendoli nuovamente) e si è poi misurata l'ampiezza picco-picco del segnale in S6 in funzione del numero di lastrine . I dati son in tabella (\tab{lastrine})
+
+\begin{table}[h]
+	\centering
+	\begin{tabular}{ccc}		
+		 {#lasrine }& {V$_{out}$ [mV]}& {$\Delta V_{out}[mV]$}\\
+		 \midrule
+                       1 & 1100 & 40\\
+                       2 & 936 & 40\\
+                       3 & 744 & 15\\
+                       4 & 644 & 32\\
+                       5 & 504 & 12\\
+ 	\end{tabular}
+	\caption{Tensione in uscita in funzione del numero di lastrine.}
+	\label{t:lastrine}
+\end{table}
+
+\section{Sfasatore di 90° e sfasatore a fase variabile}
+E' stato montato il circuito in \fig{adattamento_fase}. L'ingresso S1 è lo stesso usato nel circuito precedente.
+Aggiustando il trimmer P1 in modo che la fase tra S1 e S2 fosse di 90° gradi nel limite della risoluzione temporale dell'oscilloscopio.
+Abbiamo poi regolato il trimmer p3 in modo che il duty cicle dell'onda quadra in uscita da S3 fosse del 50\% come in \fig{S3-S1deviatore0}.
+Agendo sul deviatore si poteva variare la fase dell'onda in S3 di 90° rispetto a quella di S1 come in  \fig{S3-S1deviatore0} e \fig{S3-S1deviatore90}.
+Agendo sul trimmer P2 si può aggiungere un ulteriore sfasamento di $156 \pm 5$ gradi , (errore calcolato in base agli errori ottenuti dalle misure temporali con l'oscilloscopio.)

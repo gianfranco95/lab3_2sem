@@ -5,13 +5,27 @@ Oltre a varie resistenze e condensatori il cui valore sarà indicato nel seguito,
 Abbiamo inoltre collegato tra loro le linee di massa onde minimizzare differenze di tensione tra le stesse.
 
 \section{Amplificatore di potenza e preamplificatore}
-Abbiamo montato il circuito in \fig{pre-amp}. All'ingresso S1 è stato inviato un segnale prelevato dal generatore d'onda con frequenza e a ampiezza prima detti. Si è visto che il led rosso era acceso e si è misurata la tensione all'uscita(in \fig{amplpotenza}) dell'emettitore ottenendo un segnale sinusoidale con media $2.04 \pm 0.04 [V]$ e ampiezza picco-picco $588 \pm 4 [mV]$.\footnote{Gli errori sono stati attribuiti considerando la risoluzione dell'oscilloscopio.}//
-Si è verificato che l'uscita S6 presentasse un andamento sinusoidale a media nulla e di ampiezza picco-picco pari a $1.36 \pm 0.04 [V]$. Tale valore è stato ottenuto coprendo sia led che fotodiodo, in modo da eliminare gli effetti della luce ambientale. Successivamente è stata fatta una misura con la luce ambiente e si è notato un rumore di ampiezza circa $400 [mV]$ sovrapposto al segnale;(tale rumore non è presente quando il circuito viene coperto ed in tal caso l'errore delle tensioni è pari alla risoluzione dell'oscilloscopio) . Sono state poi inserite una serie di lastrine di mylar tra led e fotodiodo (coprendoli nuovamente) e si è poi misurata l'ampiezza picco-picco del segnale in S6 in funzione del numero di lastrine . I dati son in tabella (\tab{lastrine})
+Abbiamo montato il circuito in \fig{pre-amp}, utilizzando le resistenze e condensatori di seguito indicati(gli errori sono quelli calcolati col tester):
+\begin{itemize}
+\item $R_1=10.10 \pm 0.09[k\Omega]$
+\item $R_2=1.479 \pm 0.01[k\Omega]$
+\item $R_3=81.9 \pm 0.8[k\Omega]$
+\item $R_4=56.4 \pm 0.8[\Omega]$
+\item $R_5=17.6 \pm 0.1[k\Omega]$
+\item $R_6=120.9 \pm 1[k\Omega]$
+\item $R_7=3.86 \pm 0.04[k\Omega]$
+\item $R_9=1.21 \pm 0.01[M\Omega]$
+\item $C_1=106 \pm 5[nF]$
+\item $C_2=104 \pm 5[nF]$
+\end{itemize}
+
+All'ingresso S1 è stato inviato un segnale prelevato dal generatore d'onda con frequenza e a ampiezza prima detti. Si è visto che il led rosso era acceso e si è misurata la tensione all'uscita(in \fig{amplpotenza}) dell'emettitore ottenendo un segnale sinusoidale con media $2.04 \pm 0.04 [V]$ e ampiezza picco-picco $588 \pm 4 [mV]$.\footnote{Gli errori sono stati attribuiti considerando la risoluzione dell'oscilloscopio.}//
+Si è verificato che l'uscita S6 presentasse un andamento sinusoidale a media nulla e di ampiezza picco-picco pari a $1.36 \pm 0.04 [V]$. Tale valore è stato ottenuto coprendo sia led che fotodiodo, in modo da eliminare gli effetti della luce ambientale. Successivamente è stata fatta una misura con la luce ambiente e si è notato un rumore di ampiezza circa $400 [mV]$ sovrapposto al segnale;(tale rumore non è presente quando il circuito viene coperto ed in tal caso l'errore delle tensioni è pari alla risoluzione dell'oscilloscopio) . Sono state poi inserite una serie di lastrine di mylar tra led e fotodiodo (coprendoli nuovamente) e si è poi misurata l'ampiezza picco-picco del segnale in S6 in funzione del numero di lastrine . I dati son0 in (\tab{lastrine})
 
 \begin{table}[h]
 	\centering
 	\begin{tabular}{ccc}		
-		 {#lasrine }& {V$_{out}$ [mV]}& {$\Delta V_{out}[mV]$}\\
+		 {\#lastrine }& {V$_{out}$ [mV]}& {$\Delta V_{out}[mV]$}\\
 		 \midrule
                        1 & 1100 & 40\\
                        2 & 936 & 40\\
@@ -23,9 +37,44 @@ Si è verificato che l'uscita S6 presentasse un andamento sinusoidale a media nul
 	\label{t:lastrine}
 \end{table}
 
-\section{Sfasatore di 90° e sfasatore a fase variabile}
-E' stato montato il circuito in \fig{adattamento_fase}. L'ingresso S1 è lo stesso usato nel circuito precedente.
-Aggiustando il trimmer P1 in modo che la fase tra S1 e S2 fosse di 90° gradi nel limite della risoluzione temporale dell'oscilloscopio.
+\section{Sfasatore di \ang{90} e sfasatore a fase variabile}
+
+E' stato montato il circuito in \fig{adattamento_fase}, utilizzando le resistenze e condensatori di seguito indicati(gli errori sono quelli calcolati col tester):
+\begin{itemize}
+\item $R_8=215 \pm 3[k\Omega]$
+\item $R_{10}=26.7 \pm 0.3[k\Omega]$
+\item $R_{11}=10.18 \pm 0.09[k\Omega]$
+\item $R_{12}=27.1 \pm 0.3[k\Omega]$
+\item $R_{13}=975 \pm 9[\Omega]$
+\item $R_{14}=21.6 \pm 0.2[k\Omega]$
+\item $R_{15}=22.0 \pm 0.2[k\Omega]$
+\item $R_{16}=9.93 \pm 0.09[k\Omega]$
+\item $R_{17}=3.26 \pm 0.04[k\Omega]$
+\item $C_3=10.6 \pm 0.4[nF]$
+\item $C_4=10.4 \pm 0.4[nF]$
+\item $trimmer P1 = 9.33 \pm  0.09[k\Omega]$
+\item $trimmer P2 = 99.2 \pm  0.9[k\Omega]$
+\item $trimmer P3 = 105.5 \pm  0.9[k\Omega]$
+\end{itemize} 
+L'ingresso S1 è lo stesso usato nel circuito precedente.
+Abbiamo aggiustato il trimmer P1 in modo che la fase tra S1 e S2 fosse di \ang{90} gradi nel limite della risoluzione temporale dell'oscilloscopio.
 Abbiamo poi regolato il trimmer p3 in modo che il duty cicle dell'onda quadra in uscita da S3 fosse del 50\% come in \fig{S3-S1deviatore0}.
-Agendo sul deviatore si poteva variare la fase dell'onda in S3 di 90° rispetto a quella di S1 come in  \fig{S3-S1deviatore0} e \fig{S3-S1deviatore90}.
+Agendo sul deviatore si poteva variare la fase dell'onda in S3 di \ang{90} rispetto a quella di S1 come in  \fig{S3-S1deviatore0} e \fig{S3-S1deviatore90}.
 Agendo sul trimmer P2 si può aggiungere un ulteriore sfasamento di $156 \pm 5$ gradi , (errore calcolato in base agli errori ottenuti dalle misure temporali con l'oscilloscopio.)
+
+\section{Squadratore e campionatore}
+E' stato montato il circuito in \fig{squadratore} e si è verificato che le onde quadre in S4 e S5 fossero in opposizione di fase come in \fig{s4-s5}. Successivamente sono stati osservati i segnali S7 e S8 ,prima separatamente e poi contemporaneamente ; i relativi grafici sono in \fig{}, \fig{}, \fig{}, \fig{}. 
+
+per amplificatore differenziale
+
+\begin{itemize}
+\item $R_{18}=3.20 \pm 0.05[M\Omega]$
+\item $R_{20}=1.17 \pm 0.01[M\Omega]$
+\item $R_{21}=1.51 \pm 0.01[k\Omega]$
+\item $R_{22}=38.6 \pm 0.4[k\Omega]$
+\item $R_{23}=32.2 \pm 0.4[k\Omega]$
+\item $R_{24}=38.7 \pm 0.4[k\Omega]$
+\item $R_{26}=32.3 \pm 0.4[k\Omega]$
+\item $C_5=232 \pm 12[nF]$
+\item $C_6=50 \pm 2[nF]$
+\end{itemize} 

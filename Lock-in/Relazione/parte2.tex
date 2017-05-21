@@ -46,19 +46,19 @@ V=V_{out,0}e^{-nb}
 \end{equation}
 dove n è il numero di piastrine inserite tra il led e il fotodiodo, e b è una costante che quantifica l'assorbimento.\\
  Come errori abbiamo considerato, per ciascuna misura di tensione, gli errori di lettura e calibrazione del multimetro sommati in quadratura. In \fig{Grafico} è mostrato il grafico con la funzione di fit.\\
-Abbiamo ottenuto V$_{out,0} = 988 \pm 25$ mV, la costante $b = 0.166 \pm 0.04$??l'errore non è 0.004??, una covarianza normalizzata $cov = 0.82$ e $\chi^2 = 842$ con 11 gradi di libertà. Il valore molto grande del $\chi^2$ può essere spiegato con la presenza di un errore ben più significativo di quelli strumentali dovuto alla variabilità della radiazione luminosa rilevata dal fotodiodo, che pur venendo coperto durante le misure, era raggiunto da un fondo di luce ambiente.???In realtà tutto il circuito è costruito per eliminare il rumore della luce dell'ambiente\\
+Abbiamo ottenuto V$_{out,0} = 974 \pm 27$ mV, la costante $b = 0.160 \pm 0.004$, una covarianza normalizzata $cov = 0.84$ e $\chi^2 = 723$ con 11 gradi di libertà. Il valore molto grande del $\chi^2$ può essere spiegato con la presenza di un errore ben più significativo di quelli strumentali dovuto alla variabilità della radiazione luminosa rilevata dal fotodiodo, che pur venendo coperto durante le misure, era raggiunto da un fondo di luce ambiente.???In realtà tutto il circuito è costruito per eliminare il rumore della luce dell'ambiente\\
 Si può ottenere un valore per la lunghezza caratteristica di assorbimento, cioè della grandezza l tale che:
 \begin{equation}
 I=I_{0}e^{-x/l}
 \end{equation}
 dove I è l'intensità della luce all'interno del materiale ad una distanza x dalla superficie esposta alla radiazione.
-Considerando che lo spessore di ciascuna lastra di Mylar ha un valore nominale di s=150 $\mu$m si ha l=sb=24.9$ \pm$ 0.6 $\mu$m.
+Considerando che lo spessore di ciascuna lastra di Mylar ha un valore nominale di s=150 $\mu$m si ha l=sb=24.0$ \pm$ 0.6 $\mu$m.
 
 \section{Osservazioni}
 Nel regolare le fasi del lock-in, ponendoil deviatore a 90° non è stato possibile avere una uscita al "Voltmetro" nulla(nei limiti della precisione dello strumento).\\
 Il fatto che questo non sia stato possibile può essere determinato da diverse cause:
 \begin{itemize}
-\item dal fatto che non è stato possibile calibrare lo sfasatore variabile con sfasamento esattamente nullo rispetto all'onda in ingresso S1 (ed S6).
+\item dal fatto di non aver calibrato lo sfasatore variabile con sfasamento esattamente nullo rispetto all'onda in ingresso S1 (ed S6).
 In tal caso ciò porterebbe ad avere all'ingresso dell'amplificatore differenziale due segnali che non corrispondono ad esattamente le semionde positiva e negativa del segnale S6. Di conseguenza, anche il mediatore non avrà onde ingresso completamente positive (o negative). Questo potrà influire sulle misure che verranno effettuate.\\
 \item la presenza di un offset in almeno uno dei componenti del circuito totale. Anche questo può influire negativamente sulle misure.
 \end{itemize} 
@@ -68,7 +68,7 @@ Per verificare se questo effetto sia influente è stato effettuato un ulteriore 
 V=V_{0}T^{n}e^{-nb}
 \end{equation}
 Dove T rappresenta l'eventuale presenza di un coefficiente di trasmissione <1 nel caso di riflessione.\\
-Tuttavia i parametri $V_{0}$ e b risultano uguali a quelli trovati nel fit precedente(entro l'errore), ed anche il $\chi^{2}$ risulta essere alto ($\sim$ 840)\\
+Tuttavia i parametri $V_{0}$ e b risultano uguali a quelli trovati nel fit precedente(entro l'errore), ed anche il $\chi^{2}$ risulta essere alto ($\sim$ 720)\\
 Se ne deduce quindi che questo è un effetto trascurabile.\\
 Si è svolto inoltre un fit considerando la possibile presenza di un offset nell'ipotesi in cui questo sia costante e dunque il modello è della forma:
 
@@ -77,9 +77,9 @@ V=V_{out,0}e^{-nb} + C
 \end{equation}
 
 Da cui si ottiene:
-V{out,0}= 970 $\pm$ 15 mV ;  b=0.21 $\pm$ 0.01  C=70 $\pm$ 10 mV. Con $\chi^{2}$/ndof =230/10 (\fig{Grafico4})
+V{out,0}= 967 $\pm$ 13 mV ;  b=0.208 $\pm$ 0.008  C=73 $\pm$ 9 mV. Con $\chi^{2}$/ndof =135/10 (\fig{Grafico4})
 Da cui si ricava l=31 $\pm$  1 $\mu$m
 \section{Conclusioni}
-E' stato realizzato un circuito lock-in che, sfruttando le fasi relative tra onde ha permesso di eliminare con successo i notevoli rumori presenti nell'ambiente della misura. E' stata effettuata una misura del coefficiente di assorbimento del mylar al 2\%. \\
+E' stato realizzato un circuito lock-in che, sfruttando le fasi relative tra onde ha permesso di eliminare con successo i notevoli rumori presenti nell'ambiente della misura,dovuti principalmente alla radiazione luminosa presente nell'ambiente. E' stata data una stima del coefficiente di assorbimento del mylar al 3\%. \\
 Il fit realizzato mostra che non c'è accordo quantitativo tra le misure e l'andamento esponenziale ipotizzato.\\
-Questa discrepanza è attribuibile principalmente al non perfetto funzionamento del circuito di lock-in: infatti non è stato possibile calibrare perfettamente le fasi in modo tale che venisse selezionata esattamente solo la parte positiva dell'onda, e non è stato possibile eliminare l'offset presente all'uscita. Di conseguenza il valore restituito all'uscita del mediatore non rappresenta con precisione l'intensità luminosa incidente sul fotodiodo.\\
+Questa discrepanza è attribuibile principalmente al non perfetto funzionamento del circuito di lock-in: infatti non è stato possibile  eliminare l'offset presente all'uscita. Di conseguenza il valore restituito all'uscita del mediatore non rappresenta con precisione l'intensità luminosa incidente sul fotodiodo.\\

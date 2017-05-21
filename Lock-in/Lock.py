@@ -6,6 +6,7 @@ import math
 import pylab 
 import scipy
 import scipy.special
+from lab import mme
 
 n = numpy.array([0,1,2,3,4,5])
 V = numpy.array([1.36,1.10,0.936,0.744,0.644,0.504])
@@ -20,6 +21,7 @@ pylab.ylim(0.4,1.5)
 
 n,Vout=pylab.loadtxt(os.path.join(folder,'Dati','Lock_in.txt')).T
 dVout=pylab.sqrt((Vout*0.5/100)**2+1)
+dVout=mme(Vout/1000,'volt','lab3')*1000
 from scipy.optimize import curve_fit
 
 def F(x,a,b):
@@ -31,7 +33,7 @@ pylab.figure(2)
 pylab.title('Tensione di uscita in funzione del numero di lastrine')
 pylab.subplot(211)
 pylab.ylabel('V$_{out}$ [mV]')
-pylab.errorbar(n,Vout,dVout,color = 'black',marker = 'o',linestyle='')
+pylab.errorbar(n,Vout,dVout,color = 'black',marker = '.',linestyle='')
 r=pylab.linspace(-0.5,13,100)
 pylab.plot(r,F(r,a0,b0),color = 'black')
 chisq=(((F(n,a0,b0)-Vout)/dVout)**2).sum()
@@ -42,17 +44,18 @@ pylab.errorbar(n,((F(n,a0,b0)-Vout)/dVout),marker = 'o', color = 'black', linest
 pylab.ylabel('Scarto normalizzato')
 pylab.xlabel('numero lastrine')
 pylab.show()
-print('a=%f +- %f,b=%f +- %f   chisq=%f'%(a0,da0,b0,db0,chisq))
+print('a=%f +- %f,b=%f +- %f , cov=%f  chisq=%f'%(a0,da0,b0,db0,pcov[0,1]/(da0*db0),chisq))
 
 ##Proviamo a fare in questo modo
 
 n,Vout=pylab.loadtxt(os.path.join(folder,'Dati','Lock_in.txt')).T
 dVout=pylab.sqrt((Vout*0.5/100)**2+1)
+dVout=mme(Vout/1000,'volt','lab3')*1000
 from scipy.optimize import curve_fit
 n=n
 def F2(x,a2,b2,T2):
     return (T2**x)*a2*pylab.exp(-x*b2)
-popt,pcov=curve_fit(F2,n,Vout,p0=[1000,1,1],sigma=dVout)
+popt,pcov=curve_fit(F2,n,Vout,p0=[1000,1,0.5],sigma=dVout)
 a02,b02,T02=popt
 da02,db02,dT02=pylab.sqrt(pcov.diagonal())
 print(T02)
@@ -77,6 +80,7 @@ print('a=%f +- %f,b=%f +- %f, T=%f +- %f   chisq=%f'%(a02,da02,b02,db02,T02,dT02
 
 n,Vout=pylab.loadtxt(os.path.join(folder,'Dati','Lock_in.txt')).T
 dVout=pylab.sqrt((Vout*0.5/100)**2+1)
+dVout=mme(Vout/1000,'volt','lab3')*1000
 from scipy.optimize import curve_fit
 n=n
 def F3(x,a2,b2,T2,c2):
@@ -105,6 +109,7 @@ print('a=%f +- %f,b=%f +- %f, T=%f +- %f, c= %f +- %f   chisq=%f'%(a03,da03,b03,
 
 n,Vout=pylab.loadtxt(os.path.join(folder,'Dati','Lock_in.txt')).T
 dVout=pylab.sqrt((Vout*0.5/100)**2+1)
+dVout=mme(Vout/1000,'volt','lab3')*1000
 from scipy.optimize import curve_fit
 n=n
 def F4(x,a2,b2,c2):
@@ -117,7 +122,7 @@ pylab.figure(5)
 pylab.title('Tensione di uscita in funzione del numero di lastrine')
 pylab.subplot(211)
 pylab.ylabel('V$_{out}$ [mV]')
-pylab.errorbar(n,Vout,dVout,color = 'black',marker = 'o',linestyle='')
+pylab.errorbar(n,Vout,dVout,color = 'black',marker = '.',linestyle='')
 pylab.plot(r2,F4(r4,a04,b04,c04),color = 'blue')
 chisq4=(((F4(n,a04,b04,c04)-Vout)/dVout)**2).sum()
 ndof=len(Vout)-3

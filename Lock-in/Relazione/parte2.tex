@@ -12,9 +12,9 @@ Abbiamo realizzato il circuito mostrato in \fig{Mediatore}, usando come componen
 \item $C_6=50 \pm 2[nF]$
 \end{itemize}
 Ponendo il deviatore in posizione 0, abbiamo osservato all'oscilloscopio il segnale in posizione S9. Esso risultava, sempre negativo, con un'ampiezza V$ = 1.1 \pm 0.1$ V. Dopo il mediatore (nell'uscita denominata "Voltmetro") abbiamo ottenuto un segnale continuo, positivo, di ampiezza V$ = 1.12 \pm 0.05$ V.\\
-Con il deviatore nella posizione 90$^\circ$, invece, abbiamo ottenuto in S9 V$_{S9} = 1.9 \pm 0.1$ V e dopo il mediatore V$_{out} = 224 \pm 10$ mV. Il segnale risultava circa a media nulla.??Offset???\\
+Con il deviatore nella posizione 90$^\circ$, invece, abbiamo ottenuto in S9 V$_{S9} = 1.9 \pm 0.1$ V e dopo il mediatore V$_{out} = 224 \pm 10$ mV. Il segnale risultava circa a media nulla.\\
  Variando il potenziometro P2, le parti positiva e negativa della forma d'onda aumentavano o diminuivano, in modo complementare alle uscite S7 e S8, la loro estensione in un periodo, come atteso\\
-Considerato il circuito nel suo complesso, abbiamo ricercato, mantenendo il deviatore nella posizione 90$^\circ$, la posizione del potenziometro P2 che minimizzasse (in modulo) il segnale in uscita ("Voltmetro") , corrispondente ad un estremo della posizione del partitore di tensione (la stessa posizione che P2 aveva in precedenza, nel momento in cui si è verivicato che l'uscita S9 fosse sempre negativa). Non è stato possibile raggiungere, al variare del valore del potenziometro, un valore in uscita minore di ????. 
+Considerato il circuito nel suo complesso, abbiamo ricercato, mantenendo il deviatore nella posizione 90$^\circ$, la posizione del potenziometro P2 che minimizzasse (in modulo) il segnale in uscita ("Voltmetro") , corrispondente ad un estremo della posizione del partitore di tensione (la stessa posizione che P2 aveva in precedenza, nel momento in cui si è verificato che l'uscita S9 fosse sempre negativa). Non è stato infatti possibile raggiungere, al variare del valore del potenziometro, un valore in uscita minore di V$_{out} = 224 \pm 10$ mV. 
 
  Spostando poi il deviatore nella posizione 0$^\circ$, abbiamo misurato con il multimetro digitale la tensione in uscita, che appariva, come atteso, costante, in funzione del numero di lastrine collocate tra il LED ed il fotodiodo (\tab{Fotodiodo}).\\ E' stato verificato che, durante tutto il tempo in cui si sono svolte le misure, il valore del potenziale in uscita restituito in assenza di lastrine di mylar non variasse. 
 \begin{table}[h]
@@ -46,7 +46,7 @@ V=V_{out,0}e^{-nb}
 \end{equation}
 dove n è il numero di piastrine inserite tra il led e il fotodiodo, e b è una costante che quantifica l'assorbimento.\\
  Come errori abbiamo considerato, per ciascuna misura di tensione, gli errori di lettura e calibrazione del multimetro sommati in quadratura. In \fig{Grafico} è mostrato il grafico con la funzione di fit.\\
-Abbiamo ottenuto V$_{out,0} = 974 \pm 27$ mV, la costante $b = 0.160 \pm 0.004$, una covarianza normalizzata $cov = 0.84$ e $\chi^2 = 723$ con 11 gradi di libertà. Il valore molto grande del $\chi^2$ può essere spiegato con la presenza di un errore ben più significativo di quelli strumentali dovuto alla variabilità della radiazione luminosa rilevata dal fotodiodo, che pur venendo coperto durante le misure, era raggiunto da un fondo di luce ambiente.???In realtà tutto il circuito è costruito per eliminare il rumore della luce dell'ambiente\\
+Abbiamo ottenuto V$_{out,0} = 974 \pm 27$ mV, la costante $b = 0.160 \pm 0.004$, una covarianza normalizzata $cov = 0.84$ e $\chi^2 = 723$ con 11 gradi di libertà. Il valore molto grande del $\chi^2$ può essere spiegato con la presenza di un errore ben più significativo di quelli strumentali dovuto alla variabilità della radiazione luminosa rilevata dal fotodiodo, che pur venendo coperto durante le misure, era raggiunto da un fondo di luce ambiente .Tuttavia il circuito è costruito per eliminare il rumore della luce dell'ambiente.\\
 Si può ottenere un valore per la lunghezza caratteristica di assorbimento, cioè della grandezza l tale che:
 \begin{equation}
 I=I_{0}e^{-x/l}
